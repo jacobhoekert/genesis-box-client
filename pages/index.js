@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 import { HomeBanner } from '../components/HomeBanner/HomeBanner'
-import axios from 'axios'
+import StrapiApi from '../axios-instances/StrapiApi'
 
 export default function Home({data}) {
   return (
@@ -27,7 +27,7 @@ export default function Home({data}) {
 }
 
 export async function getStaticProps(){
-  const res = await axios.get('/home')
+  const res = await StrapiApi.get('/home')
   const data = res.data;
   console.log(data.HomeBanner);
   return {

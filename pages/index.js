@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
+import { HomeBanner } from '../components/HomeBanner/HomeBanner'
 import axios from 'axios'
 
-export default function Home() {
+export default function Home({data}) {
   return (
     <>
       <Head>
@@ -11,10 +12,11 @@ export default function Home() {
         {/* <link rel='icon' href='/logo.png' /> */}
       </Head>
       <div id='outer-wrap'>
-        <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='hamburger-menu-cross.png' />} width={ 320 }/>
+        <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 }/>
         <div id='page-wrap'>
           <Navbar />
-          <HomeBanner />
+          <HomeBanner data={data.HomeBanner}/>
+          
           {/* <BasicBanner data={data.basicBanner}/>
           <ProcessSection data={data.process}/>
           <Footer /> */}
@@ -25,9 +27,9 @@ export default function Home() {
 }
 
 export async function getStaticProps(){
-  const res = await axios.get('/')
+  const res = await axios.get('/home')
   const data = res.data;
-  //console.log(data.process.step);
+  console.log(data.HomeBanner);
   return {
     props: {
       data

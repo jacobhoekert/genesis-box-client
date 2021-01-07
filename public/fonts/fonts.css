@@ -1,0 +1,4 @@
+@font-face {
+    font-family: 'botanica';
+    src: url('./botanica.woff') format('woff'), url('./botanica.woff2') format('woff2');
+}

@@ -1,4 +1,4 @@
-import ShopifyAdminApi from '../../axios-instances/ShopifyAdminApi'
+import ShopifyAdminApi from '../../axios/ShopifyAdminApi'
 
 export default async (req, res) => {
   try {

@@ -1,4 +1,4 @@
-import ShopifyAdminApi from '../../axios-instances/ShopifyAdminApi'
+import ShopifyAdminApi from '../../axios/ShopifyAdminApi'
 
 export default async (req, res) => {
   try {
@@ -10,12 +10,12 @@ export default async (req, res) => {
       const articles = result.data.articles;
       let articlesWithTheirComments = [];
       for (const article of articles) {
-        const result = await ShopifyAdminApi.get(`/comments.json`, {
-          article_id: article.id,
-          blog_id: blog.id
-        });
+        console.log(blog.id)
+        console.log(article.id)
+        const result = await ShopifyAdminApi.get(`/comments.json?article_id=${article.id}&blog_id=${blog.id}`);
         const comments = result.data.comments;
-        const articleAndComments = { article, comments }
+        console.log(comments)
+        let articleAndComments = { article, comments }
         articlesWithTheirComments.push(articleAndComments)
       }
       allArticles.push(articlesWithTheirComments);

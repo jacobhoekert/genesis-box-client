@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 import { HomeBanner } from '../components/HomeBanner/HomeBanner'
-import StrapiApi from '../axios-instances/StrapiApi'
+import StrapiApi from '../axios/StrapiApi'
 
 export default function Home({data}) {
 

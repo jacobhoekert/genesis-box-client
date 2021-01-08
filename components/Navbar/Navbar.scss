@@ -3,12 +3,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 52px;
+  padding-right: 150px;
   padding-left: 80px;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
   background-color: #F6F1E9;
+  border-bottom: 1px solid #124658;
 
   @media screen and (max-width: 600px) {
     padding-left: 140px;
@@ -16,6 +17,8 @@
 
   .logo {
     cursor: pointer;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   .mobile-menu-logo {
@@ -30,17 +33,50 @@
     @media screen and (max-width: 600px) {
       display: none;
     }
+    
+    .about-container {
+      position: relative;
+    }
+
+    .drop-down {
+      position: absolute;
+      width: 150px;
+
+      .drop-down-item {
+        padding: 5px;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        font-family: 'brandon-grotesque';
+        font-size: 25px;
+        background-color: #F6F1E9;
+        cursor: pointer;
+
+        &:first-child {
+          border-radius: 5px 5px 0px 0px;
+        }
+
+        &:last-child {
+          border-bottom: 1px solid black;
+          border-radius: 0px 0px 5px 5px;
+        }
+
+        &:hover {
+          background-color: #c0bbb2;
+        }
+      }
+    }
 
     p {
+      font-family: 'brandon-grotesque';
       margin-top: 0px;
       margin-bottom: 0px;
-      margin-right: 74px;
-      font-size: 15px;
+      font-size: 25px;
+      text-align: center;
+      margin-right: 60px;
 
       &:hover {
         cursor: pointer;
-        transform: scale(1.1);
-        color: #1a66a8;
       }
     }
 

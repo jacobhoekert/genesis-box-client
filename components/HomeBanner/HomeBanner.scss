@@ -1,18 +1,23 @@
 .home-banner {
-  
+  background-color: #F6F1E9;
+  height: 1000px;
+
   .flex-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-    padding-top: 40px;
-  
+    padding-top: 100px;
+    height: 400px;
+    
     .text {
-      width: 40%;
-      padding: 100px;
+      width: 35%;
+      padding-left: 10%;
       font-family: 'botanica';
-      font-size: 50px;
+      font-size: 45px;
+      margin-right: 5%;
+      margin-top: 100px;
     }
+
   }
 }
 

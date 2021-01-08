@@ -2,3 +2,8 @@
     font-family: 'botanica';
     src: url('./botanica.woff') format('woff'), url('./botanica.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: "brandon-grotesque";
+    src: url('./brandon-grotesque-light-58a8a4b38001d.otf') format("opentype");
+}

@@ -10,7 +10,7 @@ const TheGarden = () => {
 
   return (
     <div>
-      <h1>Hello</h1>
+      <h1>The Garden</h1>
     </div>
   )
 }

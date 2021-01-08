@@ -4,6 +4,8 @@ import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 import { HomeBanner } from '../components/HomeBanner/HomeBanner'
 import StrapiApi from '../axios-instances/StrapiApi'
 
+//import { Instagram } from 'reactjs-social-embed'
+
 export default function Home({data}) {
   return (
     <>
@@ -16,6 +18,8 @@ export default function Home({data}) {
         <div id='page-wrap'>
           <Navbar />
           <HomeBanner data={data.HomeBanner}/>
+          {/* <Instagram url="https://www.instagram.com/thegenesisbox/" /> */}
+
           
           {/* <BasicBanner data={data.basicBanner}/>
           <ProcessSection data={data.process}/>

@@ -1,4 +1,4 @@
-.navbar {
+#navbar {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -19,11 +19,6 @@
     display: block;
   }
 
-  .mobile-menu-logo {
-    position: absolute;
-    left: -170px;
-  }
-
   .navbar-menu-container {
     border-top: 1px solid #124658;
     border-bottom: 1px solid #124658;
@@ -41,7 +36,7 @@
       display: none;
     }
     
-    .about-container {
+    .about-link {
       position: relative;
     }
 

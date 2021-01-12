@@ -1,45 +1,22 @@
 import Head from 'next/head'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
-import { HomeBanner } from '../components/HomeBanner/HomeBanner'
+import { WhyGenesis } from '../components/AboutUs/WhyGenesis/WhyGenesis'
 import StrapiApi from '../axios/StrapiApi'
-import { useEffect } from 'react'
 
-export default function Home({data}) {
-
-  // useEffect(() => {
-  //   const script = document.createElement('script');
-  
-  //   script.src = "../buy-button.js"
-  
-  //   document.body.appendChild(script);
-  
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   }
-  // }, []);
+export default function WhyGenesisPage({data}) {
 
   return (
-
-
     <>
       <Head>
         <title>The Genesis Box</title>
         {/* <link rel='icon' href='/logo.png' /> */}
-        <script src="../buy-button.js"></script>
       </Head>
       <div id='outer-wrap'>
         <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 }/>
         <div className='page-wrap'>
           <Navbar />
-          <HomeBanner data={data.HomeBanner}/>
-          
-          <div id='product-component-1610134264369'></div>
-          
-
-          {/* <BasicBanner data={data.basicBanner}/>
-          <ProcessSection data={data.process}/>
-          <Footer /> */}
+          <WhyGenesis data={data}/>
         </div>
       </div>
     </>
@@ -47,8 +24,9 @@ export default function Home({data}) {
 }
 
 export async function getStaticProps(){
-  const res = await StrapiApi.get('/home')
+  const res = await StrapiApi.get('/why-genesis')
   const data = res.data;
+  console.log(data);
   return {
     props: {
       data

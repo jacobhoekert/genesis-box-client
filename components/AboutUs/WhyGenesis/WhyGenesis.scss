@@ -1,0 +1,143 @@
+.why-genesis {
+  padding-bottom: 150px;
+
+  .title-container {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+
+    .why {
+      font-family: 'youthful';
+      color: #8DB5BC;
+      font-size: 120px;
+      font-weight: 100;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      position: relative;
+      z-index: 1;
+      margin-left: 5px;
+    }
+  
+    .genesis {
+      font-family: 'botanica';
+      color: #124658;
+      font-size: 100px;
+      font-weight: 100;
+      margin-top: -75px;
+      z-index: -1;
+    }
+  }
+
+  .subtitle {
+    margin: auto;
+    text-align: center;
+    color: #124658;
+    font-family: 'brandon-grotesque';
+    font-style: italic;
+    font-size: 60px;
+    font-weight: 200;
+  }
+
+  .blob-container {
+    position: relative;
+    width: 500px;
+    margin: auto;
+    display: block;
+
+    .blob {
+      width: 100%;
+      margin: auto;
+      display: block;
+      margin-top: 45px;
+      position: absolute;
+      z-index: 2;
+
+    }
+    .definition-container {
+      position: relative;
+      z-index: 8;
+      width: 330px;
+      top: 140px;
+      left: 75px;
+      color: white;
+
+      .genesis-word {
+        font-family: 'botanica';
+        font-size: 25px;
+        font-weight: 100;
+        text-align: center;
+        margin-bottom: 0px;
+      }
+
+      .type {
+        font-family: 'brandon-grotesque';
+        letter-spacing: 1px;
+        line-height: 1.2em;
+        text-align: center;
+        margin-top: 0px;
+  
+      }
+  
+      .def {
+        font-family: 'brandon-grotesque';
+        letter-spacing: 1px;
+        line-height: 1.2em;
+      }
+  
+      .syn-ant {
+        font-family: 'brandon-grotesque';
+        letter-spacing: 1px;
+        line-height: 1.2em;
+      }
+    }
+  }
+  
+  .creation-and-beginnings-body {
+    width: 50%;
+    margin: auto;
+    margin-top: 300px;
+
+    .creation-title {
+      font-family: 'youthful';
+      font-size: 70px;
+      font-weight: 100;
+      color: #8DB5BC;
+      margin-bottom: 0px;
+    }
+
+    .creation-body {
+      font-family: 'brandon-grotesque';
+      font-size: 18.5px;
+      font-weight: 600;
+      letter-spacing: 1.0px;
+      line-height: 1.2em;
+    }
+
+    .beginnings-title {
+      font-family: 'youthful';
+      font-size: 70px;
+      font-weight: 100;
+      margin-bottom: 0px;
+      color: #8DB5BC;
+    }
+
+    .beginnings-body {
+      font-family: 'brandon-grotesque';
+      font-size: 18.5px;
+      font-weight: 600;
+      letter-spacing: 1.0px;
+      line-height: 1.2em;
+
+    }
+    
+
+  }
+
+  .blue-logo {
+    width: 80px;
+    display: block;
+    margin: auto;
+    margin-top: 85px;
+  }
+ 
+}

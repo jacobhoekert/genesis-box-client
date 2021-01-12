@@ -7,3 +7,18 @@
     font-family: "brandon-grotesque";
     src: url('./brandon-grotesque-light-58a8a4b38001d.otf') format("opentype");
 }
+
+@font-face {
+    font-family: "youthful";
+    src: url('./youthful.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "verlag";
+    src: url('./Verlag-Book.otf') format("opentype");
+}
+
+@font-face {
+    font-family: "verlag-light";
+    src: url('./Verlag-Light.otf') format("opentype");
+}

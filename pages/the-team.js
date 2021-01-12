@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
-import { WhyGenesis } from '../components/AboutUs/WhyGenesis/WhyGenesis'
+import { TheTeam } from '../components/AboutUs/TheTeam/TheTeam'
 import StrapiApi from '../axios/StrapiApi'
 
-export default function WhyGenesisPage({data}) {
+export default function TheTeamPage({data}) {
 
   return (
     <>
@@ -15,7 +15,7 @@ export default function WhyGenesisPage({data}) {
         <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 }/>
         <div className='page-wrap'>
           <Navbar />
-          <WhyGenesis data={data}/>
+          <TheTeam data={data}/>
         </div>
       </div>
     </>
@@ -23,9 +23,8 @@ export default function WhyGenesisPage({data}) {
 }
 
 export async function getStaticProps(){
-  const res = await StrapiApi.get('/why-genesis')
+  const res = await StrapiApi.get('/the-team')
   const data = res.data;
-  console.log(data);
   return {
     props: {
       data

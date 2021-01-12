@@ -1,0 +1,34 @@
+#the-team {
+  padding-bottom: 150px;
+
+  .title-container {
+    width: 30%;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+
+    .this-is-who {
+      font-family: 'youthful';
+      color: #8B6C78;
+      font-size: 120px;
+      font-weight: 100;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      position: relative;
+      z-index: 1;
+      margin-left: 5px;
+      text-align: center;
+    }
+  
+    .we-are {
+      font-family: 'botanica';
+      color: #124658;
+      font-size: 100px;
+      font-weight: 100;
+      margin-top: -85px;
+      z-index: -1;
+      text-align: center;
+
+    }
+  }
+}

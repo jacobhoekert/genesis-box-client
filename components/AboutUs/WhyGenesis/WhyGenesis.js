@@ -3,7 +3,7 @@ import Markdown from 'markdown-to-jsx'
 
 export const WhyGenesis = ({data}) => {
   return (
-    <div className="why-genesis">
+    <div id="why-genesis">
       <div className="title-container">
         <h1 className="why">why</h1>
         <h1 className="genesis">genesis</h1>

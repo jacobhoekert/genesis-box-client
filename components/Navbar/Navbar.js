@@ -13,13 +13,13 @@ export const Navbar = () => {
   }
 
   return (
-    <div className="navbar">
-        <Link href="/"><img width="180px" className="logo" src="/images/main-logo.png" /></Link>
-        <div className="navbar-menu-container">
+    <div id="navbar">
+      <Link href="/"><img width="180px" className="logo" src="/images/main-logo.png" /></Link>
+      <div className="navbar-menu-container">
         <div className="navbar-menu">
           <Link href="/"><p>Home</p></Link>
-          <div>
-            <div className="about-container" >
+          <div className="about-container">
+            <div className="about-link" >
               <Link href="/about"><p onMouseEnter={handleDropDownEnter} onMouseLeave={handleDropDownLeave}>About Us</p></Link>
             </div>
             <div onMouseEnter={handleDropDownEnter} onMouseLeave={handleDropDownLeave}>
@@ -37,7 +37,7 @@ export const Navbar = () => {
           <Link href="/the-garden"><p>The Garden</p></Link>
           <img className="bag-icon" src="/images/shopping-bag2.png"/>
         </div>
-        </div>
+      </div>
     </div>
   )
 }

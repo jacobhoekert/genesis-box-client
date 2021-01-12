@@ -1,0 +1,32 @@
+.profile {
+  width: 55%;
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  margin-bottom: 70px;
+  padding-right: 50px;
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+  }
+
+  .profile-text-container {
+    width: 60%;
+
+    .profile-name {
+      font-family: 'botanica';
+      margin-top: 0px;
+
+    }
+
+    .profile-bio {
+      font-family: 'brandon-grotesque';
+      letter-spacing: 1px;
+      line-height: 1.2em;
+      font-weight: bold;
+      text-align: justify;
+    }
+  }
+}

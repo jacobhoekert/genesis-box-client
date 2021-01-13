@@ -1,9 +1,12 @@
 import Head from 'next/head'
+import { useState, useEffect } from 'react'
+import StrapiApi from '../axios/StrapiApi'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
-import { HomeBanner } from '../components/HomeBanner/HomeBanner'
-import StrapiApi from '../axios/StrapiApi'
-import { useEffect } from 'react'
+import { HomeBanner } from '../components/Home/HomeBanner/HomeBanner'
+import { Mission } from '../components/Home/Mission/Mission'
+import { GenesisMethod } from '../components/Home/GenesisMethod/GenesisMethod'
+import { Testimonials } from '../components/Home/Testimonials/Testimonials'
 
 export default function Home({data}) {
 
@@ -19,9 +22,14 @@ export default function Home({data}) {
   //   }
   // }, []);
 
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const startVideo = () => {
+    
+    setIsPlaying(true);
+  }
+
   return (
-
-
     <>
       <Head>
         <title>The Genesis Box</title>
@@ -32,10 +40,11 @@ export default function Home({data}) {
         <div className='page-wrap'>
           <Navbar />
           <HomeBanner data={data.HomeBanner}/>
-          
-          <div id='product-component-1610134264369'></div>
-          
+          <Mission />
+          <GenesisMethod />
+          <Testimonials data={data}/>
 
+          <div id='product-component-1610134264369'></div>
           {/* <BasicBanner data={data.basicBanner}/>
           <ProcessSection data={data.process}/>
           <Footer /> */}

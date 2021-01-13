@@ -15,8 +15,11 @@
     "react": "17.0.1",
     "react-burger-menu": "^3.0.3",
     "react-dom": "17.0.1",
+    "react-player": "^2.7.2",
+    "react-slick": "^0.27.14",
     "reactjs-social-embed": "^1.2.0",
     "sass": "^1.32.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1"
   }
 }

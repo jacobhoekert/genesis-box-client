@@ -1,0 +1,45 @@
+#mission {
+  padding-bottom: 300px;
+  margin-top: 150px;
+
+  .blob-container {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    display: block;
+
+    .blob {
+      width: 100%;
+      margin: auto;
+      display: block;
+      margin-top: 45px;
+      position: absolute;
+      z-index: 2;
+    }
+
+    .mission-text-container {
+      position: relative;
+      z-index: 8;
+      width: 400px;
+      top: 160px;
+      left: 85px;
+      color: white;
+
+      .mission-title {
+        font-family: 'botanica';
+        font-size: 40px;
+        font-weight: 100;
+        text-align: center;
+      }
+
+      .mission-text {
+        font-family: 'brandon-grotesque';
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 1.2em;
+      }
+
+    }
+  }
+}

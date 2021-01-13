@@ -7,6 +7,7 @@ import { HomeBanner } from '../components/Home/HomeBanner/HomeBanner'
 import { Mission } from '../components/Home/Mission/Mission'
 import { GenesisMethod } from '../components/Home/GenesisMethod/GenesisMethod'
 import { Testimonials } from '../components/Home/Testimonials/Testimonials'
+import { InstagramFeed } from '../components/Home/InstagramFeed/InstagramFeed'
 
 export default function Home({data}) {
 
@@ -43,6 +44,7 @@ export default function Home({data}) {
           <Mission />
           <GenesisMethod />
           <Testimonials data={data}/>
+          <InstagramFeed />
 
           <div id='product-component-1610134264369'></div>
           {/* <BasicBanner data={data.basicBanner}/>

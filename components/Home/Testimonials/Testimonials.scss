@@ -1,0 +1,59 @@
+#testimonials {
+  margin-top: 160px;
+  padding-bottom: 200px;
+
+  .title {
+    font-family: 'botanica';
+    font-size: 60px;
+    font-weight: 100;
+    color: #124658;
+    text-align: center;
+    line-height: 1em;
+    margin: auto;
+
+    span {
+      font-family: 'youthful';
+      color: #8B6C78;
+      text-align: center;
+    }
+  }
+
+  .slider {
+    width: 40%;
+    margin: auto;
+    margin-top: 60px;
+
+    .testimonial {
+      height: 200px;
+      display: flex !important;
+      align-items: center;
+      flex-direction: column;
+      outline: none;
+    }
+  
+    p {
+      width: 75%;
+      margin: auto;
+      text-align: center;
+      font-family: 'brandon-grotesque';
+      font-size: 20px;
+      letter-spacing: 1px;
+      line-height: 1.2em;
+    }
+  
+    .testimonial-name {
+      margin-top: 5px;
+      font-size: 17px;
+    }
+  
+    .slick-prev:before {
+      font-size: 30px;
+      color: #124658;
+    }
+    
+    .slick-next:before {
+      font-size: 30px;
+      color: #124658;
+    }
+  }
+}

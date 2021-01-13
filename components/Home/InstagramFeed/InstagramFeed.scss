@@ -1,0 +1,45 @@
+#instagram-feed {
+  margin-top: 160px;
+  padding-bottom: 200px;
+
+  .title {
+    font-family: 'botanica';
+    font-size: 50px;
+    font-weight: 100;
+    color: #124658;
+    line-height: 1em;
+    margin: auto;
+    padding-left: 114px;
+  }
+
+  .slider {
+    width: 85%;
+    margin: auto;
+    margin-top: 60px;
+
+    .photo-container {
+      height: 300px;
+      display: flex !important;
+      align-items: center;
+      flex-direction: column;
+      outline: none;
+    }
+  
+    .photo {
+      width: 220px;
+      height: 220px;
+      margin: auto;
+      box-shadow: 2px 2px 6px 1px#9c9c9c;
+    }
+  
+    .slick-prev:before {
+      font-size: 30px;
+      color: #124658;
+    }
+    
+    .slick-next:before {
+      font-size: 30px;
+      color: #124658;
+    }
+  }
+}

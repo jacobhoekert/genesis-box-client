@@ -1,0 +1,53 @@
+#genesis-method {
+  width: 50%;
+  margin: auto;
+  margin-top: 160px;
+
+  .title {
+    font-family: 'youthful';
+    font-size: 65px;
+    font-weight: 100;
+    color: #8B6C78;
+    text-align: center;
+
+    span {
+      display: inline;
+      font-family: 'botanica';
+      position: relative;
+      top: -15px;
+      color: #124658;
+    }
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      text-align: center;
+      margin-right: 20px;
+
+      img {
+        width: 90px;
+      }
+    
+      #image-2 {
+        width: 75px;
+      }
+    
+      h4 {
+        font-family: 'brandon-grotesque';
+        font-size: 22px;
+        font-weight: 600;
+      }
+    }
+  }
+  
+
+}

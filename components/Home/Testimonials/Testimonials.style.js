@@ -1,13 +1,11 @@
 import styled, {css} from 'styled-components'
 
-export const ImageDiv = styled.div`
-  width: 40%;
+export const TestimonialsSection = styled.section`
   background-size: cover;
-  border-radius: 20px;
+  background-position: center;
+  height: 650px;
   
   ${props => css`
     background-image: url(${props.bkg_img});
   `};
 `;
-
-

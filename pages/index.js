@@ -61,6 +61,7 @@ export default function Home({data}) {
 export async function getStaticProps(){
   const res = await StrapiApi.get('/home')
   const data = res.data;
+  console.log(data);
   return {
     props: {
       data

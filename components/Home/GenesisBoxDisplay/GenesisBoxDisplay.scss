@@ -64,52 +64,42 @@
         cursor: pointer;
         transform: scale(1.03);
         background-color: #773351;
-
       }
     }
   }
-  // width: 50%;
-  // margin: auto;
-  // margin-top: 160px;
 
-  //   span {
-  //     display: inline;
-  //     font-family: 'botanica';
-  //     position: relative;
-  //     top: -15px;
-  //     color: #124658;
-  //   }
-  // }
+  .slider-container {
+    width: 50%;
+    height: 420px;
+    margin: auto;
+    margin-top: 35px;
+    background-color: rgb(247, 245, 239);
+    border-radius: 50px;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
 
-  // .flex-container {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   justify-content: space-evenly;
-  //   align-items: baseline;
+    .slider {
+      width: 80%;
+      margin: auto;
 
-  //   .step {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     width: 200px;
-  //     text-align: center;
-  //     margin-right: 20px;
+      .image {
+        height: 300px;
+        display: flex !important;
+        align-items: center;
+        flex-direction: column;
+        outline: none;
+      }
 
-  //     img {
-  //       width: 90px;
-  //     }
-    
-  //     #image-2 {
-  //       width: 75px;
-  //     }
-    
-  //     h4 {
-  //       font-family: 'brandon-grotesque';
-  //       font-size: 22px;
-  //       font-weight: 600;
-  //     }
-  //   }
-  // }
-  
+      .slick-prev:before {
+        font-size: 30px;
+        color: #124658;
+      }
 
+      .slick-next:before {
+        font-size: 30px;
+        color: #124658;
+      }
+    }
+  }
 }

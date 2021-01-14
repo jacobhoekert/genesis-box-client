@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { GENESIS_BOX_PRODUCT_KEY } from '../../../config/keys'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export const GenesisBoxDisplay = () => {
   const [ product, setProduct ] = useState({})
@@ -13,6 +16,16 @@ export const GenesisBoxDisplay = () => {
       title: lowerCaseTitle
     })
   }, [])
+
+  var sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 6000,
+  };
 
   return (
     <div id="genesis-box-display">
@@ -28,8 +41,22 @@ export const GenesisBoxDisplay = () => {
         <button className="view-more" href="#">VIEW MORE</button>
         <button className="add-to-cart" href="#">ADD TO CART</button>
       </div>
-      <div className="image-carousel"> 
-        {/* <img src="/images/04_curatethegenesisbox_1.png"/> */}
+      <div className="slider-container"> 
+        <div className="carousel">
+          <Slider {...sliderSettings}>
+            {
+              product.images &&
+              product.images.map((image, index) => {
+                console.log(image)
+                return (
+                  <div key={index} className="image">
+                    <img src={image.src} />
+                  </div>
+                )
+              })
+            }
+          </Slider>
+        </div>
       </div>
     </div>
   )

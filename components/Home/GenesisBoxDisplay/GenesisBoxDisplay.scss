@@ -1,0 +1,98 @@
+#genesis-box-display {
+  display: flex;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .title {
+      font-family: 'botanica';
+      font-size: 45px;
+      font-weight: 100;
+      color: #124658;
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    .price {
+      font-family: 'brandon-grotesque';
+      font-size: 28px;
+      font-weight: 100;
+      color: #124658;
+      text-align: left;
+      margin-top: 5px;
+      margin-left: 10px;
+    }
+
+    .view-more {
+      font-family: 'brandon-grotesque';
+      font-size: 16px;
+      font-weight: 100;
+      line-height: 1.8;
+      color: #F6F1E9;
+      background-color: #81606c;
+      width: 60%;
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    .add-to-cart {
+      font-family: 'brandon-grotesque';
+      font-size: 16px;
+      font-weight: 100;
+      line-height: 1.8;
+      color: #F6F1E9;
+      background-color: #4c1d31;
+      width: 60%;
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  // width: 50%;
+  // margin: auto;
+  // margin-top: 160px;
+
+  //   span {
+  //     display: inline;
+  //     font-family: 'botanica';
+  //     position: relative;
+  //     top: -15px;
+  //     color: #124658;
+  //   }
+  // }
+
+  // .flex-container {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-evenly;
+  //   align-items: baseline;
+
+  //   .step {
+  //     display: flex;
+  //     flex-direction: column;
+  //     align-items: center;
+  //     width: 200px;
+  //     text-align: center;
+  //     margin-right: 20px;
+
+  //     img {
+  //       width: 90px;
+  //     }
+    
+  //     #image-2 {
+  //       width: 75px;
+  //     }
+    
+  //     h4 {
+  //       font-family: 'brandon-grotesque';
+  //       font-size: 22px;
+  //       font-weight: 600;
+  //     }
+  //   }
+  // }
+  
+
+}

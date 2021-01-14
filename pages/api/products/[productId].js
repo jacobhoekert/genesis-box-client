@@ -5,9 +5,8 @@ export default async (req, res) => {
     const {
       query: { productId },
     } = req
-    const result = await ShopifyAdminApi.get(`/products/${productId}/images.json`);
-    const images = result.data.images;
-    res.status(200).json(images);
+    const result = await ShopifyAdminApi.get(`/products/${productId}.json`);
+    res.status(200).json(result.data.product);
   } catch (error) {
     console.log(error);
   }

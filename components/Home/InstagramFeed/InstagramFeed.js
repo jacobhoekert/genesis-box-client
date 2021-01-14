@@ -26,7 +26,7 @@ export const InstagramFeed = ({data}) => {
   }, []);
 
   useEffect(() => {
-    console.log(photoUrls);
+    // console.log(photoUrls);
   }, [photoUrls])
 
   var settings = {

@@ -5,6 +5,7 @@ import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 import { HomeBanner } from '../components/Home/HomeBanner/HomeBanner'
 import { Mission } from '../components/Home/Mission/Mission'
+import { GenesisBoxDisplay } from '../components/Home/GenesisBoxDisplay/GenesisBoxDisplay'
 import { GenesisMethod } from '../components/Home/GenesisMethod/GenesisMethod'
 import { Testimonials } from '../components/Home/Testimonials/Testimonials'
 import { InstagramFeed } from '../components/Home/InstagramFeed/InstagramFeed'
@@ -42,6 +43,7 @@ export default function Home({data}) {
           <Navbar />
           <HomeBanner data={data.HomeBanner}/>
           <Mission />
+          <GenesisBoxDisplay />
           <GenesisMethod />
           <Testimonials data={data}/>
           <InstagramFeed />

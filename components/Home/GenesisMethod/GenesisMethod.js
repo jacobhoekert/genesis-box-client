@@ -23,6 +23,10 @@ export const GenesisMethod = () => {
           <img src="/images/05_sharethegoodsandthejoy.png"/>
           <h4>5. share the goods and JOY</h4>
         </div>
+        <div className="step">
+          <img src="/images/06_continueartisanpartnership.png"/>
+          <h4>6. continue artsian partnerships</h4>
+        </div>
       </div>
     </div>
   )

@@ -1,12 +1,16 @@
 #mission {
   padding-bottom: 300px;
-  margin-top: 150px;
+  margin-top: 230px;
 
   .blob-container {
     position: relative;
     width: 600px;
     margin: auto;
     display: block;
+
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
 
     .blob {
       width: 100%;

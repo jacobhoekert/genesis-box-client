@@ -2,7 +2,32 @@ body {
   margin: 0px;
 }
 
-.page-wrap {
-  background-color: #F6F1E9;
+.connect-button {
+  font-family: 'brandon-grotesque';
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.8;
+  color: #F6F1E9;
+  background-color: #81606c;
+  width: 200px;
+  height: 35px;
+  margin: auto;
+  margin-top: 20px;
+  display: block;
+  border: none;
+  outline: none;
+}
 
+.connect-button:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  background-color: #b98e9e;
+}
+
+.blue-logo {
+  width: 80px;
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 80px;
 }

@@ -14,7 +14,6 @@ export const Navbar = () => {
 
   return (
     <div id="navbar">
-      <Link href="/"><img width="180px" className="logo" src="/images/main-logo.png" /></Link>
       <div className="navbar-menu-container">
         <div className="navbar-menu">
           <Link href="/"><p>Home</p></Link>
@@ -32,10 +31,11 @@ export const Navbar = () => {
               } 
             </div>
           </div>
-          <Link href="/shop"><p>Shop</p></Link>
           <Link href="/global-community"><p>Global Community</p></Link>
+          <Link href="/shop"><p>Shop</p></Link>
           <Link href="/the-garden"><p>The Garden</p></Link>
           <Link href="/connect"><p>Connect</p></Link>
+          <img className="search-icon" src="/images/search2.png"/>
           <img className="bag-icon" src="/images/shopping-bag2.png"/>
         </div>
       </div>

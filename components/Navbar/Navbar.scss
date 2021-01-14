@@ -6,24 +6,17 @@
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+  top: -60px;
 
   @media screen and (max-width: 600px) {
     padding-left: 140px;
   }
 
-  .logo {
-    cursor: pointer;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    display: block;
-  }
-
   .navbar-menu-container {
-    border-top: 1px solid #124658;
-    border-bottom: 1px solid #124658;
+    background-color: #124658;
+    color: white;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
   }
 
   .navbar-menu {
@@ -80,6 +73,13 @@
       &:hover {
         cursor: pointer;
       }
+    }
+
+    .search-icon {
+      cursor: pointer;
+      width: 30px;
+      margin-right: 35px;
+      
     }
 
     .bag-icon {

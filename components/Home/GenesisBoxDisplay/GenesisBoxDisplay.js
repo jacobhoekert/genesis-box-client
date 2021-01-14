@@ -25,12 +25,8 @@ export const GenesisBoxDisplay = () => {
             ${ product.variants[0].price }
           </p>
         }
-        <button className="view-more" href="#">
-          VIEW MORE
-        </button>
-        <button className="add-to-cart" href="#">
-          ADD TO CART
-        </button>
+        <button className="view-more" href="#">VIEW MORE</button>
+        <button className="add-to-cart" href="#">ADD TO CART</button>
       </div>
       <div className="image-carousel"> 
         {/* <img src="/images/04_curatethegenesisbox_1.png"/> */}

@@ -1,5 +1,8 @@
 #genesis-box-display {
   display: flex;
+  width: 75%;
+  margin: auto;
+  padding-top: 140px;
 
   .info {
     display: flex;
@@ -18,7 +21,7 @@
     .price {
       font-family: 'brandon-grotesque';
       font-size: 28px;
-      font-weight: 100;
+      font-weight: 900;
       color: #124658;
       text-align: left;
       margin-top: 5px;
@@ -32,10 +35,16 @@
       line-height: 1.8;
       color: #F6F1E9;
       background-color: #81606c;
-      width: 60%;
-      margin-top: 10px;
+      width: 200px;
+      height: 35px;
       margin-left: 10px;
-      margin-bottom: 10px;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+        background-color: #b98e9e;
+      }
     }
 
     .add-to-cart {
@@ -45,10 +54,18 @@
       line-height: 1.8;
       color: #F6F1E9;
       background-color: #4c1d31;
-      width: 60%;
-      margin-top: 10px;
+      width: 200px;
+      height: 35px;
+      margin-top: 20px;
       margin-left: 10px;
-      margin-bottom: 10px;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.03);
+        background-color: #773351;
+
+      }
     }
   }
   // width: 50%;

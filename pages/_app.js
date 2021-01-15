@@ -13,6 +13,7 @@ import '../components/Home/InstagramFeed/InstagramFeed.scss'
 import '../components/AboutUs/WhyGenesis/WhyGenesis.scss'
 import '../components/AboutUs/TheTeam/TheTeam.scss'
 import '../components/AboutUs/TheTeam/Profile/Profile.scss'
+import '../components/AboutUs/GenesisBoxProducts/GenesisBoxProducts.scss'
 
 import { ParallaxProvider } from 'react-scroll-parallax'
 

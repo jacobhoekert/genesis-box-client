@@ -41,22 +41,23 @@ export const GenesisBoxDisplay = () => {
         <button className="view-more" href="#">VIEW MORE</button>
         <button className="add-to-cart" href="#">ADD TO CART</button>
       </div>
-      <div className="slider-container"> 
-        <div className="carousel">
-          <Slider {...sliderSettings}>
-            {
-              product.images &&
-              product.images.map((image, index) => {
-                console.log(image)
-                return (
-                  <div key={index} className="image">
-                    <img src={image.src} />
-                  </div>
-                )
-              })
-            }
-          </Slider>
-        </div>
+      <div className="slider">
+        <Slider {...sliderSettings}>
+          {
+            product.images &&
+            product.images.map((image, index) => {
+              console.log(image.src)
+              const size = '_400x400'
+              const smallImageUrl = image.src.slice(0,image.src.search(/\.(jpe?g|gif|png|tiff)/)) + size + image.src.slice(image.src.search(/\.(jpe?g|gif|png|tiff)/))
+              console.log(smallImageUrl)
+              return (
+                <div key={index} className="image-container">
+                  <img className="image" src={smallImageUrl} />
+                </div>
+              )
+            })
+          }
+        </Slider>
       </div>
     </div>
   )

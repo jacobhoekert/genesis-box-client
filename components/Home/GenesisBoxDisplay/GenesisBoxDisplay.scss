@@ -1,13 +1,16 @@
 #genesis-box-display {
   display: flex;
+  justify-content: center;
   width: 75%;
   margin: auto;
   padding-top: 140px;
 
   .info {
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    // margin-left: 5px;
 
     .title {
       font-family: 'botanica';
@@ -68,38 +71,24 @@
     }
   }
 
-  .slider-container {
-    width: 50%;
-    height: 420px;
-    margin: auto;
-    margin-top: 35px;
-    background-color: rgb(247, 245, 239);
-    border-radius: 50px;
-    opacity: 0.5;
-    display: flex;
-    justify-content: center;
+  .slider {
+    width: 400px;
+    // margin: auto;
+    margin-top: 25px;
+    // margin-left: 120px;
 
-    .slider {
-      width: 80%;
-      margin: auto;
+    .image-container {
+      height: 400px;
+      display: flex !important;
+      align-items: center;
+    }
 
-      .image {
-        height: 300px;
-        display: flex !important;
-        align-items: center;
-        flex-direction: column;
-        outline: none;
-      }
+    .slick-prev:before {
+      color: #124658;
+    }
 
-      .slick-prev:before {
-        font-size: 30px;
-        color: #124658;
-      }
-
-      .slick-next:before {
-        font-size: 30px;
-        color: #124658;
-      }
+    .slick-next:before {
+      color: #272a2b;
     }
   }
 }

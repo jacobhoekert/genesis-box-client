@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { GENESIS_BOX_PRODUCT_KEY } from '../../../config/keys'
+import { BuildImageUrl } from '../../../config/ShopifyImageConfig'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -41,22 +42,19 @@ export const GenesisBoxDisplay = () => {
         <button className="view-more" href="#">VIEW MORE</button>
         <button className="add-to-cart" href="#">ADD TO CART</button>
       </div>
-      <div className="slider-container"> 
-        <div className="carousel">
-          <Slider {...sliderSettings}>
-            {
-              product.images &&
-              product.images.map((image, index) => {
-                console.log(image)
-                return (
-                  <div key={index} className="image">
-                    <img src={image.src} />
-                  </div>
-                )
-              })
-            }
-          </Slider>
-        </div>
+      <div className="slider">
+        <Slider {...sliderSettings}>
+          {
+            product.images &&
+            product.images.map((image, index) => {
+              return (
+                <div key={index} className="image-container">
+                  <img className="image" src={BuildImageUrl(image)} />
+                </div>
+              )
+            })
+          }
+        </Slider>
       </div>
     </div>
   )

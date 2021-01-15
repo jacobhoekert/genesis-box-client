@@ -12,7 +12,7 @@ const TheGarden = () => {
       <Head>
         <title>The Genesis Box</title>
       </Head>
-      <HeaderImage imagePath={'/images/montana-122.jpg'} />
+      <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
       <BlogGrid />
     </>

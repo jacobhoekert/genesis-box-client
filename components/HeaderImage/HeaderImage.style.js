@@ -1,7 +1,6 @@
 import styled, {css} from 'styled-components'
 
 export const ImageDiv = styled.div`
-  height: 500px;
   background-size: cover;
   background-position: center;
   height: 500px;
@@ -16,6 +15,7 @@ export const ImageDiv = styled.div`
   
   ${props => css`
     background-image: url(${props.bkg_img});
+    height: ${props.height};
   `};
 `;
 

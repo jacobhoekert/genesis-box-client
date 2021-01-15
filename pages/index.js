@@ -38,7 +38,7 @@ export default function Home({data}) {
       <Head>
         <title>The Genesis Box</title>
       </Head>
-      <HeaderImage imagePath='/images/home-header-image.jpg' />
+      <HeaderImage imagePath='/images/home-header-image.jpg' height='500px'/>
       <Navbar />
         <div style={{height: '500px', textAlign: 'center', paddingTop: '200px'}}>
           GLOBE COMING SOON

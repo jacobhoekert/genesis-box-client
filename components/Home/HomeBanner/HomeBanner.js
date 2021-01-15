@@ -1,4 +1,4 @@
-import { ImageDiv } from './HomeBanner.style';
+import { ImageDiv } from './HomeBanner.style'
 import { Parallax } from 'react-scroll-parallax'
 
 export const HomeBanner = ({data}) => {

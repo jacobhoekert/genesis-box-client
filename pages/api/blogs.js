@@ -10,17 +10,14 @@ export default async (req, res) => {
       const articles = result.data.articles;
       let articlesWithTheirComments = [];
       for (const article of articles) {
-        console.log(blog.id)
-        console.log(article.id)
         const result = await ShopifyAdminApi.get(`/comments.json?article_id=${article.id}&blog_id=${blog.id}`);
         const comments = result.data.comments;
-        console.log(comments)
         let articleAndComments = { article, comments }
         articlesWithTheirComments.push(articleAndComments)
       }
-      allArticles.push(articlesWithTheirComments);
+      allArticles = articlesWithTheirComments;
     }
-    res.status(200).json(allArticles)
+    res.status(200).json(allArticles);
   } catch (error) {
     console.log(error);
   }

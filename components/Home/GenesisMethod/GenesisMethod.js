@@ -25,7 +25,7 @@ export const GenesisMethod = () => {
         </div>
         <div className="step">
           <img src="/images/06_continueartisanpartnership.png"/>
-          <h4>6. continue artsian partnerships</h4>
+          <h4>6. continue artisan partnerships</h4>
         </div>
       </div>
     </div>

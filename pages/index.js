@@ -10,7 +10,7 @@ import { GenesisBoxDisplay } from '../components/Home/GenesisBoxDisplay/GenesisB
 import { GenesisMethod } from '../components/Home/GenesisMethod/GenesisMethod'
 import { Testimonials } from '../components/Home/Testimonials/Testimonials'
 import { InstagramFeed } from '../components/Home/InstagramFeed/InstagramFeed'
-import { HeaderImage } from '../components/Home/HeaderImage/HeaderImage'
+import { HeaderImage } from '../components/HeaderImage/HeaderImage'
 
 export default function Home({data}) {
 
@@ -38,29 +38,23 @@ export default function Home({data}) {
       <Head>
         <title>The Genesis Box</title>
       </Head>
-      <div id='outer-wrap'>
-        <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 }/>
-        <div className='page-wrap'>
-          <HeaderImage />
-          <Navbar />
-            <div style={{height: '500px', textAlign: 'center', paddingTop: '200px'}}>
-              GLOBE COMING SOON
-            </div>
-          
-          <HomeBanner data={data.HomeBanner}/>
-          <Mission />
-          <GenesisBoxDisplay />
-          <GenesisMethod />
-          <Testimonials data={data}/>
-          <InstagramFeed />
-          <button className="connect-button" href="#">CONNECT WITH US</button>
-          <img className="blue-logo" src="/images/genesis-blue-circle.png"/>
-          <div id='product-component-1610134264369'></div>
-          {/* <BasicBanner data={data.basicBanner}/>
-          <ProcessSection data={data.process}/>
-          <Footer /> */}
+      <HeaderImage imagePath='/images/home-header-image.jpg' />
+      <Navbar />
+        <div style={{height: '500px', textAlign: 'center', paddingTop: '200px'}}>
+          GLOBE COMING SOON
         </div>
-      </div>
+      <HomeBanner data={data.HomeBanner}/>
+      <Mission />
+      <GenesisBoxDisplay />
+      <GenesisMethod />
+      <Testimonials data={data}/>
+      <InstagramFeed />
+      <button className="connect-button" href="#">CONNECT WITH US</button>
+      <img className="blue-logo" src="/images/genesis-blue-circle.png"/>
+      <div id='product-component-1610134264369'></div>
+      {/* <BasicBanner data={data.basicBanner}/>
+      <ProcessSection data={data.process}/>
+      <Footer /> */}
     </>
   )
 }

@@ -1,17 +1,21 @@
-import { useEffect } from 'react'
+import Head from 'next/head'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Navbar } from '../components/Navbar/Navbar'
+import { HeaderImage } from '../components/HeaderImage/HeaderImage'
+import { BlogGrid } from '../components/TheGarden/BlogGrid/BlogGrid'
 
 const TheGarden = () => {
 
-  useEffect( () => {
-    axios.get('http://localhost:3000/api/blogs')
-      .then(data => console.log(data))
-  },[])
-
   return (
-    <div>
-      <h1>The Garden</h1>
-    </div>
+    <>
+      <Head>
+        <title>The Genesis Box</title>
+      </Head>
+      <HeaderImage imagePath={'/images/montana-122.jpg'} />
+      <Navbar />
+      <BlogGrid />
+    </>
   )
 }
 

@@ -1,11 +1,12 @@
 import { Parallax } from 'react-scroll-parallax'
+import { ImageDiv } from './HeaderImage.style'
 
-export const HeaderImage = ({data}) => {
+export const HeaderImage = props => {
   return (
     <Parallax y={[-27, 0]}>
-      <div id="header-image">
+      <ImageDiv bkg_img={props.imagePath}>
         <img width="180px" src="/images/main-logo.png" className="logo" />
-      </div>
+      </ImageDiv>
     </Parallax>
   )
 }

@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
-import { Shop } from '../components/Shop/Shop'
+import { GenesisBoxProducts } from '../components/AboutUs/GenesisBoxProducts/GenesisBoxProducts'
+import StrapiApi from '../axios/StrapiApi'
 import { HeaderImage } from '../components/HeaderImage/HeaderImage'
 
-export default function ShopPage({data}) {
+export default function GenesisBoxProductsPage({data}) {
 
   return (
     <>
@@ -16,7 +17,7 @@ export default function ShopPage({data}) {
         <div className='page-wrap'>
           <HeaderImage />
           <Navbar />
-          <Shop data={data}/>
+          <GenesisBoxProducts data={data}/>
         </div>
       </div>
     </>

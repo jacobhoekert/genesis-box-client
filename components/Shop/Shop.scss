@@ -1,0 +1,16 @@
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  // margin: auto;
+  max-width: 100% !important;
+
+  #products > * {
+    width: 200px;
+  }
+
+  div {
+    // margin: 20px;
+  }
+}

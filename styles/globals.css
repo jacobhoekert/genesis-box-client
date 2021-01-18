@@ -18,6 +18,8 @@ body {
   outline: none;
 }
 
+/* Home Page Extra CSS */
+
 .connect-button:hover {
   cursor: pointer;
   transform: scale(1.03);

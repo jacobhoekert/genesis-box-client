@@ -1,0 +1,43 @@
+.blog-comments {
+  width: 50%;
+  margin: auto;
+  margin-top: 80px;
+  border-top: 1px solid #124658;
+  border-bottom: 1px solid #124658;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: 'brandon-grotesque';
+  color: #124658;
+
+  .num-of-comments {
+    font-size: 29px;
+  }
+
+  .all-comments-container {
+    margin-top: 40px;
+
+    .comment-container {
+      margin-top: 20px;
+      border-bottom: 0.5px solid rgba(28, 86, 105, 0.192);
+      padding-bottom: 20px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      .comment-body {
+        margin-bottom: 0px;
+        font-size: 18px;
+      }
+  
+      .comment-author-and-date {
+        width: 220px;
+        display: flex;
+        justify-content: space-between;
+        font-style: italic;
+      }
+    }
+
+  }
+  
+}

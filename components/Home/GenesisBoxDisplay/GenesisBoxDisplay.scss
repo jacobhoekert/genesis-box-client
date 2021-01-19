@@ -128,6 +128,7 @@
 
       .image {
         margin: auto;
+        height: 350px;
 
         @media screen and (max-width: 1000px) {
           height: 300px;
@@ -142,20 +143,12 @@
 
     .slick-prev:before {
       color: #124658;
-      font-size: 30px;
-
-      @media screen and (max-width: 600px) {
-        font-size: 25px;
-      }
+      font-size: 25px;
     }
 
     .slick-next:before {
       color: #124658;
-      font-size: 30px;
-
-      @media screen and (max-width: 600px) {
-        font-size: 25px;
-      }
+      font-size: 25px;
     }
   }
 

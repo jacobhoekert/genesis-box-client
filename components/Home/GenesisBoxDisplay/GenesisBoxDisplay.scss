@@ -11,7 +11,8 @@
   }
 
   @media screen and (max-width: 600px) {
-    padding-top: 30px;
+    padding-top: 100px;
+    width: 85%;
   }
 
   .info {
@@ -24,6 +25,10 @@
       align-items: center;
     }
 
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+
     .title {
       font-family: 'botanica';
       font-size: 45px;
@@ -31,6 +36,10 @@
       color: #124658;
       text-align: center;
       margin-bottom: 0px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 40px;
+      }
     }
 
     .price {
@@ -114,10 +123,10 @@
 
       @media screen and (max-width: 600px) {
         width: 95%;
+        height: 280px;
       }
 
       .image {
-        border-radius: 50px;
         margin: auto;
 
         @media screen and (max-width: 1000px) {
@@ -133,10 +142,20 @@
 
     .slick-prev:before {
       color: #124658;
+      font-size: 30px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 25px;
+      }
     }
 
     .slick-next:before {
-      color: #272a2b;
+      color: #124658;
+      font-size: 30px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 25px;
+      }
     }
   }
 

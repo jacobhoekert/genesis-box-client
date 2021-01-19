@@ -2,6 +2,12 @@
   margin-top: 160px;
   padding-bottom: 100px;
 
+  @media screen and (max-width: 600px) {
+    margin-top: 100px;
+    padding-bottom: 80px;
+
+  }
+
   .title {
     font-family: 'botanica';
     font-size: 50px;
@@ -10,6 +16,13 @@
     line-height: 1em;
     margin: auto;
     padding-left: 114px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 37px;
+      width: 70%;
+      padding-left: 0px;
+      text-align: center;
+    }
   }
 
   .slider {
@@ -17,12 +30,18 @@
     margin: auto;
     margin-top: 60px;
 
+    @media screen and (max-width: 600px) {
+      width: 80%;
+      margin-top: 30px;
+    }
+
     .photo-container {
       height: 300px;
       display: flex !important;
       align-items: center;
       flex-direction: column;
       outline: none;
+
     }
   
     .photo {
@@ -30,16 +49,29 @@
       height: 220px;
       margin: auto;
       box-shadow: 2px 2px 8px 1px#cecece;
+
+      @media screen and (max-width: 600px) {
+        width: 260px;
+        height: 260px;
+      }
     }
   
     .slick-prev:before {
       font-size: 30px;
       color: #124658;
+
+      @media screen and (max-width: 600px) {
+        font-size: 25px;
+      }
     }
     
     .slick-next:before {
       font-size: 30px;
       color: #124658;
+
+      @media screen and (max-width: 600px) {
+        font-size: 25px;
+      }
     }
   }
 }

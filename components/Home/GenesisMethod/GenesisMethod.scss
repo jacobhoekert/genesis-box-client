@@ -3,6 +3,10 @@
   margin: auto;
   margin-top: 220px;
 
+  @media screen and (max-width: 600px) {
+    margin-top: 120px;
+  }
+
   .title {
     font-family: 'youthful';
     font-size: 65px;

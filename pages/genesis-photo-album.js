@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { HeaderImage } from '../components/HeaderImage/HeaderImage'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
-import { TheTeam } from '../components/AboutUs/TheTeam/TheTeam'
+import { GenesisPhotoAlbum } from '../components/AboutUs/GenesisPhotoAlbum/GenesisPhotoAlbum'
 import StrapiApi from '../axios/StrapiApi'
+import { HeaderImage } from '../components/HeaderImage/HeaderImage'
 
-export default function TheTeamPage({data}) {
+export default function GenesisPhotoAlbumPage({data}) {
 
   return (
     <>
@@ -17,19 +17,20 @@ export default function TheTeamPage({data}) {
         <div className='page-wrap'>
           <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
           <Navbar />
-          <TheTeam data={data}/>
+          <GenesisPhotoAlbum data={data}/>
         </div>
       </div>
     </>
   )
 }
 
-export async function getStaticProps(){
-  const res = await StrapiApi.get('/the-team')
-  const data = res.data;
-  return {
-    props: {
-      data
-    }
-  }
-}
+// export async function getStaticProps(){
+//   const res = await StrapiApi.get('/genesis-box-products')
+//   const data = res.data;
+//   console.log(data);
+//   return {
+//     props: {
+//       data
+//     }
+//   }
+// }

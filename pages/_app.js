@@ -12,7 +12,8 @@ import '../components/Home/InstagramFeed/InstagramFeed.scss'
 import '../components/AboutUs/WhyGenesis/WhyGenesis.scss'
 import '../components/AboutUs/TheTeam/TheTeam.scss'
 import '../components/AboutUs/TheTeam/Profile/Profile.scss'
-import '../components/AboutUs/GenesisBoxProducts/GenesisBoxProducts.scss'
+import '../components/AboutUs/GenesisPhotoAlbum/GenesisPhotoAlbum.scss'
+import '../components/AboutUs/EntrepreneurialEmpowerment/EntrepreneurialEmpowerment.scss'
 import '../components/TheGarden/BlogGrid/BlogGrid.scss'
 import '../components/TheGarden/BlogCard/BlogCard.scss'
 import '../components/TheGarden/BlogArticle/BlogArticle.scss'
@@ -26,7 +27,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ParallaxProvider>
       <div id='outer-wrap'>
-          <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 }/>
+          <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 } />
         <div className='page-wrap'>
           <Component {...pageProps} />
         </div>

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { getAllArticleUrls, getArticleData } from '../../lib/articles'
 import { Navbar } from '../../components/Navbar/Navbar'
 import { HeaderImage } from '../../components/HeaderImage/HeaderImage'
@@ -26,6 +27,13 @@ export default function Article({ articleData }) {
           <BlogComments comments={articleData.comments}/>
       }
       <CommentForm articleData={articleData}/>
+      <Link href='/the-garden'>
+        <button className="pink-button centered-flex" href="#">
+          <img className="left-arrow" src="/images/left-arrow-white.png"/>
+          Back to The Garden
+        </button>
+      </Link>
+      <div className="empty-space"></div>
     </>
   )
 }

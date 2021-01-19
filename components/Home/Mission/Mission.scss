@@ -2,6 +2,11 @@
   padding-bottom: 300px;
   margin-top: 230px;
 
+  @media screen and (max-width: 600px) {
+    margin-top: 60px;
+    padding-bottom: 60px;
+  }
+
   .blob-container {
     position: relative;
     width: 600px;
@@ -29,11 +34,22 @@
       left: 85px;
       color: white;
 
+      @media screen and (max-width: 600px) {
+        width: 70%;
+        left: 13%;
+        top: 0px;
+        padding-top: 30%;
+      }
+
       .mission-title {
         font-family: 'botanica';
         font-size: 40px;
         font-weight: 100;
         text-align: center;
+
+        @media screen and (max-width: 600px) {
+          font-size: 20px;
+        }
       }
 
       .mission-text {
@@ -42,6 +58,10 @@
         text-align: center;
         letter-spacing: 1px;
         line-height: 1.2em;
+
+        @media screen and (max-width: 600px) {
+          font-size: 14px;
+        }
       }
 
     }

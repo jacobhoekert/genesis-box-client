@@ -49,7 +49,7 @@ export default function Home({data}) {
       <GenesisMethod />
       <Testimonials data={data}/>
       <InstagramFeed />
-      <button className="connect-button" href="#">CONNECT WITH US</button>
+      <button className="pink-button" href="#">CONNECT WITH US</button>
       <img className="blue-logo" src="/images/genesis-blue-circle.png"/>
       <div id='product-component-1610134264369'></div>
       {/* <BasicBanner data={data.basicBanner}/>

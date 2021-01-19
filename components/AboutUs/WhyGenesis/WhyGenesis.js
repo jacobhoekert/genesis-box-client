@@ -8,7 +8,6 @@ export const WhyGenesis = ({data}) => {
         <h1 className="why">why</h1>
         <h1 className="genesis">genesis</h1>
       </div>
-      <h2 className="subtitle">Creation & Beginnings</h2>
       <div className="blob-container">
         <img className="blob" src="/images/blob1.png"/>
         <div className="definition-container">

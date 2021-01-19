@@ -2,7 +2,7 @@ body {
   margin: 0px;
 }
 
-.connect-button {
+.pink-button {
   font-family: 'brandon-grotesque';
   font-size: 16px;
   font-weight: 100;
@@ -18,12 +18,26 @@ body {
   outline: none;
 }
 
-/* Home Page Extra CSS */
+@media screen and (max-width: 600px) {
+  .pink-button {
+    height: 45px;
+  }
+}
 
-.connect-button:hover {
+.pink-button:hover {
   cursor: pointer;
-  transform: scale(1.03);
   background-color: #b98e9e;
+}
+
+.left-arrow {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.centered-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .blue-logo {
@@ -32,4 +46,8 @@ body {
   margin: auto;
   margin-top: 60px;
   margin-bottom: 80px;
+}
+
+.empty-space {
+  height: 200px;
 }

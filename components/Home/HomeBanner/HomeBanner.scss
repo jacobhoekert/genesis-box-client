@@ -9,6 +9,11 @@
       height: 400px;
     }
 
+    @media screen and (max-width: 600px) {
+      height: 200px;
+      background-color: white;
+    }
+
   }
   
   .flex-container {
@@ -41,7 +46,8 @@
       color: #124658;
 
       @media screen and (max-width: 600px) {
-        font-size: 38px;
+        font-size: 28px;
+        width: 95%;
       }
     }
 

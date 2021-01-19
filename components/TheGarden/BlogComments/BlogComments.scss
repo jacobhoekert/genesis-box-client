@@ -9,6 +9,10 @@
   font-family: 'brandon-grotesque';
   color: #124658;
 
+  @media screen and (max-width: 600px) {
+    width: 85%;
+  }
+
   .num-of-comments {
     font-size: 29px;
   }
@@ -27,7 +31,7 @@
   
       .comment-body {
         margin-bottom: 0px;
-        font-size: 18px;
+        font-size: 17px;
       }
   
       .comment-author-and-date {

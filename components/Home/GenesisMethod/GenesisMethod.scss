@@ -10,12 +10,21 @@
     color: #8B6C78;
     text-align: center;
 
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      margin: auto;
+      font-size: 40px;
+      margin-left: 5px;
+      margin-bottom: 30px;
+    }
+
     span {
       display: inline;
       font-family: 'botanica';
       position: relative;
       top: -15px;
       color: #124658;
+      
     }
   }
 

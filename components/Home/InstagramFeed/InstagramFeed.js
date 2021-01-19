@@ -25,10 +25,6 @@ export const InstagramFeed = ({data}) => {
     };
   }, []);
 
-  useEffect(() => {
-    // console.log(photoUrls);
-  }, [photoUrls])
-
   var settings = {
     dots: true,
     infinite: true,

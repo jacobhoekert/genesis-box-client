@@ -6,6 +6,16 @@
   margin-bottom: 70px;
   padding-right: 50px;
 
+  @media screen and (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 85%;
+  }
+
   .profile-image {
     width: 200px;
     height: 200px;
@@ -15,9 +25,18 @@
   .profile-text-container {
     width: 60%;
 
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+
     .profile-name {
       font-family: 'botanica';
       margin-top: 0px;
+
+      @media screen and (max-width: 950px) {
+        text-align: center;
+        margin-top: 20px;
+      }
 
     }
 

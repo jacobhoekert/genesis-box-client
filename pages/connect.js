@@ -1,9 +1,31 @@
-const Connect = () => {
+import Head from 'next/head'
+import { ConnectTitle } from '../components/Connect/ConnectTitle/ConnectTitle'
+import { ConnectWidget } from '../components/Connect/ConnectWidget/ConnectWidget'
+import { HeaderImage } from '../components/HeaderImage/HeaderImage'
+import { Navbar } from '../components/Navbar/Navbar'
+import { SendMessageForm } from '../components/Connect/SendMessageForm/SendMessageForm'
+
+export default function ConnectPage({data}) {
   return (
-    <div>
-      <h1>Connect</h1>
-    </div>
+    <>
+      <Head>
+        <title>The Genesis Box</title>
+      </Head>
+      <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
+      <Navbar />
+      <ConnectTitle />
+      <ConnectWidget title="CONTACT US." formComponent={<SendMessageForm />}/>
+    </>
   )
 }
 
-export default Connect
+// export async function getStaticProps(){
+//   const res = await StrapiApi.get('/why-genesis')
+//   const data = res.data;
+//   console.log(data);
+//   return {
+//     props: {
+//       data
+//     }
+//   }
+// }

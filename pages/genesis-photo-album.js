@@ -12,14 +12,9 @@ export default function GenesisPhotoAlbumPage({data}) {
       <Head>
         <title>The Genesis Box</title>
       </Head>
-      <div id='outer-wrap'>
-        <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 }/>
-        <div className='page-wrap'>
-          <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
-          <Navbar />
-          <GenesisPhotoAlbum data={data}/>
-        </div>
-      </div>
+      <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
+      <Navbar />
+      <GenesisPhotoAlbum data={data}/>
     </>
   )
 }

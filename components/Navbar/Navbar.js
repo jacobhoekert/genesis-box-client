@@ -25,13 +25,11 @@ export const Navbar = () => {
           </Link>
           <div className="about-container">
             <div className="about-link" >
-              <Link href="/about">
-                <div onMouseEnter={handleDropDownEnter} onMouseLeave={handleDropDownLeave} className="menu-item">
-                  <p >
-                    About Us
-                  </p>
-                </div>
-              </Link>
+              <div onMouseEnter={handleDropDownEnter} onMouseLeave={handleDropDownLeave} className="menu-item">
+                <p >
+                  About Us
+                </p>
+              </div>
             </div>
             <div onMouseEnter={handleDropDownEnter} onMouseLeave={handleDropDownLeave}>
               {isDroppedDown &&

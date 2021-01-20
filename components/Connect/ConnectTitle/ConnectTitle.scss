@@ -1,0 +1,47 @@
+#connect {
+  padding-bottom: 150px;
+
+  .title-container {
+    margin: auto;
+    text-align: center;
+
+    @media screen and (max-width: 950px) {
+      width: 80%;
+    }
+  
+    .connect-word {
+      font-family: 'botanica';
+      color: #124658;
+      font-size: 100px;
+      font-weight: 100;
+      z-index: -1;
+      text-align: center;
+      margin-top: 30px;
+
+      @media screen and (max-width: 950px) {
+        font-size: 50px;
+        margin-top: -40px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .with-us-words {
+      font-family: 'youthful';
+      color: #8DB5BC;
+      font-size: 120px;
+      font-weight: 100;
+      margin-top: -170px;
+      margin-bottom: 0px;
+      position: relative;
+      margin-left: 5px;
+      text-align: center;
+      z-index: 1;
+
+      @media screen and (max-width: 950px) {
+        font-size: 60px;
+      }
+    }
+  }
+}
+
+      

@@ -16,6 +16,5 @@ export const TheTeam = ({data}) => {
       }
       </div>
     </div>
-
   )
 }

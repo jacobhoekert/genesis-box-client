@@ -17,6 +17,7 @@ import '../components/AboutUs/GenesisBoxProducts/GenesisBoxProducts.scss'
 import '../components/TheGarden/BlogGrid/BlogGrid.scss'
 import '../components/TheGarden/BlogCard/BlogCard.scss'
 import '../components/HeaderImage/HeaderImage.scss'
+import '../components/Shop/Shop.scss'
 
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 import { ParallaxProvider } from 'react-scroll-parallax'

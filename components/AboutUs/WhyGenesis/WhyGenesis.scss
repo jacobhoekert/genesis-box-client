@@ -4,8 +4,11 @@
   .title-container {
     width: 30%;
     margin: auto;
-    margin-top: 30px;
     text-align: center;
+
+    @media screen and (max-width: 950px) {
+      width: 80%;
+    }
 
     .why {
       font-family: 'youthful';
@@ -17,6 +20,10 @@
       position: relative;
       z-index: 1;
       margin-left: 5px;
+
+      @media screen and (max-width: 950px) {
+        font-size: 100px;
+      }
     }
   
     .genesis {
@@ -26,17 +33,12 @@
       font-weight: 100;
       margin-top: -75px;
       z-index: -1;
-    }
-  }
 
-  .subtitle {
-    margin: auto;
-    text-align: center;
-    color: #124658;
-    font-family: 'brandon-grotesque';
-    font-style: italic;
-    font-size: 60px;
-    font-weight: 200;
+      @media screen and (max-width: 950px) {
+        font-size: 80px;
+        margin-bottom: 10px;
+      }
+    }
   }
 
   .blob-container {
@@ -44,6 +46,10 @@
     width: 500px;
     margin: auto;
     display: block;
+
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
 
     .blob {
       width: 100%;
@@ -62,6 +68,13 @@
       left: 75px;
       color: white;
 
+      @media screen and (max-width: 600px) {
+        width: 70%;
+        left: 15%;
+        top: 0px;
+        padding-top: 16%;
+      }
+
       .genesis-word {
         font-family: 'botanica';
         font-size: 25px;
@@ -76,6 +89,10 @@
         line-height: 1.2em;
         text-align: center;
         margin-top: 0px;
+
+        @media screen and (max-width: 600px) {
+          font-size: 14px;
+        }
   
       }
   
@@ -83,12 +100,20 @@
         font-family: 'brandon-grotesque';
         letter-spacing: 1px;
         line-height: 1.2em;
+
+        @media screen and (max-width: 600px) {
+          font-size: 14px;
+        }
       }
   
       .syn-ant {
         font-family: 'brandon-grotesque';
         letter-spacing: 1px;
         line-height: 1.2em;
+
+        @media screen and (max-width: 600px) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -98,12 +123,25 @@
     margin: auto;
     margin-top: 300px;
 
+    @media screen and (max-width: 950px) {
+      width: 90%;
+    }
+
+    @media screen and (max-width: 600px) {
+      margin-top: 150px;
+    }
+
+    @media screen and (max-width: 450px) {
+      margin-top: 80px;
+    }
+
     .creation-title {
       font-family: 'youthful';
       font-size: 70px;
       font-weight: 100;
       color: #8DB5BC;
       margin-bottom: 0px;
+      
     }
 
     .creation-body {

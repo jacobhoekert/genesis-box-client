@@ -11,6 +11,7 @@ import { GenesisMethod } from '../components/Home/GenesisMethod/GenesisMethod'
 import { Testimonials } from '../components/Home/Testimonials/Testimonials'
 import { InstagramFeed } from '../components/Home/InstagramFeed/InstagramFeed'
 import { HeaderImage } from '../components/HeaderImage/HeaderImage'
+import { World } from '../components/GlobalCommunity/World/World'
 
 export default function Home({data}) {
 
@@ -38,18 +39,16 @@ export default function Home({data}) {
       <Head>
         <title>The Genesis Box</title>
       </Head>
-      <HeaderImage imagePath='/images/home-header-image.jpg' />
+      <HeaderImage imagePath='/images/home-header-image.jpg' height='500px'/>
       <Navbar />
-        <div style={{height: '500px', textAlign: 'center', paddingTop: '200px'}}>
-          GLOBE COMING SOON
-        </div>
+      <World />
       <HomeBanner data={data.HomeBanner}/>
       <Mission />
       <GenesisBoxDisplay />
       <GenesisMethod />
       <Testimonials data={data}/>
       <InstagramFeed />
-      <button className="connect-button" href="#">CONNECT WITH US</button>
+      <button className="pink-button" href="#">CONNECT WITH US</button>
       <img className="blue-logo" src="/images/genesis-blue-circle.png"/>
       <div id='product-component-1610134264369'></div>
       {/* <BasicBanner data={data.basicBanner}/>

@@ -56,6 +56,8 @@ export const GenesisBoxDisplay = () => {
           }
         </Slider>
       </div>
+      <button className="view-more-mobile" href="#">VIEW MORE</button>
+      <button className="add-to-cart-mobile" href="#">ADD TO CART</button>
     </div>
   )
 }

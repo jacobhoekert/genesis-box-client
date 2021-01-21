@@ -2,6 +2,10 @@
   margin-top: 160px;
   padding-bottom: 200px;
 
+  @media screen and (max-width: 600px) {
+    margin-top: 100px;
+  }
+
   .title {
     font-family: 'botanica';
     font-size: 75px;
@@ -11,6 +15,14 @@
     line-height: 1em;
     margin: auto;
     padding-top: 35px;
+
+    @media screen and (max-width: 900px) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 40px;
+    }
 
     span {
       font-family: 'youthful';
@@ -29,6 +41,14 @@
     opacity: 0.5;
     display: flex;
     justify-content: center;
+
+    @media screen and (max-width: 900px) {
+      width: 70%;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
     
     .slider {
       width: 80%;
@@ -40,6 +60,10 @@
         align-items: center;
         flex-direction: column;
         outline: none;
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
+        }
       }
     
       p {
@@ -50,6 +74,11 @@
         font-size: 23px;
         letter-spacing: 1px;
         line-height: 1.2em;
+
+        @media screen and (max-width: 600px) {
+          font-size: 18px;
+          width: 85%;
+        }
       }
     
       .testimonial-name {
@@ -57,16 +86,28 @@
         font-size: 19px;
         font-weight: 900;
         letter-spacing: 2px;
+
+        @media screen and (max-width: 600px) {
+          font-size: 16px;
+        }
       }
     
       .slick-prev:before {
         font-size: 30px;
         color: #124658;
+
+        @media screen and (max-width: 600px) {
+          font-size: 25px;
+        }
       }
       
       .slick-next:before {
         font-size: 30px;
         color: #124658;
+
+        @media screen and (max-width: 600px) {
+          font-size: 25px;
+        }
       }
     }
   }

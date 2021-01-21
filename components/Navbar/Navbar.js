@@ -25,20 +25,18 @@ export const Navbar = () => {
           </Link>
           <div className="about-container">
             <div className="about-link" >
-              <Link href="/about">
-                <div onMouseEnter={handleDropDownEnter} onMouseLeave={handleDropDownLeave} className="menu-item">
-                  <p >
-                    About Us
-                  </p>
-                </div>
-              </Link>
+              <div onMouseEnter={handleDropDownEnter} onMouseLeave={handleDropDownLeave} className="menu-item">
+                <p >
+                  About Us
+                </p>
+              </div>
             </div>
             <div onMouseEnter={handleDropDownEnter} onMouseLeave={handleDropDownLeave}>
               {isDroppedDown &&
                 <div className="drop-down">
                   <Link href="/why-genesis"><div className="drop-down-item">Why Genesis?</div></Link>
                   <Link href="/the-team"><div className="drop-down-item">The Team</div></Link>
-                  <Link href="/genesis-box-products"><div className="drop-down-item">Genesis Box Products</div></Link>
+                  <Link href="/genesis-photo-album"><div className="drop-down-item">Genesis Photo Album</div></Link>
                 </div>
               } 
             </div>

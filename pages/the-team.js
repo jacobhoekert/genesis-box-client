@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { HeaderImage } from '../components/HeaderImage/HeaderImage'
 import { Navbar } from '../components/Navbar/Navbar'
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 import { TheTeam } from '../components/AboutUs/TheTeam/TheTeam'
@@ -11,13 +12,9 @@ export default function TheTeamPage({data}) {
       <Head>
         <title>The Genesis Box</title>
       </Head>
-      <div id='outer-wrap'>
-        <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 }/>
-        <div className='page-wrap'>
-          <Navbar />
-          <TheTeam data={data}/>
-        </div>
-      </div>
+      <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
+      <Navbar />
+      <TheTeam data={data}/>
     </>
   )
 }

@@ -1,16 +1,33 @@
 #genesis-box-display {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 75%;
   margin: auto;
   padding-top: 140px;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding-top: 100px;
+    width: 85%;
+  }
 
   .info {
     width: 400px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    // margin-left: 5px;
+
+    @media screen and (max-width: 1000px) {
+      align-items: center;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
 
     .title {
       font-family: 'botanica';
@@ -19,6 +36,10 @@
       color: #124658;
       text-align: center;
       margin-bottom: 0px;
+
+      @media screen and (max-width: 600px) {
+        font-size: 40px;
+      }
     }
 
     .price {
@@ -43,6 +64,10 @@
       margin-left: 10px;
       border: none;
 
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
+
       &:hover {
         cursor: pointer;
         transform: scale(1.03);
@@ -63,6 +88,10 @@
       margin-left: 10px;
       border: none;
 
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
+
       &:hover {
         cursor: pointer;
         transform: scale(1.03);
@@ -73,22 +102,101 @@
 
   .slider {
     width: 400px;
-    // margin: auto;
     margin-top: 25px;
-    // margin-left: 120px;
+
+    @media screen and (max-width: 1000px) {
+      margin-top: 0px;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 95%;
+    }
 
     .image-container {
       height: 400px;
       display: flex !important;
       align-items: center;
+
+      @media screen and (max-width: 1000px) {
+        height: 300px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 95%;
+        height: 280px;
+      }
+
+      .image {
+        margin: auto;
+        height: 350px;
+
+        @media screen and (max-width: 1000px) {
+          height: 300px;
+        }
+
+        @media screen and (max-width: 600px) {
+          width: 95%;
+          height: auto;
+        }
+      }
     }
 
     .slick-prev:before {
       color: #124658;
+      font-size: 25px;
     }
 
     .slick-next:before {
-      color: #272a2b;
+      color: #124658;
+      font-size: 25px;
+    }
+  }
+
+  .view-more-mobile {
+    display: none;
+    font-family: 'brandon-grotesque';
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.8;
+    color: #F6F1E9;
+    background-color: #81606c;
+    width: 200px;
+    height: 35px;
+    margin-top: 60px;
+    border: none;
+
+    @media screen and (max-width: 1000px) {
+      display: block;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+      background-color: #b98e9e;
+    }
+  }
+
+  .add-to-cart-mobile {
+    display: none;
+    font-family: 'brandon-grotesque';
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.8;
+    color: #F6F1E9;
+    background-color: #4c1d31;
+    width: 200px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+
+    @media screen and (max-width: 1000px) {
+      display: block;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+      background-color: #773351;
     }
   }
 }

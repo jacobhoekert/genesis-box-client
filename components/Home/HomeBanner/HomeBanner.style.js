@@ -14,7 +14,9 @@ export const ImageDiv = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    width: 90%;
+    width: 300px;
+    height: 220px;
+    border-radius: 40px;
   }
   
   ${props => css`

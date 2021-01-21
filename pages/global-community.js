@@ -1,9 +1,16 @@
+import { World } from '../components/GlobalCommunity/World/World'
+
 const GlobalCommunity = () => {
+
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <>
+      <div>
+        <World />
+      </div>
+    </>
   )
 }
+
+
 
 export default GlobalCommunity

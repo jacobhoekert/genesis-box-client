@@ -11,6 +11,7 @@ import { GenesisMethod } from '../components/Home/GenesisMethod/GenesisMethod'
 import { Testimonials } from '../components/Home/Testimonials/Testimonials'
 import { InstagramFeed } from '../components/Home/InstagramFeed/InstagramFeed'
 import { HeaderImage } from '../components/HeaderImage/HeaderImage'
+import { World } from '../components/GlobalCommunity/World/World'
 
 export default function Home({data}) {
 
@@ -40,9 +41,7 @@ export default function Home({data}) {
       </Head>
       <HeaderImage imagePath='/images/home-header-image.jpg' height='500px'/>
       <Navbar />
-        <div style={{height: '500px', textAlign: 'center', paddingTop: '200px'}}>
-          GLOBE COMING SOON
-        </div>
+      <World />
       <HomeBanner data={data.HomeBanner}/>
       <Mission />
       <GenesisBoxDisplay />

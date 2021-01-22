@@ -29,18 +29,15 @@ import '../components/Connect/EmailListForm/EmailListForm.scss'
 import '../components/Connect/TestimonyPrayerForm/TestimonyPrayerForm.scss'
 
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
-import { ParallaxProvider } from 'react-scroll-parallax'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ParallaxProvider>
       <div id='outer-wrap'>
           <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 } />
         <div className='page-wrap'>
           <Component {...pageProps} />
         </div>
       </div>
-    </ParallaxProvider>
   )
 }
 

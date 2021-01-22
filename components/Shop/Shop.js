@@ -1,18 +1,21 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import ShopifyAdminApi from '../../axios/ShopifyAdminApi' 
 import { SHOPIFY_SHOP_NAME, SHOPIFY_STOREFRONT_ACCESS_TOKEN } from '../../config/keys'
+import ClipLoader from "react-spinners/ClipLoader";
 
 export const Shop = () => {
   const [ tagNames, setTagNames ] = useState([])
   const [ tagProducts, setTagProducts ] = useState([])
   const [ activeProducts, setActiveProducts ] = useState([])
   const [ resultingQuantity, setResultingQuantity ] = useState(0)
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect( async () => {
+    setIsLoading(true)
     const res = await axios.get('http://localhost:3000/api/products')
     const products = res.data
+    setIsLoading(false)
   
     const tags = GetProductTags(products)
     setTagNames(tags.names)
@@ -29,10 +32,12 @@ export const Shop = () => {
 
   const rebuildProducts = (relevantProducts) => {
     const ui = GetUi()
+    setIsLoading(true)
     DestroyProducts(activeProducts, ui)
     RenderProducts(relevantProducts, ui)
     setActiveProducts(relevantProducts)
     setResultingQuantity(relevantProducts.length)
+    setIsLoading(false)
   }
 
   const handleTagChange = (tag) => {
@@ -59,10 +64,6 @@ export const Shop = () => {
 
   return (
     <>
-    <Head>
-      <title>The Genesis Box</title>
-    </Head>
-    <body>
       <div id="title-container">
         <h1 id="title">Products</h1>
       </div>
@@ -89,8 +90,19 @@ export const Shop = () => {
           <span>{ resultingQuantity } product{ resultingQuantity == 1 ? '' : 's' }</span>
         </div>
       </div>
-      <div id='products'></div>
-    </body>
+      <div id='products'>
+        {
+          isLoading ? (
+            <div className="loader-container">
+              <ClipLoader
+              size={30}
+              color={"#124658"}
+              loading={true}
+              />
+            </div>
+          ) : <></>
+        }
+      </div>
     </>
   )
 }
@@ -193,43 +205,96 @@ const RenderProducts = (products, ui) => {
     id: productIds,
     options: {
       cart: {
-        // iframe: false,
-        popup: false
+        popup: false,
+        styles: {
+          button: {
+            'color': '#F6F1E9',
+            'background-color': '#4c1d31',
+
+            ':hover': {
+              'cursor': 'pointer',
+              'transform': 'scale(1.03)',
+              'background-color': '#773351',
+            }
+          }
+        }
+      },
+      toggle: {
+        styles: {
+          toggle: {
+            'background-color': '#4c1d31',
+
+            ':hover': {
+              'cursor': 'pointer',
+              'background-color': '#773351',
+            }
+          }
+        }
+      },
+      modalProduct: {
+        contents: {
+          img: false,
+          imgWithCarousel: true,
+        },
+        styles: {
+          button: {
+            'color': '#F6F1E9',
+            'background-color': '#4c1d31',
+
+            ':hover': {
+              'cursor': 'pointer',
+              'transform': 'scale(1.03)',
+              'background-color': '#773351',
+            }
+          }
+        }
       },
       product: {
         width: '30%',
-        // iframe: false,
         buttonDestination: 'modal',
         isButton: true,
         contents: {
           title: true,
           img: true,
-          // imgWithCarousel: true,
           price: true,
           description: false,
           options: false,
           button: false
         },
         styles: {
+          title: {
+            'color': '#124658',
+            'font-size': '22px',
+            'padding-left': '10px',
+            'padding-right': '10px',
+            'font-weight': '200'
+          },
+          price: {
+            'color': '#124658',
+            'font-size': '16px',
+            'font-weight': '800',
+          },
           product: {
             'position': 'relative',
             'display': 'flex',
             'flex-direction': 'column',
-            'min-width': '30.2%',
+            'justify-content': 'space-between',
+            'min-width': '12%',
+            'height': 'auto',
             'border': '1px solid rgba(196, 194, 194, 0.2)',
-            'border-radius': '20px',
+            'border-radius': '15px',
             'box-shadow': '0px 0px 20px 10px rgba(216, 216, 216, 0.4)',
             'background-color': 'white',
-            'margin-bottom': '30px',
-            'padding-bottom': '20px',
-            'margin-right': '15px',
-            'margin-left': '15px',
-            'transition': 'transform 0.3s ease-in-out',     
+            'margin-right': '10px',
+            'margin-left': '10px',
+            'transition': 'all 0.3s ease-in-out',     
+            'font-family': 'Source Sans Pro, sans-serif',
 
             ':hover': {
               'cursor': 'pointer',
-              'transform': 'translate(0px, -10px)'
-            }
+              'transform': 'scale(1.1)',
+              'opacity': '0.8',
+            },
           }
         }
       },
@@ -240,15 +305,16 @@ const RenderProducts = (products, ui) => {
         styles: {
           products: {
             'padding-top': '100px',
+            'padding-bottom': '100px',
             'display': 'flex',
             'flex-wrap': 'wrap',
             'justify-content': 'flex-start',
-            'width': '80%',
+            'width': '84%',
             'margin': 'auto'
           }
      
         }
-      }
+      },
     }
   })
 }

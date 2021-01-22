@@ -61,7 +61,7 @@ export const Navbar = () => {
               <p>Connect</p>
             </div>
           </Link>
-          <img 
+          {/* <img 
             onMouseEnter={() => setSearchBlue(true)} 
             onMouseLeave={() => setSearchBlue(false)} 
             className="search-icon" 
@@ -72,7 +72,7 @@ export const Navbar = () => {
             onMouseLeave={() => setBagBlue(false)}
             className="bag-icon"
             src={isBagBlue ? "/images/shopping-bag2-blue.png" : "/images/shopping-bag2.png"}
-          />
+          /> */}
         </div>
       </div>
     </div>

@@ -17,7 +17,6 @@ import '../components/AboutUs/GenesisPhotoAlbum/GenesisPhotoAlbum.scss'
 import '../components/AboutUs/EntrepreneurialEmpowerment/EntrepreneurialEmpowerment.scss'
 import '../components/TheGarden/BlogGrid/BlogGrid.scss'
 import '../components/TheGarden/BlogCard/BlogCard.scss'
-import '../components/HeaderImage/HeaderImage.scss'
 import '../components/Shop/Shop.scss'
 import '../components/TheGarden/BlogArticle/BlogArticle.scss'
 import '../components/TheGarden/BlogComments/BlogComments.scss'
@@ -27,18 +26,15 @@ import '../components/Connect/ConnectWidget/ConnectWidget.scss'
 import '../components/Connect/SendMessageForm/SendMessageForm.scss'
 
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
-import { ParallaxProvider } from 'react-scroll-parallax'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ParallaxProvider>
       <div id='outer-wrap'>
           <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 } />
         <div className='page-wrap'>
           <Component {...pageProps} />
         </div>
       </div>
-    </ParallaxProvider>
   )
 }
 

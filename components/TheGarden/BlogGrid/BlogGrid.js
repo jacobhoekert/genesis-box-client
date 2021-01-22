@@ -20,35 +20,40 @@ export const BlogGrid = ({data}) => {
   },[])
 
   return (
-    <div className="blog-grid">
-      {
-        isLoading ? (
-          <div className="loader-container">
-            <ClipLoader
-            size={30}
-            color={"#124658"}
-            loading={true}
-            />
-          </div>
-        ) : 
-          articles.map((article, index) => {
-            const formattedDate = formatDate(article.article.published_at);
-            const formattedSummary = formatAmpsCorrectly(article.article.summary_html);
-            const articleUrlPath = "/the-garden/" + articleTitleToUrl(article.article.title);
-            return (
-              <BlogCard
-                key={index}
-                linkUrl={articleUrlPath}
-                image={article.article.image.src}
-                alt="asdf"
-                title={article.article.title}
-                author={article.article.author}
-                date={formattedDate}
-                summary={formattedSummary}
+    <>
+      <div id="title-container">
+        <h1 id="title">The Garden</h1>
+      </div>
+      <div className="blog-grid">
+        {
+          isLoading ? (
+            <div className="loader-container">
+              <ClipLoader
+              size={30}
+              color={"#124658"}
+              loading={true}
               />
-            )
-          })
-      }
-    </div>
+            </div>
+          ) : 
+            articles.map((article, index) => {
+              const formattedDate = formatDate(article.article.published_at);
+              const formattedSummary = formatAmpsCorrectly(article.article.summary_html);
+              const articleUrlPath = "/the-garden/" + articleTitleToUrl(article.article.title);
+              return (
+                <BlogCard
+                  key={index}
+                  linkUrl={articleUrlPath}
+                  image={article.article.image.src}
+                  alt="asdf"
+                  title={article.article.title}
+                  author={article.article.author}
+                  date={formattedDate}
+                  summary={formattedSummary}
+                />
+              )
+            })
+        }
+      </div>
+    </>
   )
 }

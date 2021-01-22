@@ -23,6 +23,7 @@ import '../components/TheGarden/CommentForm/CommentForm.scss'
 import '../components/Connect/ConnectTitle/ConnectTitle.scss'
 import '../components/Connect/ConnectWidget/ConnectWidget.scss'
 import '../components/Connect/SendMessageForm/SendMessageForm.scss'
+import '../components/Connect/EmailListForm/EmailListForm.scss'
 
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 import { ParallaxProvider } from 'react-scroll-parallax'

@@ -1,4 +1,4 @@
-#send-message-form-container{
+#email-list-form-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@
     height: auto;
   }
 
-  #send-message-form{
+  #email-list-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +86,7 @@
         }
       }
 
-      #email-and-message-container {
+      #email-container {
         width: 100%;
 
         .label-input-flex {

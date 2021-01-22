@@ -1,6 +1,8 @@
-.globe-container {
+#globe-container {
   display: flex;
   justify-content: flex-end;
   margin: 0px;
-  margin-right: 50px;
+  position: relative;
+  right: -115px;
+  margin-top: 50px;
 }

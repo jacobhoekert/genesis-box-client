@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Link from 'next/head'
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import StrapiApi from '../axios/StrapiApi'
 import { Navbar } from '../components/Navbar/Navbar'
@@ -48,7 +48,7 @@ export default function Home({data}) {
       <GenesisMethod />
       <Testimonials data={data}/>
       <InstagramFeed />
-      <button className="pink-button" href="#">CONNECT WITH US</button>
+      <Link href="/connect"><button className="pink-button">CONNECT WITH US</button></Link>
       <img className="blue-logo" src="/images/genesis-blue-circle.png"/>
       <div id='product-component-1610134264369'></div>
       {/* <BasicBanner data={data.basicBanner}/>

@@ -4,6 +4,7 @@ import { ConnectWidget } from '../components/Connect/ConnectWidget/ConnectWidget
 import { HeaderImage } from '../components/HeaderImage/HeaderImage'
 import { Navbar } from '../components/Navbar/Navbar'
 import { SendMessageForm } from '../components/Connect/SendMessageForm/SendMessageForm'
+import { EmailListForm } from '../components/Connect/EmailListForm/EmailListForm'
 
 export default function ConnectPage({data}) {
   return (
@@ -14,6 +15,7 @@ export default function ConnectPage({data}) {
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
       <ConnectTitle />
+      <ConnectWidget title="JOIN OUR EMAIL COMMUNITY." formComponent={<EmailListForm />}/>
       <ConnectWidget title="CONTACT US." formComponent={<SendMessageForm />}/>
     </>
   )

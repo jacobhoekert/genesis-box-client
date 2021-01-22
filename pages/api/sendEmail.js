@@ -1,19 +1,21 @@
 const nodemailer = require('nodemailer');
-const smtpTransport = require('nodemailer-smtp-transport');
-const cors = require('cors')({origin: true});
-const creds = require('../../config/email.config');
+const { GMAIL_USERNAME, GMAIL_PASSWORD} = require('../../config/keys');
 
 export default async (req, res) => {
-  cors(req, res, () => {  
-    let transporter = nodemailer.createTransport(transport[, defaults])
-
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: GMAIL_USERNAME,
+        pass: GMAIL_PASSWORD
+      }
+    });
 
     let {firstName, lastName, email, message} = req.body;
     let content = `name: ${firstName} ${lastName} \n email: ${email} \n message: ${message}`
 
     const mail = {
       from: `${firstName} ${lastName} <${email}>`,
-      to: 'jshoekert@gmail.com',
+      to: 'thegenesisbox@gmail.com',
       subject: `Website Contact Form Message from ${firstName} ${lastName} <${email}>`,
       text: content
     }
@@ -24,5 +26,4 @@ export default async (req, res) => {
       }
       return res.send('Email sent');
     });
-  });    
 };

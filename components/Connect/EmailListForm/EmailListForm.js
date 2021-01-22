@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 
-export const SendMessageForm = () => {
+export const EmailListForm = () => {
+  const [isFormValid, setIsFormValid] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    message: ""
   });
 
   const updateForm = e => {
@@ -22,7 +22,6 @@ export const SendMessageForm = () => {
       firstName: "",
       lastName: "",
       email: "",
-      message: ""
     });
   };
 
@@ -31,7 +30,7 @@ export const SendMessageForm = () => {
     setIsLoading(true);
     axios({
       method: "POST",
-      url: "http://localhost:3000/api/sendEmail",
+      url: "http://localhost:3000/api/subscribeToMailChimp",
       data: form
     })
       .then(function() {
@@ -49,7 +48,7 @@ export const SendMessageForm = () => {
     if (hasSubmitted) {
       return (
         <div className="display-message">
-          Thanks! We'll get back to you shortly!
+          Thank you for joining The Genesis Box!
         </div>
       );
     } else {
@@ -58,8 +57,10 @@ export const SendMessageForm = () => {
   };
 
   return (
-    <section id="send-message-form-container">
-      <form id="send-message-form" onSubmit={handleSubmit} method="POST">
+    <section id="email-list-form-container">
+      <form id="email-list-form" onSubmit={handleSubmit} method="POST">
+      <input type="hidden" name="u" value="126b76b76358b5694e3d0c7d5"></input>
+      <input type="hidden" name="id" value="179cc6b0e3"></input>
         <div id="questions">
           <div id="names-container">
             <div className="label-input-flex">
@@ -81,30 +82,19 @@ export const SendMessageForm = () => {
               />
             </div>
           </div>
-          <div id="email-and-message-container">
+          <div id="email-container">
             <div className="label-input-flex">
               <label>Email</label>
               <input
-                id="email"
                 name="email"
                 value={form.email}
                 onChange={e => updateForm(e)}
               />
             </div>
-            <div className="label-input-flex">
-              <label>Message</label>
-              <textarea
-                rows="5"
-                id="message"
-                name="message"
-                value={form.message}
-                onChange={e => updateForm(e)}
-              ></textarea>
-            </div>
           </div>
           
           <div id="submit-row">
-            <button type="submit">
+            <button disabled={isFormValid} type="submit">
               {isLoading ? (
                 <ClipLoader
                   size={20}

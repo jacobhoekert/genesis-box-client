@@ -24,8 +24,6 @@ export const ImageDiv = styled.div`
       height: 100px;
     }
   }
-
-  
   
   ${props => css`
     background-image: url(${props.bkg_img});

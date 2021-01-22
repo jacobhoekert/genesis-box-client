@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { SHOPIFY_SHOP_NAME, SHOPIFY_STOREFRONT_ACCESS_TOKEN } from '../../config/keys'
@@ -64,10 +63,10 @@ export const Shop = () => {
 
   return (
     <>
-      <div id="title-container">
+      <div id="shop-title-container">
         <h1 id="title">Products</h1>
       </div>
-      <div id='filter-sort-bar'>
+      <div id='shop-filter-bar'>
         <div id='filter-menus'>
           <span>FILTER BY</span>
           <select id='tag-selection' onChange={(event) => handleTagChange(event.target.value)}>

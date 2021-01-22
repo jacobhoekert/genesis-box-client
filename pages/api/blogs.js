@@ -1,22 +1,19 @@
 import ShopifyAdminApi from '../../axios/ShopifyAdminApi'
+import { THE_GARDEN_BLOG_ID } from '../../config/keys'
 
 export default async (req, res) => {
   try {
-    const result = await ShopifyAdminApi.get(`/blogs.json`);
-    const blogs = result.data.blogs;
     let allArticles = [];
-    for (const blog of blogs) {
-      const result = await ShopifyAdminApi.get(`/blogs/${blog.id}/articles.json`);
-      const articles = result.data.articles;
-      let articlesWithTheirComments = [];
-      for (const article of articles) {
-        const result = await ShopifyAdminApi.get(`/comments.json?article_id=${article.id}&blog_id=${blog.id}`);
-        const comments = result.data.comments;
-        let articleAndComments = { article, comments }
-        articlesWithTheirComments.push(articleAndComments)
-      }
-      allArticles = articlesWithTheirComments;
+    const result = await ShopifyAdminApi.get(`/blogs/${THE_GARDEN_BLOG_ID}/articles.json`);
+    const articles = result.data.articles;
+    let articlesWithTheirComments = [];
+    for (const article of articles) {
+      const result = await ShopifyAdminApi.get(`/comments.json?article_id=${article.id}&blog_id=${THE_GARDEN_BLOG_ID}`);
+      const comments = result.data.comments;
+      let articleAndComments = { article, comments }
+      articlesWithTheirComments.push(articleAndComments)
     }
+    allArticles = articlesWithTheirComments;
     res.status(200).json(allArticles);
   } catch (error) {
     console.log(error);

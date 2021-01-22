@@ -21,10 +21,12 @@ import '../components/Shop/Shop.scss'
 import '../components/TheGarden/BlogArticle/BlogArticle.scss'
 import '../components/TheGarden/BlogComments/BlogComments.scss'
 import '../components/TheGarden/CommentForm/CommentForm.scss'
+import '../components/Connect/Connect/Connect.scss'
 import '../components/Connect/ConnectTitle/ConnectTitle.scss'
 import '../components/Connect/ConnectWidget/ConnectWidget.scss'
 import '../components/Connect/SendMessageForm/SendMessageForm.scss'
 import '../components/Connect/EmailListForm/EmailListForm.scss'
+import '../components/Connect/TestimonyPrayerForm/TestimonyPrayerForm.scss'
 
 import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 

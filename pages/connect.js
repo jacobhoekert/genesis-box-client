@@ -1,10 +1,7 @@
 import Head from 'next/head'
-import { ConnectTitle } from '../components/Connect/ConnectTitle/ConnectTitle'
-import { ConnectWidget } from '../components/Connect/ConnectWidget/ConnectWidget'
 import { HeaderImage } from '../components/HeaderImage/HeaderImage'
 import { Navbar } from '../components/Navbar/Navbar'
-import { SendMessageForm } from '../components/Connect/SendMessageForm/SendMessageForm'
-import { EmailListForm } from '../components/Connect/EmailListForm/EmailListForm'
+import { Connect } from '../components/Connect/Connect/Connect'
 
 export default function ConnectPage({data}) {
   return (
@@ -14,9 +11,7 @@ export default function ConnectPage({data}) {
       </Head>
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
-      <ConnectTitle />
-      <ConnectWidget title="JOIN OUR EMAIL COMMUNITY." formComponent={<EmailListForm />}/>
-      <ConnectWidget title="CONTACT US." formComponent={<SendMessageForm />}/>
+      <Connect />
     </>
   )
 }

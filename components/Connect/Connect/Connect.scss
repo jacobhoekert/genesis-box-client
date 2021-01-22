@@ -1,0 +1,52 @@
+
+#connect {
+
+  .image-ribbon {
+    margin-top: 100px;
+    height: 270px;
+    background-image: url('/images/montana-16.jpg');
+    background-size: cover;
+
+    @media screen and (max-width: 600px) {
+      background: white;
+    }
+  }
+
+  .top-widget-container {
+    position: relative;
+    top: -60px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    @media screen and (max-width: 600px) {
+      top: -100px;
+
+    }
+  }
+
+  .bottom-widgets-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 170px;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1200px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 600px) {
+      margin-top: 250px;
+      width: 100%;
+    }
+  }
+
+  .connect-blue-logo {
+    width: 80px;
+    display: block;
+    margin: auto;
+    margin-top: 120px;
+  }
+}

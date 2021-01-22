@@ -3,7 +3,6 @@ import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 
 export const EmailListForm = () => {
-  const [isFormValid, setIsFormValid] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
@@ -34,13 +33,12 @@ export const EmailListForm = () => {
       data: form
     })
       .then(function() {
-        console.log("Comment successfully submitted");
         resetForm();
         setHasSubmitted(true);
         setIsLoading(false);
       })
       .catch(function(error) {
-        console.error("Error submitting comment: ", error);
+        console.error(error);
       });
   };
 
@@ -87,6 +85,7 @@ export const EmailListForm = () => {
               <label>Email</label>
               <input
                 name="email"
+                type="email"
                 value={form.email}
                 onChange={e => updateForm(e)}
               />
@@ -94,7 +93,7 @@ export const EmailListForm = () => {
           </div>
           
           <div id="submit-row">
-            <button disabled={isFormValid} type="submit">
+            <button type="submit">
               {isLoading ? (
                 <ClipLoader
                   size={20}

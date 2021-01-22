@@ -38,7 +38,7 @@
         width: 85%;
       }
 
-      input, textarea{
+      input, textarea, select {
         transition-duration: 400ms;
         border: none;
         padding: 5px;
@@ -48,7 +48,6 @@
 
         &:focus{
           outline: none !important;
-          background-color: rgb(218, 218, 218);
         }
       }
 
@@ -86,7 +85,7 @@
         }
       }
 
-      #email-and-message-container {
+      #email-topic-message-container {
         width: 100%;
 
         .label-input-flex {
@@ -150,11 +149,6 @@
           p{
             font-size: 18px;
             color: white;
-
-            @media screen and (max-width: 600px) {
-              text-align: center;
-              padding-left: 45px;
-            }
           }
         }
       }

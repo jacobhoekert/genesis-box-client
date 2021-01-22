@@ -7,10 +7,35 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
+  @media screen and (max-width: 1200px) {
+    margin-top: 60px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding: 0px;
+  }
+
   .title {
     text-align: center;
     font-family: 'brandon-grotesque';
     font-size: 35px;
     color: #124658;
+
+    @media screen and (max-width: 600px) {
+      font-size: 30px;
+    }
+  }
+
+  .testimony-title {
+    margin: 4px;
+    text-align: center;
+    font-family: 'brandon-grotesque';
+    font-size: 35px;
+    color: #124658;
+
+    @media screen and (max-width: 600px) {
+      font-size: 30px;
+    }
   }
 }

@@ -9,6 +9,7 @@ export const SendMessageForm = () => {
     firstName: "",
     lastName: "",
     email: "",
+    topic: "",
     message: ""
   });
 
@@ -22,6 +23,7 @@ export const SendMessageForm = () => {
       firstName: "",
       lastName: "",
       email: "",
+      topic: "",
       message: ""
     });
   };
@@ -35,13 +37,12 @@ export const SendMessageForm = () => {
       data: form
     })
       .then(function() {
-        console.log("Comment successfully submitted");
         resetForm();
         setHasSubmitted(true);
         setIsLoading(false);
       })
       .catch(function(error) {
-        console.error("Error submitting comment: ", error);
+        console.error(error);
       });
   };
 
@@ -81,15 +82,26 @@ export const SendMessageForm = () => {
               />
             </div>
           </div>
-          <div id="email-and-message-container">
+          <div id="email-topic-message-container">
             <div className="label-input-flex">
-              <label>Email</label>
+              <label>Email Address</label>
               <input
                 id="email"
                 name="email"
+                type="email"
                 value={form.email}
                 onChange={e => updateForm(e)}
               />
+            </div>
+            <div className="label-input-flex">
+              <label>Topic</label>
+              <select className="topic-select" name="topic" onChange={e => updateForm(e)}>
+                <option value="connect with our team">connect with our team</option>
+                <option value="request for partnership">request for partnership</option>
+                <option value="share missionary connection">share missionary connection</option>
+                <option value="share artisan connection">share artisan connection</option>
+                <option value="other">other</option>
+              </select>
             </div>
             <div className="label-input-flex">
               <label>Message</label>

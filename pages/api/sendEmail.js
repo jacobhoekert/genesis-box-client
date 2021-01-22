@@ -10,13 +10,29 @@ export default async (req, res) => {
       }
     });
 
-    let {firstName, lastName, email, message} = req.body;
-    let content = `name: ${firstName} ${lastName} \n email: ${email} \n message: ${message}`
+    let {firstName, lastName, email, topic, message, type} = req.body;
+
+    let subjectContent = '';
+    let content = '';
+    // if it is a prayer/testimony form (because that form has a type field)
+    if (req.body.type) {
+      content = `name: ${firstName} ${lastName} \n email: ${email} \n type: ${type} \n message: ${message}`
+      if (req.body.type == "prayer") {
+        subjectContent = `Website Prayer Message from ${firstName} ${lastName} <${email}>`
+      } else {
+        subjectContent = `Website Testimony Message from ${firstName} ${lastName} <${email}>`
+      }
+    // else it is a contact us message form
+    } else {
+      subjectContent = `Website Connect Message from ${firstName} ${lastName} <${email}>`
+      content = `name: ${firstName} ${lastName} \n email: ${email} \n topic: ${topic} \n message: ${message}`
+    }
+
 
     const mail = {
       from: `${firstName} ${lastName} <${email}>`,
       to: 'thegenesisbox@gmail.com',
-      subject: `Website Contact Form Message from ${firstName} ${lastName} <${email}>`,
+      subject: subjectContent,
       text: content
     }
 

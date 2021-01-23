@@ -28,7 +28,7 @@ export default async (req, res) => {
     }
 
     const mail = {
-      from: `${firstName} ${lastName} <${email}>`,
+      from: `thegenesisbox@gmail.com`,
       to: 'thegenesisbox@gmail.com',
       subject: subjectContent,
       text: content

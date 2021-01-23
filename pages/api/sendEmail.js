@@ -27,7 +27,6 @@ export default async (req, res) => {
       content = `name: ${firstName} ${lastName} \n email: ${email} \n topic: ${topic} \n message: ${message}`
     }
 
-
     const mail = {
       from: `${firstName} ${lastName} <${email}>`,
       to: 'thegenesisbox@gmail.com',

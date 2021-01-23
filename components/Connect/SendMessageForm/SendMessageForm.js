@@ -36,7 +36,8 @@ export const SendMessageForm = () => {
       url: "https://genesis-box-client.vercel.app/api/sendEmail",
       data: form
     })
-      .then(function() {
+      .then(function(result) {
+        console.log(result);
         resetForm();
         setHasSubmitted(true);
         setIsLoading(false);

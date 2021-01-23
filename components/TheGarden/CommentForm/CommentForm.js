@@ -31,7 +31,7 @@ export const CommentForm = ({articleData}) => {
     setIsLoading(true);
     axios({
       method: "POST",
-      url: "https://genesis-box-client-b1tl6mk0t.vercel.app/api/comments",
+      url: "https://genesis-box-client.vercel.app/api/comments",
       data: {
         form: form,
         articleData: articleData.article

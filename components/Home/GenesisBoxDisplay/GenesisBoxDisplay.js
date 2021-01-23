@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { GENESIS_BOX_PRODUCT_KEY } from '../../../config/keys'
 import { BuildImageUrl } from '../../../config/ShopifyImageConfig'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -10,7 +9,7 @@ export const GenesisBoxDisplay = () => {
   const [ product, setProduct ] = useState({})
 
   useEffect(async () => {
-    const result = await axios.get(`http://localhost:3000/api/products/${GENESIS_BOX_PRODUCT_KEY}`)
+    const result = await axios.get(`/api/products/${process.env.NEXT_PUBLIC_GENESIS_BOX_PRODUCT_KEY}`)
     const lowerCaseTitle = result.data.title.toLowerCase()
     setProduct({
       ...result.data,

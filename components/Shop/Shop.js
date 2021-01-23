@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { SHOPIFY_SHOP_NAME, SHOPIFY_STOREFRONT_ACCESS_TOKEN } from '../../config/keys'
 import ClipLoader from "react-spinners/ClipLoader";
 
 export const Shop = () => {
@@ -12,7 +11,7 @@ export const Shop = () => {
 
   useEffect( async () => {
     setIsLoading(true)
-    const res = await axios.get('http://localhost:3000/api/products')
+    const res = await axios.get('/api/products')
     const products = res.data
     setIsLoading(false)
   
@@ -108,8 +107,8 @@ export const Shop = () => {
 
 const GetUi = () => {
   const client = ShopifyBuy.buildClient({
-    domain: `${SHOPIFY_SHOP_NAME}.myshopify.com`,
-    storefrontAccessToken: SHOPIFY_STOREFRONT_ACCESS_TOKEN
+    domain: `${process.env.NEXT_PUBLIC_SHOPIFY_SHOP_NAME}.myshopify.com`,
+    storefrontAccessToken: process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN
   });
   const ui = ShopifyBuy.UI.init(client)
   return ui
@@ -137,7 +136,7 @@ const SortActiveProducts = (products, sortBy) => {
 }
 
 const CountProductSales = async (products) => {
-  const res = await axios.get('http://localhost:3000/api/orders')
+  const res = await axios.get('/api/orders')
   const orders = res.data
   console.log(orders)
 

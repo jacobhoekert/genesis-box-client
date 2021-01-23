@@ -29,7 +29,7 @@ export const EmailListForm = () => {
     setIsLoading(true);
     axios({
       method: "POST",
-      url: "http://localhost:3000/api/subscribeToMailChimp",
+      url: "/api/subscribeToMailChimp",
       data: form
     })
       .then(function() {

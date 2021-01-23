@@ -1,12 +1,11 @@
 const nodemailer = require('nodemailer');
-const { GMAIL_USERNAME, GMAIL_PASSWORD} = require('../../config/keys');
 
 export default async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: GMAIL_USERNAME,
-        pass: GMAIL_PASSWORD
+        user: process.env.GMAIL_USERNAME,
+        pass: process.env.GMAIL_PASSWORD
       }
     });
 

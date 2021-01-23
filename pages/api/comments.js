@@ -1,6 +1,9 @@
-import ShopifyAdminApi from '../../axios/ShopifyAdminApi'
+import axios from 'axios'
 
 export default async (req, res) => {
+  const ShopifyAdminApi = axios.create({
+    baseURL: `https://${process.env.SHOPIFY_API_KEY}:${process.env.SHOPIFY_API_PASSWORD}@${process.env.NEXT_PUBLIC_SHOPIFY_SHOP_NAME}.myshopify.com/admin/api/${process.env.NEXT_PUBLIC_SHOPIFY_API_VERSION}`
+  });
   if (req.method === 'POST') {
     try {
       const author = `${req.body.form.firstName} ${req.body.form.lastName}`;

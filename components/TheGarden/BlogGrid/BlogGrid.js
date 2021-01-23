@@ -14,7 +14,7 @@ export const BlogGrid = ({data}) => {
   useEffect(() => {
     async function fetchArticles() {
       setIsLoading(true);
-      const result = await axios.get('http://localhost:3000/api/blogs');
+      const result = await axios.get('/api/blogs');
       const articles = result.data;
       console.log(articles);
       setActiveArticles(articles)

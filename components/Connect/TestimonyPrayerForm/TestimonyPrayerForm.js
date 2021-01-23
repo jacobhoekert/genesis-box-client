@@ -55,7 +55,7 @@ export const TestimonyPrayerForm = () => {
 
     axios({
       method: "POST",
-      url: "http://localhost:3000/api/sendEmail",
+      url: "/api/sendEmail",
       data: form
     })
     

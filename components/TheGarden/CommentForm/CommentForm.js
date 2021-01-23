@@ -31,7 +31,7 @@ export const CommentForm = ({articleData}) => {
     setIsLoading(true);
     axios({
       method: "POST",
-      url: "http://localhost:3000/api/comments",
+      url: "/api/comments",
       data: {
         form: form,
         articleData: articleData.article

@@ -4,7 +4,7 @@ import { Shop } from '../components/Shop/Shop'
 import { HeaderImage } from '../components/HeaderImage/HeaderImage'
 import axios from 'axios'
 
-export default function ShopPage({products, orders}) {
+export default function ShopPage({allProducts, orders}) {
   return (
     <>
       <Head>
@@ -12,7 +12,7 @@ export default function ShopPage({products, orders}) {
       </Head>
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
-      <Shop products={products} orders={orders}/>
+      <Shop allProducts={allProducts} orders={orders}/>
     </>
   )
 }
@@ -23,8 +23,8 @@ export async function getStaticProps(){
   });
 
   // get shopify products
-  const productsResult = await ShopifyAdminApi.get(`/products.json`);
-  const products = productsResult.data.products;
+  const allProductsResult = await ShopifyAdminApi.get(`/products.json`);
+  const allProducts = allProductsResult.data.products;
 
   // get shopify orders
   const ordersResult = await ShopifyAdminApi.get(`/orders.json?status=any`);
@@ -32,7 +32,7 @@ export async function getStaticProps(){
 
   return {
     props: {
-      products,
+      allProducts,
       orders
     }
   }

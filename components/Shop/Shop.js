@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
 
-export const Shop = ({products, orders}) => {
+export const Shop = ({allProducts, orders}) => {
   const [ tagNames, setTagNames ] = useState([])
   const [ tagProducts, setTagProducts ] = useState([])
   const [ activeProducts, setActiveProducts ] = useState([])
   const [ resultingQuantity, setResultingQuantity ] = useState(0)
 
-  useEffect( async () => {
-    const tags = GetProductTags(products)
+  useEffect(() => {
+    const tags = GetProductTags(allProducts)
     setTagNames(tags.names)
     setTagProducts(tags.products)
 
-    RenderProducts(products, GetUi())
-    setActiveProducts(products)
-    setResultingQuantity(products.length)
+    RenderProducts(allProducts, GetUi())
+    setActiveProducts(allProducts)
+    setResultingQuantity(allProducts.length)
 
     return (() => {
       DestroyProducts(activeProducts, GetUi())

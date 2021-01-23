@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
             </Head>
 
             <body>
-              <script src="http://sdks.shopifycdn.com/buy-button/latest/buybutton.js"></script>
+              <script src="https://sdks.shopifycdn.com/buy-button/latest/buybutton.js"></script>
                 <Main/>
                 <NextScript/>
             </body>

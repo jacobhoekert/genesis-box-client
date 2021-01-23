@@ -33,7 +33,7 @@ export const SendMessageForm = () => {
     setIsLoading(true);
     axios({
       method: "POST",
-      url: "/api/sendEmail",
+      url: "https://genesis-box-client.jacobhoekert.vercel.app/api/sendEmail",
       data: form
     })
       .then(function() {

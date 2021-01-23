@@ -55,7 +55,7 @@ export const TestimonyPrayerForm = () => {
 
     axios({
       method: "POST",
-      url: "/api/sendEmail",
+      url: "https://genesis-box-client-b1tl6mk0t.vercel.app/api/sendEmail",
       data: form
     })
     

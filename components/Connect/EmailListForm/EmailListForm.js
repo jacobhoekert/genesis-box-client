@@ -29,7 +29,7 @@ export const EmailListForm = () => {
     setIsLoading(true);
     axios({
       method: "POST",
-      url: "/api/subscribeToMailChimp",
+      url: "https://genesis-box-client-b1tl6mk0t.vercel.app/api/subscribeToMailChimp",
       data: form
     })
       .then(function() {

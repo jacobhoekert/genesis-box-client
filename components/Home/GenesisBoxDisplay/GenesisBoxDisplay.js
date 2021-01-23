@@ -9,7 +9,7 @@ export const GenesisBoxDisplay = () => {
   const [ product, setProduct ] = useState({})
 
   useEffect(async () => {
-    const result = await axios.get(`/api/products/${process.env.NEXT_PUBLIC_GENESIS_BOX_PRODUCT_KEY}`)
+    const result = await axios.get(`https://genesis-box-client-b1tl6mk0t.vercel.app/api/products/${process.env.NEXT_PUBLIC_GENESIS_BOX_PRODUCT_KEY}`)
     const lowerCaseTitle = result.data.title.toLowerCase()
     setProduct({
       ...result.data,

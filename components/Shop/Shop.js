@@ -11,7 +11,7 @@ export const Shop = () => {
 
   useEffect( async () => {
     setIsLoading(true)
-    const res = await axios.get('/api/products')
+    const res = await axios.get('https://genesis-box-client-b1tl6mk0t.vercel.app/api/products')
     const products = res.data
     setIsLoading(false)
   
@@ -136,7 +136,7 @@ const SortActiveProducts = (products, sortBy) => {
 }
 
 const CountProductSales = async (products) => {
-  const res = await axios.get('/api/orders')
+  const res = await axios.get('https://genesis-box-client-b1tl6mk0t.vercel.app/orders')
   const orders = res.data
   console.log(orders)
 

@@ -14,7 +14,7 @@ export const BlogGrid = ({data}) => {
   useEffect(() => {
     async function fetchArticles() {
       setIsLoading(true);
-      const result = await axios.get('/api/blogs');
+      const result = await axios.get('https://genesis-box-client-b1tl6mk0t.vercel.app/blogs');
       const articles = result.data;
       console.log(articles);
       setActiveArticles(articles)

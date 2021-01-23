@@ -5,14 +5,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export const GenesisBoxDisplay = () => {
+export const GenesisBoxDisplay = ({genesisBoxProduct}) => {
   const [ product, setProduct ] = useState({})
 
   useEffect(async () => {
-    const result = await axios.get(`https://genesis-box-client-b1tl6mk0t.vercel.app/api/products/${process.env.NEXT_PUBLIC_GENESIS_BOX_PRODUCT_KEY}`)
-    const lowerCaseTitle = result.data.title.toLowerCase()
+    const lowerCaseTitle = genesisBoxProduct.title.toLowerCase()
     setProduct({
-      ...result.data,
+      ...genesisBoxProduct,
       title: lowerCaseTitle
     })
   }, [])

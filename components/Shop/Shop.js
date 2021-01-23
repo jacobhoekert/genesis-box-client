@@ -1,20 +1,12 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
-import ClipLoader from "react-spinners/ClipLoader";
 
-export const Shop = () => {
+export const Shop = ({products, orders}) => {
   const [ tagNames, setTagNames ] = useState([])
   const [ tagProducts, setTagProducts ] = useState([])
   const [ activeProducts, setActiveProducts ] = useState([])
   const [ resultingQuantity, setResultingQuantity ] = useState(0)
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect( async () => {
-    setIsLoading(true)
-    const res = await axios.get('https://genesis-box-client-b1tl6mk0t.vercel.app/api/products')
-    const products = res.data
-    setIsLoading(false)
-  
     const tags = GetProductTags(products)
     setTagNames(tags.names)
     setTagProducts(tags.products)
@@ -44,7 +36,6 @@ export const Shop = () => {
   }
 
   const handleSortChange = (sortBy) => {
-    console.log(activeProducts)
     const relevantProducts = SortActiveProducts(activeProducts, sortBy)
     rebuildProducts(relevantProducts)
   }
@@ -88,19 +79,6 @@ export const Shop = () => {
           <span>{ resultingQuantity } product{ resultingQuantity == 1 ? '' : 's' }</span>
         </div>
       </div>
-      <div id='products'>
-        {
-          isLoading ? (
-            <div className="loader-container">
-              <ClipLoader
-              size={30}
-              color={"#124658"}
-              loading={true}
-              />
-            </div>
-          ) : <></>
-        }
-      </div>
     </>
   )
 }
@@ -136,9 +114,6 @@ const SortActiveProducts = (products, sortBy) => {
 }
 
 const CountProductSales = async (products) => {
-  const res = await axios.get('https://genesis-box-client-b1tl6mk0t.vercel.app/orders')
-  const orders = res.data
-  console.log(orders)
 
   let productSales = {}
   for (const product of products) {
@@ -156,7 +131,6 @@ const CountProductSales = async (products) => {
 
   const sortedProductSales = Object.entries(productSales)
     .sort(([,a],[,b]) => b-a)
-  console.log(sortedProductSales)
 
   let sortedProducts = []
   for (const sales in sortedProductSales) {
@@ -164,8 +138,6 @@ const CountProductSales = async (products) => {
       if (product.id === sales[0]) sortedProducts.push(product)
     }
   }
-  
-  console.log(sortedProducts)
   return sortedProducts
 }
 

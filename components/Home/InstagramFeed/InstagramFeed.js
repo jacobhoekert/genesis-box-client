@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { INSTAGRAM_APP_ID, INSTAGRAM_ACCESS_TOKEN } from '../../../config/keys'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -9,11 +8,11 @@ export const InstagramFeed = ({data}) => {
   const [photoUrls, setPhotoUrls] = useState([]);
 
   useEffect(async () => {
-    const photosResult = await axios.get(`https://graph.instagram.com/${INSTAGRAM_APP_ID}/media?fields=id&access_token=${INSTAGRAM_ACCESS_TOKEN}`)
+    const photosResult = await axios.get(`https://graph.instagram.com/${process.env.NEXT_PUBLIC_INSTAGRAM_APP_ID}/media?fields=id&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN}`)
     const numOfRecentPhotos = 10;
     const photos = photosResult.data.data.slice(0, numOfRecentPhotos).map((photo) => (photo));
     for (const photo of photos) {
-      const photoUrlResult = await axios.get(`https://graph.instagram.com/${photo.id}?fields=media_url&access_token=${INSTAGRAM_ACCESS_TOKEN}`)
+      const photoUrlResult = await axios.get(`https://graph.instagram.com/${photo.id}?fields=media_url&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN}`)
       setPhotoUrls(photoUrls => [...photoUrls, photoUrlResult.data.media_url]);
     }
   }, [])

@@ -1,9 +1,8 @@
-const { MAILCHIMP_API_KEY } = require('../../config/keys');
 const Mailchimp = require('mailchimp-api-v3');
-const mailchimp = new Mailchimp(MAILCHIMP_API_KEY);
 var md5 = require('md5');
 
 export default async (req, res) => {
+  const mailchimp = new Mailchimp(process.env.MAILCHIMP_API_KEY);
   if (req.method === 'POST') {
     try {
       const subscriberHash = md5(req.body.email);

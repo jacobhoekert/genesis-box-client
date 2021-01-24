@@ -1,19 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { getAllArticleUrls, getArticleData } from '../../lib/articles'
 import { Navbar } from '../../components/Navbar/Navbar'
 import { HeaderImage } from '../../components/HeaderImage/HeaderImage'
-import { useEffect } from 'react';
 import { BlogArticle } from '../../components/TheGarden/BlogArticle/BlogArticle';
 import { CommentForm } from '../../components/TheGarden/CommentForm/CommentForm';
 import { BlogComments } from '../../components/TheGarden/BlogComments/BlogComments';
+import { getAllArticleUrls, getArticleData } from '../../lib/articles'
 
 export default function Article({ articleData }) {
-
-  useEffect(() => {
-    console.log(articleData);
-  }, [])
-
   return (
     <>
       <Head>

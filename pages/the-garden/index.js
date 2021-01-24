@@ -1,19 +1,11 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { getAllArticleUrls, articleUrlToTitle } from '../../lib/articles'
+import { getAllArticlesFromShopify } from '../../lib/articles'
 import { Navbar } from '../../components/Navbar/Navbar'
 import { HeaderImage } from '../../components/HeaderImage/HeaderImage'
 import { BlogGrid } from '../../components/TheGarden/BlogGrid/BlogGrid'
 
-export default function TheGarden() {
-
-  useEffect(async () => {
-    // const paths = await getAllArticleUrls();
-    // console.log(paths);
-
-  }, [])
-
+export default function TheGarden({allArticles}) {
   return (
     <>
       <Head>
@@ -21,13 +13,17 @@ export default function TheGarden() {
       </Head>
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
-      <BlogGrid />
+      <BlogGrid allArticles={allArticles}/>
     </>
   )
 }
 
-// export async function getStaticPaths() {
-//   // Return a list of possible value for id
-//   const paths = await getAllArticleUrls();
-//   console.log(paths);
-// }
+export async function getStaticProps() {
+  const allArticles = await getAllArticlesFromShopify();
+
+  return {
+    props: {
+      allArticles,
+    }
+  }
+}

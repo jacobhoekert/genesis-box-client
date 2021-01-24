@@ -1,28 +1,19 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { SHOPIFY_SHOP_NAME, SHOPIFY_STOREFRONT_ACCESS_TOKEN } from '../../config/keys'
-import ClipLoader from "react-spinners/ClipLoader";
 
-export const Shop = () => {
+export const Shop = ({allProducts, orders}) => {
   const [ tagNames, setTagNames ] = useState([])
   const [ tagProducts, setTagProducts ] = useState([])
   const [ activeProducts, setActiveProducts ] = useState([])
   const [ resultingQuantity, setResultingQuantity ] = useState(0)
-  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect( async () => {
-    setIsLoading(true)
-    const res = await axios.get('http://localhost:3000/api/products')
-    const products = res.data
-    setIsLoading(false)
-  
-    const tags = GetProductTags(products)
+  useEffect(() => {
+    const tags = GetProductTags(allProducts)
     setTagNames(tags.names)
     setTagProducts(tags.products)
 
-    RenderProducts(products, GetUi())
-    setActiveProducts(products)
-    setResultingQuantity(products.length)
+    RenderProducts(allProducts, GetUi())
+    setActiveProducts(allProducts)
+    setResultingQuantity(allProducts.length)
 
     return (() => {
       DestroyProducts(activeProducts, GetUi())
@@ -45,7 +36,6 @@ export const Shop = () => {
   }
 
   const handleSortChange = (sortBy) => {
-    console.log(activeProducts)
     const relevantProducts = SortActiveProducts(activeProducts, sortBy)
     rebuildProducts(relevantProducts)
   }
@@ -89,27 +79,14 @@ export const Shop = () => {
           <span>{ resultingQuantity } product{ resultingQuantity == 1 ? '' : 's' }</span>
         </div>
       </div>
-      <div id='products'>
-        {
-          isLoading ? (
-            <div className="loader-container">
-              <ClipLoader
-              size={30}
-              color={"#124658"}
-              loading={true}
-              />
-            </div>
-          ) : <></>
-        }
-      </div>
     </>
   )
 }
 
 const GetUi = () => {
   const client = ShopifyBuy.buildClient({
-    domain: `${SHOPIFY_SHOP_NAME}.myshopify.com`,
-    storefrontAccessToken: SHOPIFY_STOREFRONT_ACCESS_TOKEN
+    domain: `${process.env.NEXT_PUBLIC_SHOPIFY_SHOP_NAME}.myshopify.com`,
+    storefrontAccessToken: process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN
   });
   const ui = ShopifyBuy.UI.init(client)
   return ui
@@ -137,9 +114,6 @@ const SortActiveProducts = (products, sortBy) => {
 }
 
 const CountProductSales = async (products) => {
-  const res = await axios.get('http://localhost:3000/api/orders')
-  const orders = res.data
-  console.log(orders)
 
   let productSales = {}
   for (const product of products) {
@@ -157,7 +131,6 @@ const CountProductSales = async (products) => {
 
   const sortedProductSales = Object.entries(productSales)
     .sort(([,a],[,b]) => b-a)
-  console.log(sortedProductSales)
 
   let sortedProducts = []
   for (const sales in sortedProductSales) {
@@ -165,8 +138,6 @@ const CountProductSales = async (products) => {
       if (product.id === sales[0]) sortedProducts.push(product)
     }
   }
-  
-  console.log(sortedProducts)
   return sortedProducts
 }
 

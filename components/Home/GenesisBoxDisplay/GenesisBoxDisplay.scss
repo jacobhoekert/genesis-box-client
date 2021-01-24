@@ -1,8 +1,10 @@
 #genesis-box-display {
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-content: center;
   align-items: center;
-  width: 75%;
+  width: 90%;
   margin: auto;
   padding-top: 140px;
 
@@ -16,13 +18,14 @@
   }
 
   .info {
-    width: 400px;
+    width: 50%;
     display: flex;
+    // margin-right: 50px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
     @media screen and (max-width: 1000px) {
-      align-items: center;
+      // align-items: center;
     }
 
     @media screen and (max-width: 600px) {
@@ -52,57 +55,51 @@
       margin-left: 10px;
     }
 
-    .view-more {
-      font-family: 'brandon-grotesque';
-      font-size: 16px;
-      font-weight: 100;
-      line-height: 1.8;
-      color: #F6F1E9;
-      background-color: #81606c;
-      width: 200px;
+    #view-more {
+      display: flex !important;
+      max-width: 100% !important;
       height: 35px;
-      margin-left: 10px;
-      border: none;
-
-      @media screen and (max-width: 1000px) {
-        display: none;
-      }
-
-      &:hover {
-        cursor: pointer;
-        transform: scale(1.03);
-        background-color: #b98e9e;
-      }
+      justify-content: center !important;
+      margin: 0 !important;
     }
 
-    .add-to-cart {
-      font-family: 'brandon-grotesque';
-      font-size: 16px;
-      font-weight: 100;
-      line-height: 1.8;
-      color: #F6F1E9;
-      background-color: #4c1d31;
-      width: 200px;
+    #add-to-cart {
+      display: flex !important;
+      max-width: 100% !important;
       height: 35px;
-      margin-top: 20px;
-      margin-left: 10px;
-      border: none;
-
-      @media screen and (max-width: 1000px) {
-        display: none;
-      }
-
-      &:hover {
-        cursor: pointer;
-        transform: scale(1.03);
-        background-color: #773351;
-      }
+      justify-content: center !important;
+      margin: 0 !important;
     }
+
+  //   #add-to-cart {
+  //     font-family: 'brandon-grotesque';
+  //     font-size: 16px;
+  //     font-weight: 100;
+  //     line-height: 1.8;
+  //     color: #F6F1E9;
+  //     background-color: #4c1d31;
+  //     width: 200px;
+  //     height: 35px;
+  //     margin-top: 20px;
+  //     margin-left: 10px;
+  //     border: none;
+
+  //     @media screen and (max-width: 1000px) {
+  //       display: none;
+  //     }
+
+  //     &:hover {
+  //       cursor: pointer;
+  //       transform: scale(1.03);
+  //       background-color: #773351;
+  //     }
+  //   }
+  // }
   }
 
   .slider {
-    width: 400px;
-    margin-top: 25px;
+    width: 480px;
+    margin-top: 60px;
 
     @media screen and (max-width: 1000px) {
       margin-top: 0px;

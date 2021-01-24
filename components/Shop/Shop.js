@@ -235,6 +235,10 @@ const RenderProducts = (products, ui) => {
           img: false,
           imgWithCarousel: true,
         },
+        text: {
+          button: 'ADD TO CART',
+          outOfStock: 'OUT OF STOCK'
+        },
         styles: {
           button: {
             'color': '#F6F1E9',

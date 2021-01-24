@@ -33,7 +33,7 @@ import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 function MyApp({ Component, pageProps }) {
   return (
       <div id='outer-wrap'>
-          <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' />} width={ 320 } />
+          <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-menu-cross.png' width={'100%'}/>} />
         <div className='page-wrap'>
           <Component {...pageProps} />
         </div>

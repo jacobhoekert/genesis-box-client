@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { GENESIS_BOX_PRODUCT_KEY, SHOPIFY_SHOP_NAME, SHOPIFY_STOREFRONT_ACCESS_TOKEN } from '../../../config/keys'
 import { BuildImageUrl } from '../../../config/ShopifyImageConfig'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,7 +14,7 @@ export const GenesisBoxDisplay = ({genesisBoxProduct}) => {
       title: lowerCaseTitle
     })
 
-    RenderButtons(GENESIS_BOX_PRODUCT_KEY, GetUi())
+    RenderButtons(process.env.NEXT_PUBLIC_GENESIS_BOX_PRODUCT_KEY, GetUi())
     // RenderButtons('6305500856471', GetUi()) // testing normal view of ADD TO CART button with different product
 
   }, [])
@@ -33,8 +31,8 @@ export const GenesisBoxDisplay = ({genesisBoxProduct}) => {
 
   const GetUi = () => {
     const client = ShopifyBuy.buildClient({
-      domain: `${SHOPIFY_SHOP_NAME}.myshopify.com`,
-      storefrontAccessToken: SHOPIFY_STOREFRONT_ACCESS_TOKEN
+      domain: `${process.env.NEXT_PUBLIC_SHOPIFY_SHOP_NAME}.myshopify.com`,
+      storefrontAccessToken: process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN
     });
     const ui = ShopifyBuy.UI.init(client)
     return ui

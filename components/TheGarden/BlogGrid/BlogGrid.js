@@ -17,9 +17,7 @@ export const BlogGrid = ({allArticles}) => {
   const handleTagChange = (tag) => {
     const relevantArticles = tagArticles[tagNames.indexOf(tag)]
     console.log(relevantArticles)
-    setIsLoading(true)
     setActiveArticles(relevantArticles)
-    setIsLoading(false)  
   }
 
   const GetArticleTags = articles => {

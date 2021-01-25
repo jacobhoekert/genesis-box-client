@@ -9,7 +9,7 @@ export const SendMessageForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    topic: "",
+    topic: "connect with our team",
     message: ""
   });
 

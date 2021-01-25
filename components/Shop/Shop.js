@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 
+
 export const Shop = ({allProducts, orders}) => {
+  const [ isLoading, setIsLoading ] = useState(false);
   const [ tagNames, setTagNames ] = useState([])
   const [ tagProducts, setTagProducts ] = useState([])
   const [ activeProducts, setActiveProducts ] = useState([])
@@ -22,12 +24,10 @@ export const Shop = ({allProducts, orders}) => {
 
   const rebuildProducts = (relevantProducts) => {
     const ui = GetUi()
-    setIsLoading(true)
     DestroyProducts(activeProducts, ui)
     RenderProducts(relevantProducts, ui)
     setActiveProducts(relevantProducts)
     setResultingQuantity(relevantProducts.length)
-    setIsLoading(false)
   }
 
   const handleTagChange = (tag) => {
@@ -266,7 +266,7 @@ const RenderProducts = (products, ui) => {
 
             ':hover': {
               'cursor': 'pointer',
-              'transform': 'scale(1.1)',
+              'transform': 'scale(1.04)',
               'opacity': '0.8',
             },
           },

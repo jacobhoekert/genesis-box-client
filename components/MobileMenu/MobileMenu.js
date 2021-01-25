@@ -9,13 +9,13 @@ export const MobileMenu = (props) => {
   }
 
   return (
-    <Menu right {...props} isOpen={isOpen}>
+    <Menu right {...props} width={'100%'}>
       <Link onClick={closeMenu} className="menu-item" href="/"><p>Home</p></Link>
-      <Link onClick={closeMenu} className="menu-item" href="/about"><p>About Us</p></Link>
-      <Link onClick={closeMenu} className="menu-item" href="/features"><p>Shop</p></Link>
-      <Link onClick={closeMenu} className="menu-item" href="/pricing"><p>Global Community</p></Link>
-      <Link onClick={closeMenu} className="menu-item" href="/faq"><p>The Garden</p></Link>
-      <Link onClick={closeMenu} className="menu-item" href="/mobileprivacypolicy"><p>Contact</p></Link>
+      <Link onClick={closeMenu} className="menu-item" href="/why-genesis"><p>Why Genesis</p></Link>
+      <Link onClick={closeMenu} className="menu-item" href="/the-team"><p>The Team</p></Link>
+      <Link onClick={closeMenu} className="menu-item" href="/shop"><p>Shop</p></Link>
+      <Link onClick={closeMenu} className="menu-item" href="/the-garden"><p>The Garden</p></Link>
+      <Link onClick={closeMenu} className="menu-item" href="/connect"><p>Connect</p></Link>
     </Menu>
   );
 };

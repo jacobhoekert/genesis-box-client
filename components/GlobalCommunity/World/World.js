@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 let Globe = () => null;
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
-import countriesJSON from './ne_110m_admin_0_countries.json'
+import countriesJSON from './countries.json'
 
 export const World = () => {
   const globeEl = useRef(true);

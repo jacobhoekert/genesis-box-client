@@ -3,6 +3,7 @@ import Link from 'next/link'
 import axios from 'axios';
 import StrapiApi from '../axios/StrapiApi'
 import { Navbar } from '../components/Navbar/Navbar'
+import { GlobeSection } from '../components/Home/GlobeSection/GlobeSection'
 import { HomeBanner } from '../components/Home/HomeBanner/HomeBanner'
 import { Mission } from '../components/Home/Mission/Mission'
 import { GenesisBoxDisplay } from '../components/Home/GenesisBoxDisplay/GenesisBoxDisplay'
@@ -10,7 +11,6 @@ import { GenesisMethod } from '../components/Home/GenesisMethod/GenesisMethod'
 import { Testimonials } from '../components/Home/Testimonials/Testimonials'
 import { InstagramFeed } from '../components/Home/InstagramFeed/InstagramFeed'
 import { HeaderImage } from '../components/HeaderImage/HeaderImage'
-import { World } from '../components/GlobalCommunity/World/World'
 
 export default function Home({data, genesisBoxProduct}) {
   return (
@@ -20,7 +20,7 @@ export default function Home({data, genesisBoxProduct}) {
       </Head>
       <HeaderImage imagePath='/images/home-header-image.jpg' height='500px'/>
       <Navbar />
-      <World />
+      <GlobeSection />
       <HomeBanner data={data.HomeBanner}/>
       <Mission />
       <GenesisBoxDisplay genesisBoxProduct={genesisBoxProduct}/>

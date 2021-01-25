@@ -71,8 +71,8 @@ export const InstagramFeed = ({data}) => {
           {
             photoUrls.map((photoUrl, index) => {
               return (
-                <a href="https://www.instagram.com/thegenesisbox/">
-                  <div key={index} className="photo-container">
+                <a key={index} href="https://www.instagram.com/thegenesisbox/">
+                  <div  className="photo-container">
                     <img className="photo" src={photoUrl}/>
                   </div>
                 </a>

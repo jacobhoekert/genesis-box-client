@@ -4,12 +4,12 @@ let Globe = () => null;
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 import countriesJSON from './countries.json'
 
-export const World = () => {
+export const World = props => {
   const globeEl = useRef(true);
-  const [countries, setCountries] = useState({ features: []});
+  const [globeCountries, setGlobeCountries] = useState({ features: []});
 
   useEffect(() => {
-    setCountries(countriesJSON);
+    setGlobeCountries(countriesJSON);
 
     // change globe lighting
     setTimeout(() => { // wait for scene to be populated (asynchronously)
@@ -24,59 +24,81 @@ export const World = () => {
     globeEl.current.pointOfView({
       lat: 27.7172,
       lng: 85.3240,
-      altitude: 1.6
+      altitude: 1.5
     });
   }, []);
+
+  // when slider changes, globe spins to slider country
+  useEffect(() => {
+    if (props.currentSliderCountry.countryName) {
+      const latitude = props.currentSliderCountry.countryLatitude;
+      const longitude = props.currentSliderCountry.countryLongitude;
+      console.log(latitude);
+      console.log(longitude);
+      globeEl.current.controls().enablePan = true;
+      globeEl.current.controls().panSpeed = true;
+      globeEl.current.pointOfView({
+        lat: latitude,
+        lng: longitude,
+        altitude: 1.5
+      }, [2000]);
+      globeEl.current.controls().autoRotate = false;
+      
+    }
+  }, [props.currentSliderCountry])
 
   const handleGlobeClick = () => {
     globeEl.current.controls().autoRotate = false;
   }
 
-  const getCountryColor = (country) => {
-    if (country.properties.NAME == "Nepal") {
-      return '#1c6e8a'
-    } else {
-      return '#124658'
+  const getCountryColor = (globeCountry) => {
+    for (const genesisCountry of props.genesisCountries) {
+      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+        return '#1c6e8a'
+      }
     }
+    return '#124658'
   }
 
-  const getCountryStrokeColor = (country) => {
-    if (country.properties.NAME == "Nepal") {
-      return '#fff'
-    } else {
-      return '#33788f'
+  const getCountryStrokeColor = (globeCountry) => {
+    for (const genesisCountry of props.genesisCountries) {
+      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+        return '#fff'
+      }
     }
+    return '#33788f'
   }
 
-  const getCountryAltitude = (country) => {
-    if (country.properties.NAME == "Italy") {
-      return 0.06
-    } else {
-      return 0.01
+  const setCountryLabel = (globeCountry) => {
+    for (const genesisCountry of props.genesisCountries) {
+      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+        return `<b style="font-size:20px;color:white">${globeCountry.properties.NAME} </b>`
+      }
     }
+    return null;
   }
 
-  const setCountryLabel = ({ properties: d }) => {
-    if (d.NAME == "Nepal") {
-      return `<b style="font-size:20px;color:white">${d.NAME} </b>`
-    } else {
-      return null;
-    }
-  }
-
-  const handleCountryHover = (country) => {
-    if (country) {
-      if (country.properties.NAME == "Nepal") {
-        globeEl.current.controls().autoRotate = false;
-        const elem = document.getElementById('globe-container');
-        elem.style.cursor = country ? 'pointer' : null;
-      } 
+  const handleCountryHover = (globeCountry) => {
+    if (globeCountry) {
+      const elem = document.getElementById('globe-container');
+      for (const genesisCountry of props.genesisCountries) {
+        if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+          globeEl.current.controls().autoRotate = false;
+          elem.style.cursor = 'pointer';
+          return 0;
+        }
+      }
+      elem.style.cursor = null;
     } 
   } 
 
-  const handleCountryClick = (country) => {
-    globeEl.current.controls().autoRotate = false;
-    console.log(country);
+  const handleCountryClick = (globeCountry) => {
+    for (const genesisCountry of props.genesisCountries) {
+      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+        globeEl.current.controls().autoRotate = false;
+        props.selectCountry(globeCountry);
+      }
+    }
   } 
 
   return (
@@ -85,10 +107,11 @@ export const World = () => {
         ref={globeEl}
         onGlobeClick={handleGlobeClick}
         backgroundColor="rgba(0,0,0,0)"
+        showAtmosphere={false}
         globeImageUrl='/images/globe-texture-map3.svg'
-        width={790}
+        width={875}
         polygonAltitude={0.008}
-        polygonsData={countries.features}
+        polygonsData={globeCountries.features}
         polygonCapColor={getCountryColor}
         polygonSideColor={() => '#33788f'}
         polygonStrokeColor={getCountryStrokeColor}

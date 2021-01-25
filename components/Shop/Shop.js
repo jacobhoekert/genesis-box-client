@@ -269,6 +269,11 @@ const RenderProducts = (products, ui) => {
               'transform': 'scale(1.1)',
               'opacity': '0.8',
             },
+          },
+          blockButton: {
+            ':focus': {
+              'outline': '0 !important',
+            }
           }
         }
       },

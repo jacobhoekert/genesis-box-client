@@ -1,0 +1,42 @@
+.countries-widget {
+  width: 400px;
+  background-color: #8DB5BC;
+  border-radius: 75px;
+
+  .title-container {
+    margin: auto;
+    text-align: center;
+
+    @media screen and (max-width: 950px) {
+      width: 80%;
+    }
+  
+    .genesis {
+      font-family: 'botanica';
+      color: #124658;
+      font-size: 70px;
+      font-weight: 100;
+      z-index: -1;
+
+      @media screen and (max-width: 950px) {
+        font-size: 80px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .countries {
+      font-family: 'youthful';
+      color: #8DB5BC;
+      font-size: 100px;
+      font-weight: 100;
+      margin-top: -120px;
+      position: relative;
+      z-index: 1;
+      margin-left: 5px;
+
+      @media screen and (max-width: 950px) {
+        font-size: 100px;
+      }
+    }
+  }
+}

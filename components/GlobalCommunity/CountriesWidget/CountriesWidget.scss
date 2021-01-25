@@ -1,7 +1,8 @@
 .countries-widget {
   width: 400px;
   background-color: #8DB5BC;
-  border-radius: 75px;
+  border-radius: 60px;
+  padding-top: 5px;
 
   .title-container {
     margin: auto;
@@ -17,6 +18,7 @@
       font-size: 70px;
       font-weight: 100;
       z-index: -1;
+      margin-top: 0px;
 
       @media screen and (max-width: 950px) {
         font-size: 80px;
@@ -26,7 +28,7 @@
 
     .countries {
       font-family: 'youthful';
-      color: #8DB5BC;
+      color: white;
       font-size: 100px;
       font-weight: 100;
       margin-top: -120px;

@@ -283,7 +283,7 @@ const RenderProducts = (products, ui) => {
         },
         styles: {
           products: {
-            'padding-top': '100px',
+            'padding-top': '50px',
             'padding-bottom': '100px',
             'display': 'flex',
             'flex-wrap': 'wrap',

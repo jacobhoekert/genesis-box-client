@@ -1,0 +1,159 @@
+.footer {
+  height: 325px;
+  background-color: #124658;
+  padding-top: 10px;
+
+  @media screen and (max-width: 800px) {
+    height: auto;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 640px;
+  }
+
+  .text-and-form-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 1200px) {
+      width: 70%;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 90%;
+    }
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: 600px) {
+      text-align: center;
+    }
+
+    .footer-text {
+      margin-top: 30px;
+      margin-right: 30px;
+      width: 45%;
+      font-family: 'brandon-grotesque';
+      color: #F6F1E9;
+
+      @media screen and (max-width: 1200px) {
+        width: 60%;
+      }
+
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        width: 80%;
+        margin-right: 0px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 90%;
+      }
+    }
+  }
+
+  .footer-bottom {
+    width: 100%;
+    border-top: 1px solid black;
+    background-color: #124658;
+    height: 60px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+
+    @media screen and (max-width: 600px) {
+      height: auto;
+    }
+
+    @media screen and (max-width: 500px) {
+      position: relative;
+      top: -80px;
+    }
+
+    .footer-bottom-content {
+      width: 60%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media screen and (max-width: 1200px) {
+        width: 70%;
+      }
+  
+      @media screen and (max-width: 1000px) {
+        width: 80%;
+      }
+
+      @media screen and (max-width: 900px) {
+        width: 90%;
+      }
+
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+      }
+
+      .accepted-payments {
+        display: flex;
+        width: 40%;
+
+        @media screen and (max-width: 600px) {
+          justify-content: center;
+        }
+
+        img {
+          width: 30px;
+          height: 25px;
+          margin-right: 2px;
+        }
+      }
+
+      .social-and-copyright {
+        margin-right: 28px;
+
+        @media screen and (max-width: 1200px) {
+          margin-right: 0px;
+        }
+    
+        @media screen and (max-width: 1000px) {
+          margin-right: 0px;
+        }
+
+        .instagram-logo-container {
+          display: flex;
+          justify-content: flex-end;
+
+          @media screen and (max-width: 600px) {
+            margin-top: 20px;
+            justify-content: center;
+          }
+
+          .instagram-logo {
+            text-align: right;
+            width: 25px;
+            margin-bottom: 5px;
+
+            @media screen and (max-width: 600px) {
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+        .copyright {
+          color: #F6F1E9;
+          font-size: 12px;
+          font-family: 'brandon-grotesque';
+        }
+      }
+    }
+  }
+}

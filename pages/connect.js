@@ -11,7 +11,9 @@ export default function ConnectPage({data}) {
       </Head>
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
-      <Connect />
+      <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
+        <Connect />
+      </div>
     </>
   )
 }

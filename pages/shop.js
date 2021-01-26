@@ -12,7 +12,9 @@ export default function ShopPage({allProducts, orders}) {
       </Head>
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
-      <Shop allProducts={allProducts} orders={orders}/>
+      <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
+        <Shop allProducts={allProducts} orders={orders}/>
+      </div>
     </>
   )
 }

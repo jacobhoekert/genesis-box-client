@@ -33,8 +33,6 @@ export const World = props => {
     if (props.currentSliderCountry.countryName) {
       const latitude = props.currentSliderCountry.countryLatitude;
       const longitude = props.currentSliderCountry.countryLongitude;
-      console.log(latitude);
-      console.log(longitude);
       globeEl.current.controls().enablePan = true;
       globeEl.current.controls().panSpeed = true;
       globeEl.current.pointOfView({

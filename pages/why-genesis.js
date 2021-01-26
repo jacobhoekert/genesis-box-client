@@ -14,7 +14,9 @@ export default function WhyGenesisPage({data}) {
       </Head>
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
-      <WhyGenesis data={data}/>
+      <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
+        <WhyGenesis data={data}/>
+      </div>
     </>
   )
 }

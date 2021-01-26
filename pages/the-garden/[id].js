@@ -15,19 +15,21 @@ export default function Article({ articleData }) {
       </Head>
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
-      <BlogArticle articleData={articleData}/>
-      {
-        articleData.comments.length > 0 &&
-          <BlogComments comments={articleData.comments}/>
-      }
-      <CommentForm articleData={articleData}/>
-      <Link href='/the-garden'>
-        <button className="pink-button centered-flex" href="#">
-          <img className="left-arrow" src="/images/left-arrow-white.png"/>
-          Back to The Garden
-        </button>
-      </Link>
-      <div className="empty-space"></div>
+      <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
+        <BlogArticle articleData={articleData}/>
+        {
+          articleData.comments.length > 0 &&
+            <BlogComments comments={articleData.comments}/>
+        }
+        <CommentForm articleData={articleData}/>
+        <Link href='/the-garden'>
+          <button className="pink-button centered-flex" href="#">
+            <img className="left-arrow" src="/images/left-arrow-white.png"/>
+            Back to The Garden
+          </button>
+        </Link>
+        <div className="empty-space"></div>
+      </div>
     </>
   )
 }

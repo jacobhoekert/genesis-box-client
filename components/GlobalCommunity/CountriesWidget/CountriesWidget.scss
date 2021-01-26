@@ -5,6 +5,10 @@
   border-radius: 60px;
   padding-top: 20px;
   padding-bottom: 40px;
+  
+  @media screen and (max-width: 950px) {
+    order: 2;
+  }
 
   .title-container {
     margin: auto;

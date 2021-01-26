@@ -11,8 +11,9 @@ import { GenesisMethod } from '../components/Home/GenesisMethod/GenesisMethod'
 import { Testimonials } from '../components/Home/Testimonials/Testimonials'
 import { InstagramFeed } from '../components/Home/InstagramFeed/InstagramFeed'
 import { HeaderImage } from '../components/HeaderImage/HeaderImage'
+import { Footer } from '../components/Footer/Footer'
 
-export default function Home({data, countries, genesisBoxProduct}) {
+export default function Home({data, countries, genesisBoxProduct, footerData}) {
   return (
     <>
       <Head>
@@ -20,7 +21,7 @@ export default function Home({data, countries, genesisBoxProduct}) {
       </Head>
       <HeaderImage imagePath='/images/home-header-image.jpg' height='500px'/>
       <Navbar />
-      <div style={{backgroundColor: "#F6F1E9"}}>
+      <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
         <GlobeSection countries={countries}/>
         <HomeBanner data={data.HomeBanner}/>
         <Mission />
@@ -32,7 +33,7 @@ export default function Home({data, countries, genesisBoxProduct}) {
         <img className="blue-logo" src="/images/genesis-blue-circle.png"/>
         <div id='product-component-1610134264369'></div>
       </div>
-      
+      <Footer footerData={footerData}/>
     </>
   )
 }
@@ -41,6 +42,11 @@ export async function getStaticProps(){
   // get strapi home content data
   const homeDataResult = await StrapiApi.get('/home');
   const data = homeDataResult.data;
+
+  // get strapi footer content data
+  const footerDataResult = await StrapiApi.get('/footer');
+  const footerData = footerDataResult.data;
+  console.log(footerDataResult)
 
   // get strapi countries data
   const countriesResult = await StrapiApi.get('/countries');
@@ -57,7 +63,8 @@ export async function getStaticProps(){
     props: {
       data,
       genesisBoxProduct,
-      countries
+      countries,
+      footerData
     }
   }
 }

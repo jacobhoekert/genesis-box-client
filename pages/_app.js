@@ -1,6 +1,7 @@
 import axios from 'axios'
 import '../styles/globals.css'
 import '../components/Navbar/Navbar.scss'
+import '../components/Footer/Footer.scss'
 import '../components/MobileMenu/MobileMenu.scss'
 import '../components/GlobalCommunity/World/World.scss'
 import '../components/GlobalCommunity/CountriesWidget/CountriesWidget.scss'

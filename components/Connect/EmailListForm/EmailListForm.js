@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 
-export const EmailListForm = () => {
+export const EmailListForm = ({isFooter}) => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
@@ -55,15 +55,16 @@ export const EmailListForm = () => {
   };
 
   return (
-    <section id="email-list-form-container">
+    <div id="email-list-form-container" style={{marginTop: isFooter && '30px'}}>
       <form id="email-list-form" onSubmit={handleSubmit} method="POST">
       <input type="hidden" name="u" value="126b76b76358b5694e3d0c7d5"></input>
       <input type="hidden" name="id" value="179cc6b0e3"></input>
         <div id="questions">
           <div id="names-container">
             <div className="label-input-flex">
-              <label>First Name</label>
+              <label style={{color: isFooter && '#F6F1E9'}}>First Name</label>
               <input
+                style={{background: isFooter && '#F6F1E9'}}
                 className="name-inputs"
                 name="firstName"
                 value={form.firstName}
@@ -71,8 +72,9 @@ export const EmailListForm = () => {
               />
             </div>
             <div className="label-input-flex">
-              <label>Last Name</label>
+              <label style={{color: isFooter && '#F6F1E9'}}>Last Name</label>
               <input
+                style={{background: isFooter && '#F6F1E9'}}
                 className="name-inputs"
                 name="lastName"
                 value={form.lastName}
@@ -82,8 +84,9 @@ export const EmailListForm = () => {
           </div>
           <div id="email-container">
             <div className="label-input-flex">
-              <label>Email</label>
+              <label style={{color: isFooter && '#F6F1E9'}}>Email</label>
               <input
+                style={{background: isFooter && '#F6F1E9'}}
                 name="email"
                 type="email"
                 value={form.email}
@@ -93,7 +96,7 @@ export const EmailListForm = () => {
           </div>
           
           <div id="submit-row">
-            <button type="submit">
+            <button type="submit" style={{background: isFooter && '#8DB5BC', width: isFooter && '175px'}}>
               {isLoading ? (
                 <ClipLoader
                   size={20}
@@ -108,6 +111,6 @@ export const EmailListForm = () => {
           <DisplayMessage />
         </div>
       </form>
-    </section>
+    </div>
   );
 };

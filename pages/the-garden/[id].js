@@ -1,13 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import StrapiApi from '../../axios/StrapiApi'
 import { Navbar } from '../../components/Navbar/Navbar'
 import { HeaderImage } from '../../components/HeaderImage/HeaderImage'
 import { BlogArticle } from '../../components/TheGarden/BlogArticle/BlogArticle';
 import { CommentForm } from '../../components/TheGarden/CommentForm/CommentForm';
 import { BlogComments } from '../../components/TheGarden/BlogComments/BlogComments';
 import { getAllArticleUrls, getArticleData } from '../../lib/articles'
+import { Footer } from '../../components/Footer/Footer'
 
-export default function Article({ articleData }) {
+export default function Article({ articleData, footerData}) {
   return (
     <>
       <Head>
@@ -30,6 +32,7 @@ export default function Article({ articleData }) {
         </Link>
         <div className="empty-space"></div>
       </div>
+      <Footer footerData={footerData}/>
     </>
   )
 }
@@ -43,10 +46,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  // get strapi footer content data
+  const footerDataResult = await StrapiApi.get('/footer');
+  const footerData = footerDataResult.data;
+
+  // get blog article data from shopify
   const articleData = await getArticleData(params.id);
+
   return {
     props: {
-      articleData
+      articleData,
+      footerData
     },
     revalidate: 30,
   }

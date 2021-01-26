@@ -40,6 +40,16 @@
       font-size: 16px;
       line-height: 12px;
       color: black;
+      background-color: #F6F1E9;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        outline: none;
+        cursor: pointer;
+      }
     }
   }
 }

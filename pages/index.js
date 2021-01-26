@@ -46,7 +46,6 @@ export async function getStaticProps(){
   // get strapi footer content data
   const footerDataResult = await StrapiApi.get('/footer');
   const footerData = footerDataResult.data;
-  console.log(footerDataResult)
 
   // get strapi countries data
   const countriesResult = await StrapiApi.get('/countries');

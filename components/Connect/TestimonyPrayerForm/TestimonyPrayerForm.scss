@@ -45,6 +45,7 @@
         padding-left: 10px;
         font-size: 18px;
         font-family: 'brandon-grotesque';
+        background-color: #F6F1E9;
 
         &:focus{
           outline: none !important;
@@ -122,12 +123,13 @@
                 height: 0;
                 width: 0;
                 appearance: none;
+                background-color: #F6F1E9;
               }
   
               #prayer {
                 height: 25px;
                 width: 25px;
-                background-color: white;
+                background-color: #F6F1E9;
                 transition-duration: 0ms;
               }
 
@@ -138,7 +140,7 @@
               #testimony {
                 height: 25px;
                 width: 25px;
-                background-color: white;
+                background-color: #F6F1E9;
                 transition-duration: 0ms;
               }
 

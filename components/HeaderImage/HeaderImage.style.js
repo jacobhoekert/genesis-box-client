@@ -7,7 +7,7 @@ export const ImageDiv = styled.div`
   display: flex;
 
   @media screen and (max-width: 600px) {
-    height: 230px;
+    height: 200px;
     background-position: top;
   }
 
@@ -19,9 +19,9 @@ export const ImageDiv = styled.div`
 
     @media screen and (max-width: 600px) {
       margin-left: 6%;
-      padding-top: 15%;
-      width: 150px;
-      height: 100px;
+      padding-top: 8%;
+      width: 120px;
+      height: 80px;
     }
   }
   

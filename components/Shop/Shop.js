@@ -35,51 +35,37 @@ export const Shop = ({allProducts, orders}) => {
     rebuildProducts(relevantProducts)
   }
 
-  const handleSortChange = (sortBy) => {
-    const relevantProducts = SortActiveProducts(activeProducts, sortBy)
-    rebuildProducts(relevantProducts)
-  }
-
-  const sortOptions = [
-    'Featured',
-    'Best Selling',
-    'Alphabetically, A-Z',
-    'Alphabetically, Z-A',
-    'Price, low to high',
-    'Price, high to low',
-    'Date, old to new',
-    'Date, new to old'
-  ]
-
   return (
     <>
-      <div id="shop-title-container">
-        <h1 id="title">Products</h1>
-      </div>
-      <div id='shop-filter-bar'>
-        <div id='filter-menus'>
-          <span>FILTER BY</span>
-          <select id='tag-selection' onChange={(event) => handleTagChange(event.target.value)}>
-            { 
-              tagNames.map(tag => {
-                return (<option value={tag}>{tag}</option>)
-              })
-            }
-          </select>
-          {/* <h3>Sort By</h3>
-          <select id='sort-selection' onChange={(event) => handleSortChange(event.target.value)}>
-            { 
-              sortOptions.map(sortBy => {
-                return (<option value={sortBy}>{sortBy}</option>)
-              })
-            }
-          </select> */}
+      <div id="shop-page-container">
+        <div id="shop-title-container">
+          <h1 id="title">Products</h1>
         </div>
-        <div id='resulting-quantity'>
-          <span>{ resultingQuantity } product{ resultingQuantity == 1 ? '' : 's' }</span>
+        <div id='shop-filter-bar'>
+          <div id='filter-menus'>
+            <span>FILTER BY</span>
+            <select id='tag-selection' onChange={(event) => handleTagChange(event.target.value)}>
+              { 
+                tagNames.map(tag => {
+                  return (<option value={tag}>{tag}</option>)
+                })
+              }
+            </select>
+            {/* <h3>Sort By</h3>
+            <select id='sort-selection' onChange={(event) => handleSortChange(event.target.value)}>
+              { 
+                sortOptions.map(sortBy => {
+                  return (<option value={sortBy}>{sortBy}</option>)
+                })
+              }
+            </select> */}
+          </div>
+          <div id='resulting-quantity'>
+            <span>{ resultingQuantity } product{ resultingQuantity == 1 ? '' : 's' }</span>
+          </div>
         </div>
+        <div id="products"></div>
       </div>
-      <div id="products"></div>
     </>
   )
 }
@@ -91,55 +77,6 @@ const GetUi = () => {
   });
   const ui = ShopifyBuy.UI.init(client)
   return ui
-}
-
-const SortActiveProducts = (products, sortBy) => {
-  switch (sortBy) {
-    case 'Featured':
-      return products // no effect right now because no products are in the Featured collection
-    case 'Best Selling':
-      return CountProductSales(products)
-    case 'Alphabetically, A-Z':
-      break;
-    case 'Alphabetically, Z-A':
-      break;
-    case 'Price, low to high':
-      break;
-    case 'Price, high to low':
-      break;
-    case 'Date, old to new':
-      break;
-    case 'Date, new to old':
-      break;
-  }
-}
-
-const CountProductSales = async (products) => {
-
-  let productSales = {}
-  for (const product of products) {
-    productSales = {
-      [product.id]: 0,
-      ...productSales
-    }
-  }
-
-  for (const order of orders) {
-    for (const lineItem of order.line_items) {
-      productSales[lineItem.product_id] += 1
-    }
-  }
-
-  const sortedProductSales = Object.entries(productSales)
-    .sort(([,a],[,b]) => b-a)
-
-  let sortedProducts = []
-  for (const sales in sortedProductSales) {
-    for (const product of products) {
-      if (product.id === sales[0]) sortedProducts.push(product)
-    }
-  }
-  return sortedProducts
 }
 
 const GetProductTags = products => {
@@ -160,12 +97,6 @@ const GetProductTags = products => {
     names: tagNames,
     products: tagProducts
   }
-}
-
-const GetProductTitles = products => {
-  const titles = products.map(product => product.title)
-  titles.sort()
-  return titles
 }
 
 const RenderProducts = (products, ui) => {
@@ -277,6 +208,17 @@ const RenderProducts = (products, ui) => {
           }
         }
       },
+      modal: {
+        styles: {
+          modal: {
+            'margin-top': '60px'
+          },
+          close: {
+            'margin-top': '60px',
+            'color': 'black'
+          }
+        }
+      },
       productSet: {
         contents: {
           pagination: false
@@ -299,9 +241,14 @@ const RenderProducts = (products, ui) => {
 }
 
 const DestroyProducts = (products, ui) => {
+  const elem = document.createElement('div');
+  elem.setAttribute("id", "products");
+  document.getElementById('shop-page-container').appendChild(elem);
+
   const productIds = products.map(product => product.id)
   ui.destroyComponent('productSet', {
     id: productIds
   })
 }
+
 

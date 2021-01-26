@@ -32,7 +32,6 @@
   .blog-text{
     padding-left: 20px;
     padding-right: 10px;
-    font-family: 'brandon-grotesque';
     color: #124658;
 
     .blog-title{
@@ -44,11 +43,8 @@
     .blog-author-and-date {
       display: flex;
       font-weight: 900;
-      width: 80%;
+      width: 90%;
       justify-content: space-between;
-
-      .blog-date {
-      }
     }
 
 

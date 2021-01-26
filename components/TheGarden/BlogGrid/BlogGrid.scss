@@ -6,7 +6,6 @@
   align-items: center;
 
   #title {
-    font-family: 'brandon-grotesque';
     font-size: 40px;
     color: #124658;
     text-align: center;
@@ -27,7 +26,8 @@
     justify-content: flex-start;
     align-items: center;
     width: 88%;
-    font-family: 'brandon-grotesque';
+    font-family: brandon-grotesque;
+    font-weight: 300;
     font-size: 12px;
     color: #124658;
 
@@ -36,7 +36,8 @@
       height: 50px;
       width: auto;
       border: none;
-      font-family: 'brandon-grotesque';
+      font-family: brandon-grotesque;
+      font-weight: 300;
       font-size: 16px;
       line-height: 12px;
       color: black;

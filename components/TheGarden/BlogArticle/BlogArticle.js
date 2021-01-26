@@ -3,6 +3,7 @@ import { formatDate } from '../../../lib/articles'
 export const BlogArticle = ({articleData}) => {
   const formattedDate = formatDate(articleData.article.published_at);
   const cleanHtmlBody = articleData.article.body_html.replace(/(<[p|br\/]>\s<\/p>)/ig, '<p><\/p>');
+  const cleanerHtmlBody = cleanHtmlBody.replace(/(font-weight: 400)/ig, 'font-weight: 300');
   return (
     <div className="article">
       <div className="article-title-container">
@@ -12,7 +13,7 @@ export const BlogArticle = ({articleData}) => {
           <p className="article-date">{formattedDate}</p>
         </div>
       </div>
-      <div className="article-body" dangerouslySetInnerHTML={{__html: cleanHtmlBody}}></div>
+      <div className="article-body" dangerouslySetInnerHTML={{__html: cleanerHtmlBody}}></div>
     </div>
   );
 };

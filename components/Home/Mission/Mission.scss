@@ -1,10 +1,12 @@
 #mission {
   padding-bottom: 300px;
   margin-top: 130px;
+  overflow: hidden;
+
 
   @media screen and (max-width: 600px) {
     margin-top: 100px;
-    padding-bottom: 60px;
+    padding-bottom: 150px;
   }
 
   .blob-container {
@@ -14,7 +16,8 @@
     display: block;
 
     @media screen and (max-width: 600px) {
-      width: 90%;
+      width: 130%;
+      left: -52px;
     }
 
     .blob {
@@ -35,7 +38,7 @@
       color: white;
 
       @media screen and (max-width: 600px) {
-        width: 70%;
+        width: 68%;
         left: 13%;
         top: 0px;
         padding-top: 30%;
@@ -48,19 +51,18 @@
         text-align: center;
 
         @media screen and (max-width: 600px) {
-          font-size: 20px;
+          font-size: 28px;
         }
       }
 
       .mission-text {
-        font-family: 'brandon-grotesque';
-        font-size: 24px;
+        font-size: 22px;
         text-align: center;
         letter-spacing: 1px;
         line-height: 1.2em;
 
         @media screen and (max-width: 600px) {
-          font-size: 14px;
+          font-size: 21px;
         }
       }
 

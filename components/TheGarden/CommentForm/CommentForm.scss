@@ -31,7 +31,8 @@
 
     .leave-comment{
       font-size: 29px;
-      font-family: 'brandon-grotesque';
+      font-family: brandon-grotesque;
+      font-weight: 300;
       color: #124658;
       margin-bottom: 20px;
       margin-top: 6px;
@@ -61,7 +62,8 @@
         border: 1px solid #124658;
         padding: 12px;
         font-size: 18px;
-        font-family: 'brandon-grotesque';
+        font-family: brandon-grotesque;
+        font-weight: 300;
         background-color: #F6F1E9;
 
         &:focus{
@@ -73,14 +75,16 @@
       #email{
         width: calc(100% - 26px);
         margin-top: 16px;
-        font-family: 'brandon-grotesque';
+        font-family: brandon-grotesque;
+        font-weight: 300;
       }
 
       #message{
         width: calc(100% - 26px);
         margin-top: 16px;
         height: 200px;
-        font-family: 'brandon-grotesque';
+        font-family: brandon-grotesque;
+        font-weight: 300;
       }
 
       #names{
@@ -113,7 +117,8 @@
         margin-top: 16px;
 
         .display-message{
-          font-family: 'brandon-grotesque';
+          font-family: brandon-grotesque;
+          font-weight: 300;
           height: 0px;
           overflow: visible;
           font-size: 18px;
@@ -130,7 +135,8 @@
           transition-duration: 200ms;
           display: flex;
           align-items: center;
-          font-family: 'brandon-grotesque';
+          font-family: brandon-grotesque;
+          font-weight: 300;
           background-color: #81606c;
 
           @media screen and (max-width: 600px) {

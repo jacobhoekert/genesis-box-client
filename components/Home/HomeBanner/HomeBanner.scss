@@ -10,8 +10,8 @@
     }
 
     @media screen and (max-width: 600px) {
-      height: 200px;
-      background-color: white;
+      height: 380px;
+      background-color: #F6F1E9;
     }
 
   }
@@ -46,7 +46,8 @@
       color: #124658;
 
       @media screen and (max-width: 600px) {
-        font-size: 28px;
+        text-align: left;
+        font-size: 40px;
         width: 95%;
       }
     }

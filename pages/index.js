@@ -23,7 +23,7 @@ export default function Home({data, countries, genesisBoxProduct, footerData}) {
       <Navbar />
       <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
         <GlobeSection countries={countries}/>
-        <Mission />
+        <Mission missionStatement={data.missionStatement}/>
         <HomeBanner data={data.HomeBanner}/>
         <GenesisBoxDisplay genesisBoxProduct={genesisBoxProduct}/>
         <GenesisMethod />

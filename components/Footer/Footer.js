@@ -11,14 +11,7 @@ export const Footer = ({footerData}) => {
       <div className="footer-bottom">
         <div className="footer-bottom-content">
           <div className="accepted-payments">
-            <img src={'/images/amex.png'}></img>
-            <img src={'/images/apple.jpg'}></img>
-            <img src={'/images/discovery.png'}></img>
-            <img src={'/images/google.png'}></img>
-            <img src={'/images/mastercard.png'}></img>
-            <img src={'/images/paypal.png'}></img>
-            <img src={'/images/venmo.png'}></img>
-            <img src={'/images/visa.png'}></img>
+            <img src={'/images/accepted-payments.jpg'}></img>
           </div>
           <div className="social-and-copyright">
             <div className="instagram-logo-container"><img src={'/images/instagram-logo.png'} className="instagram-logo"></img></div>

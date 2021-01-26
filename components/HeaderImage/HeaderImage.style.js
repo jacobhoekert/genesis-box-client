@@ -15,7 +15,7 @@ export const ImageDiv = styled.div`
     width: 220px;
     height: 150px;
     margin-left: 13%;
-    padding-top: 5%;
+    padding-top: 2%;
 
     @media screen and (max-width: 600px) {
       margin-left: 6%;

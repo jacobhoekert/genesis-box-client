@@ -17,9 +17,12 @@ export const CountriesWidget = (props) => {
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
-    afterChange: sliderIndex => {
+    beforeChange: (oldIndex, sliderIndex) => {
       props.handleSliderChange(sliderIndex);
     }
+    // afterChange: sliderIndex => {
+    //   props.handleSliderChange(sliderIndex);
+    // }
   };
   return (
     <div className="countries-widget">
@@ -36,7 +39,13 @@ export const CountriesWidget = (props) => {
               return (
                 <div key={index} className="country-container">
                   <img className="country-image" src={country.countryImage.url}/>
-                  <h2 className="country-name">{country.countryName}</h2>
+                  <div className="country-name-and-coords">
+                    <h2 className="country-name">{country.countryName}</h2>
+                    <div className="country-coords">
+                     {country.countryLatitude} n. {country.countryLongitude} e. 
+                    </div>
+                  </div>
+                  
                   {
                     country.artisans.map((artisan, index) => {
                       return (

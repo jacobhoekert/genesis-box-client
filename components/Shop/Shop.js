@@ -79,6 +79,7 @@ export const Shop = ({allProducts, orders}) => {
           <span>{ resultingQuantity } product{ resultingQuantity == 1 ? '' : 's' }</span>
         </div>
       </div>
+      <div id="products"></div>
     </>
   )
 }
@@ -257,7 +258,6 @@ const RenderProducts = (products, ui) => {
             'height': 'auto',
             'border': '1px solid rgba(196, 194, 194, 0.2)',
             'border-radius': '15px',
-            'box-shadow': '0px 0px 20px 10px rgba(216, 216, 216, 0.4)',
             'background-color': 'white',
             'margin-right': '10px',
             'margin-left': '10px',

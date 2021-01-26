@@ -65,15 +65,33 @@
         border-radius: 10px;
       }
 
-      .country-name {
-        text-align: center;
-        font-size: 35px;
-        font-family: 'botanica';
-        color: #124658;
-        font-weight: 100;
-        margin-top: 15px;
-        margin-bottom: 15px;
+
+      .country-name-and-coords {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .country-name {
+          text-align: center;
+          font-size: 35px;
+          font-family: 'botanica';
+          color: #124658;
+          font-weight: 100;
+          margin-top: 15px;
+          margin-bottom: 0px;
+        }
+  
+        .country-coords {
+          width: 200px;
+          margin: auto;
+          font-size: 22px;
+          font-family: 'botanica';
+          color: #124658;
+          margin-bottom: 15px;
+        }
+
       }
+    
 
       .grid {
         display: flex;
@@ -87,6 +105,7 @@
 
           .artisan-image {
             width: 49%;
+            height: 49%;
             border: 2px solid white;
             border-right: 1px solid white;
             border-bottom: 1px solid white;
@@ -94,7 +113,7 @@
           }
 
           .artisan-text {
-            padding-left: 20px;
+            padding-left: 10px;
             font-family: 'brandon-grotesque';
             line-height: 1.2em;
             color: #124658;
@@ -110,7 +129,8 @@
             }
 
             .artisan-info {
-              padding-left: 10px;
+              padding-left: 5px;
+              height: 100px;
             }
           }
 
@@ -125,10 +145,10 @@
             border-left: 1px solid white;
             border-top: 1px solid white;
             border-radius: 0px 0px 10px 0px;
-
           }
 
           .product-text {
+            width: 137px;
             padding-right: 20px;
             padding-left: 10px;
             font-family: 'brandon-grotesque';
@@ -178,3 +198,4 @@
     }
   }
 }
+

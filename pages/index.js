@@ -19,12 +19,12 @@ export default function Home({data, countries, genesisBoxProduct, footerData}) {
       <Head>
         <title>The Genesis Box</title>
       </Head>
-      <HeaderImage imagePath='/images/home-header-image.jpg' height='500px'/>
+      <HeaderImage imagePath='/images/home-header-image.jpg' height='400px'/>
       <Navbar />
       <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
         <GlobeSection countries={countries}/>
-        <HomeBanner data={data.HomeBanner}/>
         <Mission />
+        <HomeBanner data={data.HomeBanner}/>
         <GenesisBoxDisplay genesisBoxProduct={genesisBoxProduct}/>
         <GenesisMethod />
         <Testimonials data={data}/>

@@ -12,6 +12,7 @@
     @media screen and (max-width: 600px) {
       height: 380px;
       background-color: #F6F1E9;
+      padding-top: 60px;
     }
 
   }
@@ -48,6 +49,7 @@
       @media screen and (max-width: 600px) {
         font-size: 27px;
         width: 95%;
+        order: 2;
       }
     }
 

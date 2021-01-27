@@ -1,4 +1,5 @@
 import Markdown from 'markdown-to-jsx'
+import Link from 'next/link'
 import { EmailListForm } from '../Connect/EmailListForm/EmailListForm'
 
 export const Footer = ({footerData}) => {
@@ -14,7 +15,11 @@ export const Footer = ({footerData}) => {
             <img src={'/images/accepted-payments.jpg'}></img>
           </div>
           <div className="social-and-copyright">
-            <div className="instagram-logo-container"><img src={'/images/instagram-logo.png'} className="instagram-logo"></img></div>
+            <div className="instagram-logo-container">
+              <Link href="https://www.instagram.com/thegenesisbox/">
+                <img src={'/images/instagram-logo.png'} className="instagram-logo"></img>
+              </Link>
+            </div>
             <div className="copyright">© 2021, The Genesis Box Powered by Shopify</div>
           </div>
         </div>

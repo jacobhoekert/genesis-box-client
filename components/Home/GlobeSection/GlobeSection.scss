@@ -17,6 +17,11 @@
     right: 0px;
   }
 
+  @media screen and (max-width: 600px) {
+    padding-top: 0px;
+    height: 1600px;
+  }
+
   .mobile-title-container {
     margin: auto;
     text-align: center;

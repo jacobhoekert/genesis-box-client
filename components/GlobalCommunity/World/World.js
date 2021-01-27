@@ -13,7 +13,6 @@ export const World = props => {
 
   useEffect(() => {
     setGlobeCountries(countriesJSON);
-
     // change globe lighting
     setTimeout(() => { // wait for scene to be populated (asynchronously)
       const directionalLight = globeEl.current.scene().children.find(obj3d => obj3d.type == 'DirectionalLight');
@@ -38,6 +37,12 @@ export const World = props => {
     }
     setGlobeWidth(widthOfGlobe);
     if (width < 950) {
+      // if mobile, disable interactions (so the user can scroll down)
+      if (width < 600) {
+        globeEl.current.controls().enabled = false;
+      } else {
+        globeEl.current.controls().enabled = true;
+      }
       const globeAltitude = (-0.00236 * width) + 3.645;
       console.log(width)
       console.log(globeAltitude)

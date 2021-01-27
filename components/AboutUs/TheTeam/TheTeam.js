@@ -10,8 +10,8 @@ export const TheTeam = ({data}) => {
       </div>
       <div className="profiles"> 
       {
-        data.profiles.map((profile) => {
-          return <Profile profile={profile}/>
+        data.profiles.map((profile, index) => {
+          return <Profile key={index} profile={profile}/>
         })
       }
       </div>

@@ -36,7 +36,7 @@ export const Navbar = () => {
                 <div className="drop-down">
                   <Link href="/why-genesis"><div className="drop-down-item">Why Genesis?</div></Link>
                   <Link href="/the-team"><div className="drop-down-item">The Team</div></Link>
-                  <Link href="/genesis-photo-album"><div className="drop-down-item">Genesis Photo Album</div></Link>
+                  {/* <Link href="/genesis-photo-album"><div className="drop-down-item">Genesis Photo Album</div></Link> */}
                 </div>
               } 
             </div>

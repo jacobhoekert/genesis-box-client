@@ -75,7 +75,8 @@
 
     @media screen and (max-width: 500px) {
       position: relative;
-      top: -80px;
+      top: -90px;
+      padding-bottom: 30px;
     }
 
     .footer-bottom-content {
@@ -108,14 +109,14 @@
 
         @media screen and (max-width: 600px) {
           justify-content: center;
-          width: 90%;
+          width: 100%;
         }
 
         img {
           width: 300px;
 
           @media screen and (max-width: 600px) {
-            width: 300px;
+            width: 270px;
           }
         }
 
@@ -130,6 +131,10 @@
     
         @media screen and (max-width: 1000px) {
           margin-right: 0px;
+        }
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
         }
 
         .instagram-logo-container {
@@ -148,6 +153,7 @@
 
             @media screen and (max-width: 600px) {
               margin-bottom: 15px;
+              text-align: center;
               width: 30px;
             }
           }
@@ -156,6 +162,7 @@
         .copyright {
           color: #F6F1E9;
           font-size: 12px;
+          text-align: center;
         }
       }
     }

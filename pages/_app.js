@@ -35,9 +35,9 @@ import { MobileMenu } from '../components/MobileMenu/MobileMenu'
 
 function MyApp({ Component, pageProps }) {
   return (
-      <div id='outer-wrap' style={{height: '100%'}}>
-          <MobileMenu pageWrapId={'page-wrap'} outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-cross.png' width={'80%'}/>} />
-        <div className='page-wrap' style={{height: '100%', overflow: 'auto'}}>
+      <div id='outer-wrap'>
+          <MobileMenu outerContainerId={'outer-wrap'} customBurgerIcon={ <img src='/images/hamburger-menu-icon.png' /> } customCrossIcon={ <img src='/images/hamburger-cross.png' width={'80%'}/>} />
+        <div className='page-wrap'>
           <Component {...pageProps} />
         </div>
       </div>

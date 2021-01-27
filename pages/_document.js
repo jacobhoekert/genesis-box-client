@@ -34,6 +34,7 @@ export default class MyDocument extends Document {
         <Html>
             <Head>
                 <link href="/fonts/fonts.css" rel="stylesheet"/>
+                <link rel="stylesheet" href="https://use.typekit.net/uvo8wws.css"></link>
             </Head>
 
             <body>

@@ -32,7 +32,10 @@ export const World = props => {
   }, []);
 
   useEffect(() => {
-    const widthOfGlobe = width;
+    let widthOfGlobe = 850;
+    if (width < 950) {
+      widthOfGlobe = width;
+    }
     setGlobeWidth(widthOfGlobe);
     if (width < 950) {
       const globeAltitude = (-0.00236 * width) + 3.645;

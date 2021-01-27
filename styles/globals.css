@@ -1,7 +1,12 @@
 body {
   margin: 0px;
   font-family: brandon-grotesque;
-      font-weight: 300;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, p {
+  font-family: brandon-grotesque;
+  font-weight: 300;
 }
 
 .pink-button {

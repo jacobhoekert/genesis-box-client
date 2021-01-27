@@ -38,11 +38,11 @@ export const World = props => {
     setGlobeWidth(widthOfGlobe);
     if (width < 950) {
       // if mobile, disable interactions (so the user can scroll down)
-      // if (width < 600) {
-      //   globeEl.current.controls().enabled = false;
-      // } else {
-      //   globeEl.current.controls().enabled = true;
-      // }
+      if (width < 600) {
+        globeEl.current.controls().enabled = false;
+      } else {
+        globeEl.current.controls().enabled = true;
+      }
       const globeAltitude = (-0.00236 * width) + 3.645;
       console.log(width)
       console.log(globeAltitude)

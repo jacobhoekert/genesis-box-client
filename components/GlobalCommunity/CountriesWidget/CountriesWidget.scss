@@ -9,7 +9,7 @@
   @media screen and (max-width: 950px) {
     order: 2;
     position: relative;
-    top: -370px;
+    top: -400px;
     z-index: 10;
   }
 
@@ -125,6 +125,10 @@
           display: flex;
           margin-bottom: 0px;
 
+          @media screen and (max-width: 600px) {
+            flex-direction: column;
+          }
+
           .artisan-image {
             width: 49%;
             height: 49%;
@@ -132,6 +136,17 @@
             border-right: 1px solid white;
             border-bottom: 1px solid white;
             border-radius: 10px 0px 0px 0px;
+
+            @media screen and (max-width: 600px) {
+              width: 70%;
+              height: 70%;
+              margin: auto;
+              flex-direction: column;
+              border: 2px solid white;
+              border-right: 2px solid white;
+              border-bottom: 1px solid white;
+              border-radius: 10px 10px 0px 0px;
+            }
           }
 
           .artisan-text {
@@ -143,22 +158,43 @@
             border-bottom: 1px solid white;
             border-radius: 0px 10px 0px 0px;
 
+            @media screen and (max-width: 600px) {
+              width: calc(70% - 10px);
+              height: 70%;
+              margin: auto;
+              flex-direction: column;
+              border: 2px solid white;
+              border-right: 2px solid white;
+              border-bottom: 1px solid white;
+              border-radius: 0px 0px 0px 0px;
+
+            }
+
             .artisan-name {
               font-size: 22px;
               margin-top: 15px;
               margin-bottom: 5px;
+
             }
 
             .artisan-info {
               padding-left: 15px;
               padding-right: 5px;
               height: 100px;
+
+              @media screen and (max-width: 600px) {
+                font-size: 15px;
+              }
             }
           }
 
         }
         .product-row {
           display: flex;
+
+          @media screen and (max-width: 600px) {
+            flex-direction: column;
+          }
 
           .product-image {
             width: 49%;
@@ -167,6 +203,19 @@
             border-left: 1px solid white;
             border-top: 1px solid white;
             border-radius: 0px 0px 10px 0px;
+
+            @media screen and (max-width: 600px) {
+              order: 1;
+              width: 70%;
+              height: 70%;
+              margin: auto;
+              flex-direction: column;
+              border: 2px solid white;
+              border-right: 2px solid white;
+              border-bottom: 1px solid white;
+              border-top: 1px solid white;
+              border-radius: 0px 0px 0px 0px;
+            }
           }
 
           .product-text {
@@ -179,6 +228,20 @@
             border-right: 1px solid white;
             border-top: 1px solid white;
             border-radius: 0px 0px 0px 10px;
+
+            @media screen and (max-width: 600px) {
+              order: 2;
+              width: calc(70% - 30px);
+              height: 70%;
+              margin: auto;
+              flex-direction: column;
+              border: 2px solid white;
+              border-right: 2px solid white;
+              border-bottom: 2px solid white;
+              border-top: 1px solid white;
+              border-radius: 0px 0px 10px 10px;
+              padding-bottom: 10px;
+            }
 
             .product-name {
               font-size: 20px;
@@ -201,7 +264,7 @@
       left: 1px;
 
       @media screen and (max-width: 950px) {
-        top: -160px;
+        top: -350px;
       }
     }
     
@@ -213,7 +276,7 @@
       right: 10px;
 
       @media screen and (max-width: 950px) {
-        top: -160px;
+        top: -350px;
       }
     }
   }

@@ -22,9 +22,9 @@ export default function Home({data, countries, genesisBoxProduct, footerData}) {
       <HeaderImage imagePath='/images/home-header-image.jpg' height='400px'/>
       <Navbar />
       <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
+        <HomeBanner data={data.HomeBanner}/>
         <GlobeSection countries={countries}/>
         <Mission missionStatement={data.missionStatement}/>
-        <HomeBanner data={data.HomeBanner}/>
         <GenesisBoxDisplay genesisBoxProduct={genesisBoxProduct}/>
         <GenesisMethod />
         <Testimonials data={data}/>
@@ -64,6 +64,7 @@ export async function getStaticProps(){
       genesisBoxProduct,
       countries,
       footerData
-    }
+    },
+    revalidate: 2,
   }
 }

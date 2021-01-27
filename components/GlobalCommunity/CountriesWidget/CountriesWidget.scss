@@ -138,8 +138,8 @@
             border-radius: 10px 0px 0px 0px;
 
             @media screen and (max-width: 600px) {
-              width: 70%;
-              height: 70%;
+              width: 85%;
+              height: 85%;
               margin: auto;
               flex-direction: column;
               border: 2px solid white;
@@ -159,7 +159,7 @@
             border-radius: 0px 10px 0px 0px;
 
             @media screen and (max-width: 600px) {
-              width: calc(70% - 10px);
+              width: calc(85% - 10px);
               height: 70%;
               margin: auto;
               flex-direction: column;
@@ -167,7 +167,7 @@
               border-right: 2px solid white;
               border-bottom: 1px solid white;
               border-radius: 0px 0px 0px 0px;
-
+              padding-bottom: 20px;
             }
 
             .artisan-name {
@@ -183,7 +183,7 @@
               height: 100px;
 
               @media screen and (max-width: 600px) {
-                font-size: 15px;
+                height: 80px;
               }
             }
           }
@@ -206,8 +206,8 @@
 
             @media screen and (max-width: 600px) {
               order: 1;
-              width: 70%;
-              height: 70%;
+              width: 85%;
+              height: 85%;
               margin: auto;
               flex-direction: column;
               border: 2px solid white;
@@ -231,7 +231,7 @@
 
             @media screen and (max-width: 600px) {
               order: 2;
-              width: calc(70% - 30px);
+              width: calc(85% - 30px);
               height: 70%;
               margin: auto;
               flex-direction: column;
@@ -240,7 +240,7 @@
               border-bottom: 2px solid white;
               border-top: 1px solid white;
               border-radius: 0px 0px 10px 10px;
-              padding-bottom: 10px;
+              padding-bottom: 20px;
             }
 
             .product-name {
@@ -264,6 +264,10 @@
       left: 1px;
 
       @media screen and (max-width: 950px) {
+        top: -160px;
+      }
+
+      @media screen and (max-width: 600px) {
         top: -350px;
       }
     }
@@ -276,6 +280,10 @@
       right: 10px;
 
       @media screen and (max-width: 950px) {
+        top: -160px;
+      }
+
+      @media screen and (max-width: 600px) {
         top: -350px;
       }
     }

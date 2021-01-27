@@ -211,10 +211,10 @@ const RenderProducts = (products, ui) => {
       modal: {
         styles: {
           modal: {
-            'margin-top': '60px'
+            'margin-top': '20px',
           },
           close: {
-            'margin-top': '60px',
+            'margin-top': '20px',
             'color': 'black'
           }
         }

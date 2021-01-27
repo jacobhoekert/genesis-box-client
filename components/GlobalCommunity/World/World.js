@@ -3,10 +3,13 @@ import { useState, useEffect, useRef } from 'react'
 let Globe = () => null;
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 import countriesJSON from './countries.json'
+import useWindowDimensions from '../../../hooks/useWindowDimensions'
 
 export const World = props => {
   const globeEl = useRef(true);
   const [globeCountries, setGlobeCountries] = useState({ features: []});
+  const [globeWidth, setGlobeWidth] = useState(800);
+  const { width } = useWindowDimensions();
 
   useEffect(() => {
     setGlobeCountries(countriesJSON);
@@ -28,6 +31,27 @@ export const World = props => {
     });
   }, []);
 
+  useEffect(() => {
+    const widthOfGlobe = width;
+    setGlobeWidth(widthOfGlobe);
+    if (width < 950) {
+      const globeAltitude = (-0.00236 * width) + 3.645;
+      console.log(width)
+      console.log(globeAltitude)
+      globeEl.current.pointOfView({
+        lat: 27.7172,
+        lng: 85.3240,
+        altitude: globeAltitude
+      }, [1800]);
+    } else {
+      globeEl.current.pointOfView({
+        lat: 27.7172,
+        lng: 85.3240,
+        altitude: 1.4
+      }, [1800]);
+    }
+  }, [width])
+
   // when slider changes, globe spins to slider country
   useEffect(() => {
     if (props.currentSliderCountry.countryName) {
@@ -35,11 +59,21 @@ export const World = props => {
       const longitude = props.currentSliderCountry.countryLongitude;
       globeEl.current.controls().enablePan = true;
       globeEl.current.controls().panSpeed = true;
-      globeEl.current.pointOfView({
-        lat: latitude,
-        lng: longitude,
-        altitude: 1.4
-      }, [1800]);
+
+      if (width < 950) {
+        const globeAltitude = (-0.00236 * width) + 3.645;
+        globeEl.current.pointOfView({
+          lat: latitude,
+          lng: longitude,
+          altitude: globeAltitude
+        }, [1800]);
+      } else {
+        globeEl.current.pointOfView({
+          lat: latitude,
+          lng: longitude,
+          altitude: 1.4
+        }, [1800]);
+      }
       globeEl.current.controls().autoRotate = false;
       
     }
@@ -107,7 +141,7 @@ export const World = props => {
         backgroundColor="rgba(0,0,0,0)"
         showAtmosphere={false}
         globeImageUrl='/images/globe-texture-map3.svg'
-        width={875}
+        width={globeWidth}
         polygonAltitude={0.008}
         polygonsData={globeCountries.features}
         polygonCapColor={getCountryColor}

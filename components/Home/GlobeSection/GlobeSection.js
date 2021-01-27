@@ -28,6 +28,10 @@ export const GlobeSection = ({countries}) => {
 
   return (
     <div id="globe-section">
+      <div className="title-container">
+        <h1 className="genesis">genesis</h1>
+        <h1 className="countries">countries</h1>
+      </div>
       <CountriesWidget genesisCountries={countries} selectedCountryIndex={selectedCountryIndex} handleSliderChange={handleSliderChange}/>
       <World genesisCountries={countries} selectCountry={selectCountry} currentSliderCountry={currentSliderCountry}/>
     </div>

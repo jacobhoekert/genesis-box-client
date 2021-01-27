@@ -8,6 +8,9 @@
   
   @media screen and (max-width: 950px) {
     order: 2;
+    position: relative;
+    top: -425px;
+    z-index: 10;
   }
 
   .title-container {
@@ -16,6 +19,7 @@
 
     @media screen and (max-width: 950px) {
       width: 80%;
+      display: none;
     }
   
     .genesis {
@@ -57,12 +61,19 @@
     .country-container {
       margin-top: 30px;
 
+      @media screen and (max-width: 950px) {
+        margin-top: 0px;
+      }
 
       .country-image {
         height: 125px;
         margin: auto;
         border: 2px solid white;
         border-radius: 10px;
+
+        @media screen and (max-width: 950px) {
+          display: none;
+        }
       }
 
 
@@ -70,6 +81,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+      
 
         .country-name {
           text-align: center;
@@ -99,6 +112,10 @@
         flex-direction: column;
         width: 100%;
         margin: auto;
+
+        @media screen and (max-width: 950px) {
+          margin-top: 20px;
+        }
 
         .artisan-row {
           display: flex;
@@ -178,10 +195,9 @@
       position: relative;
       top: -90px;
       left: 1px;
-    
 
-      @media screen and (max-width: 600px) {
-        font-size: 25px;
+      @media screen and (max-width: 950px) {
+        top: -160px;
       }
     }
     
@@ -192,8 +208,8 @@
       top: -90px;
       right: 10px;
 
-      @media screen and (max-width: 600px) {
-        font-size: 25px;
+      @media screen and (max-width: 950px) {
+        top: -160px;
       }
     }
   }

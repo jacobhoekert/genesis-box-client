@@ -26,12 +26,12 @@ export const World = props => {
     globeEl.current.pointOfView({
       lat: 27.7172,
       lng: 85.3240,
-      altitude: 1.4
+      altitude: 1.8
     });
   }, []);
 
   useEffect(() => {
-    let widthOfGlobe = 850;
+    let widthOfGlobe = 900;
     if (width < 950) {
       widthOfGlobe = width;
     }
@@ -55,7 +55,7 @@ export const World = props => {
       globeEl.current.pointOfView({
         lat: 27.7172,
         lng: 85.3240,
-        altitude: 1.4
+        altitude: 1.8
       }, [1800]);
     }
   }, [width])
@@ -79,7 +79,7 @@ export const World = props => {
         globeEl.current.pointOfView({
           lat: latitude,
           lng: longitude,
-          altitude: 1.4
+          altitude: 1.8
         }, [1800]);
       }
       globeEl.current.controls().autoRotate = false;

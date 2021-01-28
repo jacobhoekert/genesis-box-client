@@ -41,11 +41,6 @@ export const Navbar = () => {
               } 
             </div>
           </div>
-          <Link href="/global-community">
-            <div className="menu-item">
-              <p>Global Community</p>
-            </div>
-          </Link>
           <Link href="/shop">
             <div className="menu-item">
               <p>Shop</p>

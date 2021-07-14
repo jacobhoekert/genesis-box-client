@@ -7,12 +7,9 @@
   right: 0px;
 
   @media screen and (max-width: 1700px) {
+    right: -10px;
   }
 
-  @media screen and (max-width: 1450px) {
-    right: -100px;
-  }
-  
   @media screen and (max-width: 950px) {
     right: 0px;
     top: -105px;

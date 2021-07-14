@@ -50,6 +50,7 @@ export async function getStaticProps(){
   // get strapi countries data
   const countriesResult = await StrapiApi.get('/countries');
   const countries = countriesResult.data;
+  console.log(countries);
 
   // get genesis box product for GenesisBoxDisplay
   const ShopifyAdminApi = axios.create({

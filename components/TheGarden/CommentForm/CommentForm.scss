@@ -68,7 +68,7 @@
 
         &:focus{
           outline: none !important;
-          background-color: rgb(218, 218, 218);
+          background-color: white;
         }
       }
 
@@ -130,7 +130,7 @@
 
         button{
           padding: 0px;
-          border: 1px solid #124658;
+          border: none;
           cursor: pointer;
           transition-duration: 200ms;
           display: flex;
@@ -145,7 +145,7 @@
           }
 
           &:hover{
-            background-color: rgb(155, 155, 155);
+            background-color: #b98e9e;
             color: white;
           }
 

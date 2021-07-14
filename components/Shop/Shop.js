@@ -100,8 +100,11 @@ const GetProductTags = products => {
 }
 
 const RenderProducts = (products, ui) => {
-  console.log(products)
-  const productIds = products.map(product => product.id)
+  console.log(products);
+  const productIds = products.filter(product => product.status == "active")
+                             .map(product => product.id)
+                             
+  console.log(productIds)
   ui.createComponent('productSet', {
     node: document.getElementById('products'),
     id: productIds,
@@ -188,8 +191,9 @@ const RenderProducts = (products, ui) => {
             'min-width': '12%',
             'height': 'auto',
             'border': '1px solid rgba(196, 194, 194, 0.2)',
+            'box-shadow': '10px 10px 20px 10px rgba(167, 167, 167, 0.4)',
             'border-radius': '15px',
-            'background-color': 'white',
+            'background-color': '#F6F1E9',
             'margin-right': '10px',
             'margin-left': '10px',
             'transition': 'all 0.3s ease-in-out',     

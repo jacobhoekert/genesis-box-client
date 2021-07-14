@@ -58,11 +58,11 @@ export const CountriesWidget = (props) => {
                             </div>
                           </div>
                           <div className="product-row">
+                            <img className="product-image" src={artisan.productImage.url}/>
                             <div className="product-text">
                               <p className="product-name">{artisan.productName}</p>
                               <Markdown className="product-info">{artisan.productInfo}</Markdown>
                             </div>
-                            <img className="product-image" src={artisan.productImage.url}/>
                           </div>
                         </div>
                       )

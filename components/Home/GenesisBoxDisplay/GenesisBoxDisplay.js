@@ -87,7 +87,7 @@ export const GenesisBoxDisplay = ({genesisBoxProduct}) => {
               ':hover': {
                 'cursor': 'pointer',
                 'transform': 'scale(1.03)',
-                'background-color': '#773351',
+                'background-color': '#b98e9e',
               }
             }
           }
@@ -157,7 +157,7 @@ export const GenesisBoxDisplay = ({genesisBoxProduct}) => {
               ':hover': {
                 'cursor': 'pointer',
                 'transform': 'scale(1.03)',
-                'background-color': '#773351',
+                'background-color': '#b98e9e',
               }
             }
           }
@@ -169,7 +169,7 @@ export const GenesisBoxDisplay = ({genesisBoxProduct}) => {
 
               ':hover': {
                 'cursor': 'pointer',
-                'background-color': '#773351',
+                'background-color': '#b98e9e',
               }
             }
           }
@@ -211,13 +211,13 @@ export const GenesisBoxDisplay = ({genesisBoxProduct}) => {
               ':hover': {
                 'cursor': 'pointer',
                 'transform': 'scale(1.03)',
-                'background-color': '#773351',
+                'background-color': '#b98e9e',
               },
 
               ':focus': {
                 'cursor': 'pointer',
                 'transform': 'scale(1.03)',
-                'background-color': '#773351',
+                'background-color': '#b98e9e',
                 'outline': 'none'
               }
             }

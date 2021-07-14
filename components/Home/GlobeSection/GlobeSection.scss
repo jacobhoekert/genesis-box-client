@@ -1,13 +1,23 @@
 #globe-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   overflow: hidden;
-  margin-left: 7%;
   padding-top: 150px;
+  margin: auto;
+  width: 80%;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1600px) {
+    right: 40px;
+    margin-left: 7%;
+    width: 100%;
+    justify-content: space-between;
+  }
 
   @media screen and (max-width: 1100px) {
     right: 40px;
+    margin-left: 7%;
+
   }
   
   @media screen and (max-width: 950px) {
@@ -19,7 +29,6 @@
 
   @media screen and (max-width: 600px) {
     padding-top: 0px;
-    height: 1600px;
   }
 
   .mobile-title-container {

@@ -13,7 +13,7 @@ export default function ConnectPage({footerData}) {
       </Head>
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
-      <div style={{backgroundColor: "white", paddingBottom: '30px'}}>
+      <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
         <Connect />
       </div>
       <Footer footerData={footerData}/>

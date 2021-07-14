@@ -64,7 +64,6 @@ export const EmailListForm = ({isFooter}) => {
             <div className="label-input-flex">
               <label style={{color: isFooter && '#F6F1E9'}}>First Name</label>
               <input
-                style={{background: isFooter && '#F6F1E9'}}
                 className="name-inputs"
                 name="firstName"
                 value={form.firstName}
@@ -74,7 +73,6 @@ export const EmailListForm = ({isFooter}) => {
             <div className="label-input-flex">
               <label style={{color: isFooter && '#F6F1E9'}}>Last Name</label>
               <input
-                style={{background: isFooter && '#F6F1E9'}}
                 className="name-inputs"
                 name="lastName"
                 value={form.lastName}
@@ -86,7 +84,6 @@ export const EmailListForm = ({isFooter}) => {
             <div className="label-input-flex">
               <label style={{color: isFooter && '#F6F1E9'}}>Email</label>
               <input
-                style={{background: isFooter && '#F6F1E9'}}
                 name="email"
                 type="email"
                 value={form.email}

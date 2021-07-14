@@ -41,7 +41,7 @@ export async function getStaticPaths() {
   const paths = await getAllArticleUrls();
   return {
     paths,
-    fallback: true
+    fallback: false
   }
 }
 

@@ -10,11 +10,13 @@ import { getAllArticleUrls, getArticleData } from '../../lib/articles'
 import { Footer } from '../../components/Footer/Footer'
 import { useEffect } from 'react'
 
-useEffect(() => {
-  console.log(articleData);
-}, [articleData])
-
 export default function Article({ articleData, footerData}) {
+
+  useEffect(() => {
+    console.log(articleData);
+  }, [articleData])
+
+
   return (
     <>
       <Head>

@@ -5,9 +5,9 @@ import { Navbar } from '../../components/Navbar/Navbar'
 import { HeaderImage } from '../../components/HeaderImage/HeaderImage'
 import { BlogGrid } from '../../components/TheGarden/BlogGrid/BlogGrid'
 import { Footer } from '../../components/Footer/Footer'
+import { useEffect } from 'react'
 
 export default function TheGarden({allArticles, footerData}) {
-
 
   useEffect(() => {
     console.log(allArticles);

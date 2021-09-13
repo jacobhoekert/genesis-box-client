@@ -7,10 +7,7 @@ module.exports = {
 
     return config;
   },
-  // serverRuntimeConfig: {
-    
-  //   mySecret: 'secret',
-  //   secondSecret: process.env.SECOND_SECRET, // Pass through env variables
-  // },
-};
-
+  env: {
+    IS_BUILD_TIME: true
+  }
+}

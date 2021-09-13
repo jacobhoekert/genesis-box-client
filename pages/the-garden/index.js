@@ -7,6 +7,12 @@ import { BlogGrid } from '../../components/TheGarden/BlogGrid/BlogGrid'
 import { Footer } from '../../components/Footer/Footer'
 
 export default function TheGarden({allArticles, footerData}) {
+
+
+  useEffect(() => {
+    console.log(allArticles);
+  }, [allArticles])
+
   return (
     <>
       <Head>

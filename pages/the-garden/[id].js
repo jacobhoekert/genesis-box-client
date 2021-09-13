@@ -8,15 +8,8 @@ import { CommentForm } from '../../components/TheGarden/CommentForm/CommentForm'
 import { BlogComments } from '../../components/TheGarden/BlogComments/BlogComments';
 import { getAllArticleUrls, getArticleData } from '../../lib/articles'
 import { Footer } from '../../components/Footer/Footer'
-import { useEffect } from 'react'
 
 export default function Article({ articleData, footerData}) {
-
-  useEffect(() => {
-    console.log(articleData);
-  }, [articleData])
-
-
   return (
     <>
       <Head>

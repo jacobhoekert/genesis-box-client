@@ -7,7 +7,4 @@ module.exports = {
 
     return config;
   },
-  env: {
-    IS_BUILD_TIME: true
-  }
 }

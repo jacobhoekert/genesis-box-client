@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 
-export const CommentForm = ({articleData}) => {
+export const CommentForm = ({articleData, getArticleComments}) => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
@@ -31,14 +31,15 @@ export const CommentForm = ({articleData}) => {
     setIsLoading(true);
     axios({
       method: "POST",
-      url: "https://genesis-box-client.vercel.app/api/comments",
+      url: "http://localhost:3000/api/comments",
       data: {
         form: form,
-        articleData: articleData.article
+        articleData: articleData
       }
     })
       .then(function() {
         console.log("Comment successfully submitted");
+        getArticleComments();
         resetForm();
         setHasSubmitted(true);
         setIsLoading(false);

@@ -22,7 +22,14 @@ export default async (req, res) => {
     } catch (error) {
       console.log(error);
     }
-  } else {
-    console.log('/api/comments only handles post requests')
+  } else if (req.method === 'GET') {
+    // GET comments
+    try {
+      const result = await ShopifyAdminApi.get(`/comments.json?article_id=${req.query.articleId}&blog_id=${process.env.NEXT_PUBLIC_THE_GARDEN_BLOG_ID}`);
+      const comments = result.data.comments;
+      res.status(200).send(comments);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

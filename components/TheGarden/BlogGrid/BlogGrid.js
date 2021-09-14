@@ -24,7 +24,7 @@ export const BlogGrid = ({allArticles}) => {
     let tagNames = ['All topics']
     let tagArticles = [articles]
     for (const article of articles) {
-      const tagList = article.article.tags.split(', ')
+      const tagList = article.tags.split(', ')
       for (const tag of tagList) {
         if (!tagNames.includes(tag)) {
           tagArticles[tagNames.length] = []
@@ -59,17 +59,17 @@ export const BlogGrid = ({allArticles}) => {
       <div className="blog-grid">
         {
           activeArticles.map((article, index) => {
-            const formattedDate = formatDate(article.article.published_at);
-            const formattedSummary = formatAmpsCorrectly(article.article.summary_html);
-            const articleUrlPath = "/the-garden/" + articleTitleToUrl(article.article.title);
+            const formattedDate = formatDate(article.published_at);
+            const formattedSummary = formatAmpsCorrectly(article.summary_html);
+            const articleUrlPath = "/the-garden/" + articleTitleToUrl(article.title);
             return (
               <BlogCard
                 key={index}
                 linkUrl={articleUrlPath}
-                image={article.article.image.src}
+                image={article.image.src}
                 alt="asdf"
-                title={article.article.title}
-                author={article.article.author}
+                title={article.title}
+                author={article.author}
                 date={formattedDate}
                 summary={formattedSummary}
               />

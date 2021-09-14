@@ -1,32 +1,27 @@
 import { useEffect, useState } from 'react'
 
-
-export const Shop = ({allProducts, orders}) => {
-  const [ isLoading, setIsLoading ] = useState(false);
+export const Shop = ({allActiveProducts, orders}) => {
   const [ tagNames, setTagNames ] = useState([])
   const [ tagProducts, setTagProducts ] = useState([])
-  const [ activeProducts, setActiveProducts ] = useState([])
   const [ resultingQuantity, setResultingQuantity ] = useState(0)
 
   useEffect(() => {
-    const tags = GetProductTags(allProducts)
-    setTagNames(tags.names)
-    setTagProducts(tags.products)
-
-    RenderProducts(allProducts, GetUi())
-    setActiveProducts(allProducts)
-    setResultingQuantity(allProducts.length)
-
+    if (allActiveProducts && allActiveProducts.length > 0) {
+      const tags = GetProductTags(allActiveProducts)
+      setTagNames(tags.names)
+      setTagProducts(tags.products)
+      RenderProducts(allActiveProducts, GetUi())
+      setResultingQuantity(allActiveProducts.length)
+    }
     return (() => {
-      DestroyProducts(activeProducts, GetUi())
+      DestroyProducts(allActiveProducts, GetUi())
     })
-  }, [])
+  }, [allActiveProducts])
 
   const rebuildProducts = (relevantProducts) => {
     const ui = GetUi()
-    DestroyProducts(activeProducts, ui)
+    DestroyProducts(allActiveProducts, ui)
     RenderProducts(relevantProducts, ui)
-    setActiveProducts(relevantProducts)
     setResultingQuantity(relevantProducts.length)
   }
 
@@ -100,11 +95,7 @@ const GetProductTags = products => {
 }
 
 const RenderProducts = (products, ui) => {
-  console.log(products);
-  const productIds = products.filter(product => product.status == "active")
-                             .map(product => product.id)
-                             
-  console.log(productIds)
+  const productIds = products.map(product => product.id)
   ui.createComponent('productSet', {
     node: document.getElementById('products'),
     id: productIds,

@@ -8,8 +8,24 @@ import { CommentForm } from '../../components/TheGarden/CommentForm/CommentForm'
 import { BlogComments } from '../../components/TheGarden/BlogComments/BlogComments';
 import { getAllArticleUrls, getArticleData } from '../../lib/articles'
 import { Footer } from '../../components/Footer/Footer'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function Article({ articleData, footerData}) {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    if (articleData) {
+      getArticleComments();
+    }
+  }, [articleData])
+
+  const getArticleComments = async () => {
+    const result = await axios.get("http://localhost:3000/api/comments", {params: {articleId: articleData.id}});
+    const commentsResult = result.data;
+    setComments(commentsResult);
+  }
+
   return (
     <>
       <Head>
@@ -20,10 +36,10 @@ export default function Article({ articleData, footerData}) {
       <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
         <BlogArticle articleData={articleData}/>
         {
-          articleData.comments.length > 0 &&
-            <BlogComments comments={articleData.comments}/>
+          comments && comments.length > 0 &&
+            <BlogComments comments={comments}/>
         }
-        <CommentForm articleData={articleData}/>
+        <CommentForm articleData={articleData} getArticleComments={getArticleComments}/>
         <Link href='/the-garden'>
           <button className="pink-button centered-flex" href="#">
             <img className="left-arrow" src="/images/left-arrow-white.png"/>

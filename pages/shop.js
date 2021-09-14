@@ -6,7 +6,7 @@ import axios from 'axios'
 import StrapiApi from '../axios/StrapiApi'
 import { Footer } from '../components/Footer/Footer'
 
-export default function ShopPage({allProducts, orders, footerData}) {
+export default function ShopPage({allActiveProducts, orders, footerData}) {
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ export default function ShopPage({allProducts, orders, footerData}) {
       <HeaderImage imagePath='/images/montana-122.jpg' height='340px'/>
       <Navbar />
       <div style={{backgroundColor: "#F6F1E9", paddingBottom: '30px'}}>
-        <Shop allProducts={allProducts} orders={orders}/>
+        <Shop allActiveProducts={allActiveProducts} orders={orders}/>
       </div>
       <Footer footerData={footerData}/>
     </>
@@ -33,6 +33,10 @@ export async function getStaticProps(){
   // get shopify products
   const allProductsResult = await ShopifyAdminApi.get(`/products.json`);
   const allProducts = allProductsResult.data.products;
+  
+  const allActiveProducts = allProducts.filter(product => product.status == "active");
+
+  console.log(allActiveProducts);
 
   // get shopify orders
   const ordersResult = await ShopifyAdminApi.get(`/orders.json?status=any`);
@@ -40,7 +44,7 @@ export async function getStaticProps(){
 
   return {
     props: {
-      allProducts,
+      allActiveProducts,
       orders,
       footerData
     },

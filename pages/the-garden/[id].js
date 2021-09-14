@@ -21,7 +21,7 @@ export default function Article({ articleData, footerData}) {
   }, [articleData])
 
   const getArticleComments = async () => {
-    const result = await axios.get("http://localhost:3000/api/comments", {params: {articleId: articleData.id}});
+    const result = await axios.get("https://genesis-box-client.vercel.app/api/comments", {params: {articleId: articleData.id}});
     const commentsResult = result.data;
     setComments(commentsResult);
   }

@@ -39,7 +39,7 @@ export const CountriesWidget = (props) => {
                 <div key={index} className="country-container">
                   <img className="country-image" src={country.countryImage.url}/>
                   <div className="country-name-and-coords">
-                    <h2 className="country-name">{country.countryName}</h2>
+                    <h2 className="country-name">{country.countryName.toLowerCase()}</h2>
                     <div className="country-coords">
                      {country.countryLatitude} n. {country.countryLongitude} e. 
                     </div>

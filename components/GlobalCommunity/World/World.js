@@ -60,7 +60,7 @@ export const World = props => {
 
   // when slider changes, globe spins to slider country
   useEffect(() => {
-    if (props.currentSliderCountry.countryName) {
+    if (props.currentSliderCountry.globeCountryName) {
       const latitude = props.currentSliderCountry.countryLatitude;
       const longitude = props.currentSliderCountry.countryLongitude;
       globeEl.current.controls().enablePan = true;
@@ -91,7 +91,7 @@ export const World = props => {
 
   const getCountryColor = (globeCountry) => {
     for (const genesisCountry of props.genesisCountries) {
-      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.globeCountryName.toLowerCase()) {
         return '#1c6e8a'
       }
     }
@@ -100,7 +100,7 @@ export const World = props => {
 
   const getCountryStrokeColor = (globeCountry) => {
     for (const genesisCountry of props.genesisCountries) {
-      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.globeCountryName.toLowerCase()) {
         return '#fff'
       }
     }
@@ -109,7 +109,7 @@ export const World = props => {
 
   const setCountryLabel = (globeCountry) => {
     for (const genesisCountry of props.genesisCountries) {
-      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.globeCountryName.toLowerCase()) {
         return `<b style="font-size:20px;color:white">${globeCountry.properties.NAME} </b>`
       }
     }
@@ -120,7 +120,7 @@ export const World = props => {
     if (globeCountry) {
       const elem = document.getElementById('globe-container');
       for (const genesisCountry of props.genesisCountries) {
-        if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+        if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.globeCountryName.toLowerCase()) {
           globeEl.current.controls().autoRotate = false;
           elem.style.cursor = 'pointer';
           return 0;
@@ -132,7 +132,7 @@ export const World = props => {
 
   const handleCountryClick = (globeCountry) => {
     for (const genesisCountry of props.genesisCountries) {
-      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.countryName.toLowerCase()) {
+      if (globeCountry.properties.NAME.toLowerCase() == genesisCountry.globeCountryName.toLowerCase()) {
         globeEl.current.controls().autoRotate = false;
         props.selectCountry(globeCountry);
       }

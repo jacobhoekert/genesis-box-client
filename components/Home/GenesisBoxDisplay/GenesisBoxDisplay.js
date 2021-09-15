@@ -39,7 +39,6 @@ export const GenesisBoxDisplay = ({genesisBoxProduct}) => {
   }
 
   const RenderButtons = (productId, ui) => {
-    console.log(productId)
     ui.createComponent('product', {
       node: document.getElementById('view-more'),
       id: productId,

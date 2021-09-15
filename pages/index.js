@@ -25,7 +25,10 @@ export default function Home({data, countries, genesisBoxProduct, footerData}) {
         <HomeBanner data={data.HomeBanner}/>
         <GlobeSection countries={countries}/>
         <Mission missionStatement={data.missionStatement}/>
-        <GenesisBoxDisplay genesisBoxProduct={genesisBoxProduct}/>
+        {
+          genesisBoxProduct.status == "active" &&
+            <GenesisBoxDisplay genesisBoxProduct={genesisBoxProduct}/>
+        }
         <GenesisMethod />
         <Testimonials data={data}/>
         <InstagramFeed />
@@ -57,6 +60,8 @@ export async function getStaticProps(){
   });
   const result = await ShopifyAdminApi.get(`/products/${process.env.NEXT_PUBLIC_GENESIS_BOX_PRODUCT_KEY}.json`);
   const genesisBoxProduct = result.data.product;
+
+  console.log(genesisBoxProduct);
 
   return {
     props: {

@@ -17,7 +17,6 @@ export default async (req, res) => {
           "article_id": req.body.articleData.id
         }
       });
-      console.log(result);
       res.status(200).send("nice");
     } catch (error) {
       console.log(error);

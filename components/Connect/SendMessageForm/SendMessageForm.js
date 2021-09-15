@@ -37,7 +37,6 @@ export const SendMessageForm = () => {
       data: form
     })
       .then(function(result) {
-        console.log(result);
         resetForm();
         setHasSubmitted(true);
         setIsLoading(false);

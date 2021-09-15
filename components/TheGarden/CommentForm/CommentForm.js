@@ -38,7 +38,6 @@ export const CommentForm = ({articleData, getArticleComments}) => {
       }
     })
       .then(function() {
-        console.log("Comment successfully submitted");
         getArticleComments();
         resetForm();
         setHasSubmitted(true);

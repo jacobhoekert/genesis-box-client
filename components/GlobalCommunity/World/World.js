@@ -44,8 +44,6 @@ export const World = props => {
         globeEl.current.controls().enabled = true;
       }
       const globeAltitude = (-0.00236 * width) + 3.645;
-      console.log(width)
-      console.log(globeAltitude)
       globeEl.current.pointOfView({
         lat: 27.7172,
         lng: 85.3240,

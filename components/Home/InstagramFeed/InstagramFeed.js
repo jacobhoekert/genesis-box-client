@@ -20,7 +20,6 @@ export const InstagramFeed = ({data}) => {
   useEffect(() => {
     return () => {
       setPhotoUrls([]);
-      console.log("Cleaned Up");
     };
   }, []);
 

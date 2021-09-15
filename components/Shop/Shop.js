@@ -75,7 +75,6 @@ const GetUi = () => {
 }
 
 const GetProductTags = products => {
-  // console.log(productDetails)
   let tagNames = ['All products']
   let tagProducts = [products]
   for (const product of products) {

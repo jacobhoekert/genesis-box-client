@@ -21,10 +21,6 @@ export const TestimonyPrayerForm = () => {
     setForm({ ...form, [name]: value });
   };
 
-  useEffect( () => {
-    console.log(form);
-  }, [form])
-
   const resetForm = () => {
     setForm({
       firstName: "",

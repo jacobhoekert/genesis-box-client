@@ -35,7 +35,6 @@ export const CountriesWidget = (props) => {
           {
             
             props.genesisCountries.map((country, index) => {
-              console.log(country);
               return (
                 <div key={index} className="country-container">
                   <img className="country-image" src={country.countryImage.url}/>

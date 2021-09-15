@@ -9,10 +9,6 @@ import { useEffect } from 'react'
 
 export default function TheGarden({allArticles, footerData}) {
 
-  useEffect(() => {
-    console.log(allArticles);
-  }, [allArticles])
-
   return (
     <>
       <Head>

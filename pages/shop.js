@@ -36,8 +36,6 @@ export async function getStaticProps(){
   
   const allActiveProducts = allProducts.filter(product => product.status == "active");
 
-  console.log(allActiveProducts);
-
   // get shopify orders
   const ordersResult = await ShopifyAdminApi.get(`/orders.json?status=any`);
   const orders = ordersResult.data.orders;

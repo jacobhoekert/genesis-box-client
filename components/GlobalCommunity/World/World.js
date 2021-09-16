@@ -87,6 +87,7 @@ export const World = props => {
 
   const handleGlobeClick = () => {
     globeEl.current.controls().autoRotate = false;
+    console.log("HERLKWJRLKSJDFLKSJFLKSJFLKSJ")
   }
 
   const getCountryColor = (globeCountry) => {
@@ -137,6 +138,7 @@ export const World = props => {
         props.selectCountry(globeCountry);
       }
     }
+    
   } 
 
   return (
